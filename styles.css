@@ -1,3 +1,10 @@
+body, html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -6,6 +13,9 @@ body {
 }
 
 header {
+    position: absolute;
+    top: 20px;
+    left: 20px;
     background: #333;
     color: #fff;
     padding: 10px 0;
@@ -35,6 +45,60 @@ section {
     margin-bottom: 20px;
 }
 
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.text-container {
+    font-size: 10rem;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.text-left, .text-right {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.text-left {
+    margin-right: -10px;
+}
+
+.text-right {
+    margin-left: -10px;
+}
+
+.text-left:hover, .text-right:hover {
+    transform: scale(1.1);
+}
+
+.text-middle {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.text-middle:hover {
+    transform: scale(1.1);
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+}
+
+small {
+    display: block;
+    font-size: 1rem;
+    font-weight: normal;
+    margin-top: 10px;
+}
+
 footer {
     background: #333;
     color: #fff;
@@ -43,4 +107,16 @@ footer {
     position: fixed;
     width: 100%;
     bottom: 0;
+}
+
+.arc {
+    margin-right: 10px;
+    transform: translateY(0);
+    overflow: hidden;
+}
+
+.diz {
+    margin-left: 10px;
+    transform: translateY(0);
+    overflow: hidden;
 }
