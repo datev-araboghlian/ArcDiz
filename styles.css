@@ -10,16 +10,16 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    background-color: #fafafa;
 }
 
 header {
-    position: absolute;
+    position: fixed;
     top: 20px;
     left: 20px;
-    background: #333;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
+    z-index: 100;
+    background: transparent;
+    padding: 0;
 }
 
 nav ul {
@@ -53,12 +53,74 @@ section {
 }
 
 .text-container {
-    font-size: 10rem;
-    font-weight: bold;
-    text-align: center;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
+    font-size: 15rem;
+    font-weight: bold;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+}
+
+.arc-container {
+    position: relative;
+    overflow: hidden;
+    width: 20rem;
+    margin-left: -10rem;
+    padding-left: 10rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.arc {
+    transform: translateY(0) translateX(-3rem);
+    position: relative;
+}
+
+.arc span, .diz span {
+    display: inline-block;
+    transition: transform 0.5s ease;
+}
+
+.arc:hover span {
+    transform: translateX(-20px);
+}
+
+.arc:hover small {
+    transform: translateX(-20px);
+}
+
+.diz-container {
+    position: relative;
+    overflow: hidden;
+    width: 20rem;
+    margin-left: 10rem;
+    padding-right: 10rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.diz {
+    transform: translateY(0) translateX(3rem);
+    position: relative;
+}
+
+.diz:hover span {
+    transform: translateX(20px);
+}
+
+.diz:hover small {
+    transform: translateX(20px);
+}
+
+small {
+    display: block;
+    font-size: 1rem;
+    font-weight: normal;
+    margin-top: 10px;
+    opacity: 0.8;
+    transition: transform 0.5s ease;
 }
 
 .text-left, .text-right {
@@ -88,15 +150,18 @@ section {
 }
 
 .logo {
-    width: 100px;
+    width: 200px;
     height: auto;
 }
 
-small {
-    display: block;
-    font-size: 1rem;
-    font-weight: normal;
-    margin-top: 10px;
+.horizontal-line {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background-color: black;
+    z-index: 1;
 }
 
 footer {
@@ -107,16 +172,4 @@ footer {
     position: fixed;
     width: 100%;
     bottom: 0;
-}
-
-.arc {
-    margin-right: 10px;
-    transform: translateY(0);
-    overflow: hidden;
-}
-
-.diz {
-    margin-left: 10px;
-    transform: translateY(0);
-    overflow: hidden;
 }
