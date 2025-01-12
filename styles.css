@@ -68,26 +68,21 @@ header {
 }
 
 .arc-container, .diz-container {
-    position: fixed;
-    width: clamp(15rem, 25vw, 30rem);
+    position: absolute;
+    width: 40rem;
     overflow: hidden;
-    text-align: center;
 }
 
 .arc-container {
-    left: 28rem;
-    top: 9rem;
-    transform: translateY(0);
-    width: 40rem;
-    overflow: hidden;
+    left: 50%;
+    top: 50%;
+    transform: translate(-60%, -80%);
 }
 
 .diz-container {
-    right: 25rem;
-    bottom: 15rem;
-    transform: translateY(0);
-    width: 40rem;
-    overflow: hidden;
+    right: 50%;
+    top: 50%;
+    transform: translate(100%, -20%);
 }
 
 .arc, .diz {
@@ -118,6 +113,14 @@ header {
     transition: transform var(--transition-speed) ease;
 }
 
+.arc:hover span, .arc:hover small {
+    transform: translateX(-2rem);
+}
+
+.diz:hover span, .diz:hover small {
+    transform: translateX(0);
+}
+
 /* Text Shadows */
 .arc span, .diz span, .arc small, .diz small, .menu-panel ul li a {
     text-shadow: 
@@ -128,13 +131,6 @@ header {
 }
 
 /* Hover Animations */
-.arc:hover span, .arc:hover small {
-    transform: translateX(-2rem);
-}
-
-.diz:hover span, .diz:hover small {
-    transform: translateX(0);
-}
 
 /* Canvas Positioning */
 #background-canvas, #c, #blob-canvas, #particle-canvas {
@@ -321,32 +317,24 @@ footer {
 /* Media Queries */
 @media screen and (max-width: 1400px) {
     .arc-container {
-        left: 3rem;
+        left: 50%;
+        top: 50%;
+        transform: translate(-60%, -80%);
     }
     .diz-container {
-        right: 3rem;
+        right: 50%;
+        top: 50%;
+        transform: translate(100%, -20%);
     }
 }
 
 @media screen and (max-width: 1024px) {
-    .arc-container {
-        left: 2rem;
-    }
-    .diz-container {
-        right: 2rem;
-    }
     .arc span, .diz span {
         font-size: clamp(6rem, 12vw, 12rem);
     }
 }
 
 @media screen and (max-width: 768px) {
-    .arc-container {
-        left: 1.5rem;
-    }
-    .diz-container {
-        right: 1.5rem;
-    }
     .arc span, .diz span {
         font-size: clamp(4rem, 10vw, 10rem);
     }
@@ -356,12 +344,6 @@ footer {
 }
 
 @media screen and (max-width: 480px) {
-    .arc-container {
-        left: 1rem;
-    }
-    .diz-container {
-        right: 1rem;
-    }
     .arc span, .diz span {
         font-size: clamp(3rem, 8vw, 8rem);
     }
