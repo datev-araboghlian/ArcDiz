@@ -100,11 +100,11 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 30px;
-    height: 24px;
+    width: 50px;
+    height: 45px;
     cursor: pointer;
-    margin-top: -35px;
-    margin-right: 30px;
+    margin-top: -40px;
+    margin-right: 35px;
     background: none;
     border: none;
     z-index: 101;
@@ -113,10 +113,10 @@ header {
 
 .hamburger-menu .bar {
     width: 100%;
-    height: 3px;
+    height: 6px;
     background-color: black;
     transition: all 0.3s ease;
-    margin: 2px 0;
+    margin: 3px 0;
 }
 
 .hamburger-menu.active .bar:nth-child(1) {
@@ -138,14 +138,14 @@ header {
 .menu-panel {
     position: fixed;
     top: 0;
-    right: -300px;
-    width: 300px;
+    right: -550px;
+    width: 550px;
     height: 100vh;
     background: rgba(0, 0, 0, 0.9);
     backdrop-filter: blur(10px);
     transition: right 0.3s ease;
     z-index: 99;
-    padding: 100px 40px;
+    padding: 100px 70px;
 }
 
 .menu-panel.active {
@@ -159,18 +159,18 @@ header {
 }
 
 .menu-panel ul li {
-    margin: 20px 0;
+    margin: 30px 0;
+    text-align: right;
 }
 
 .menu-panel ul li a {
     color: white;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 2rem;
+    font-weight: 500;
     transition: opacity 0.3s ease;
-}
-
-.menu-panel ul li a:hover {
-    opacity: 0.8;
+    letter-spacing: 1px;
+    white-space: nowrap;
 }
 
 body.menu-open {
@@ -530,6 +530,111 @@ footer {
 @media screen and (max-width: 480px) {
     .arc span, .diz span {
         font-size: clamp(3rem, 8vw, 8rem);
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .menu-panel {
+        width: 450px;
+        right: -450px;
+        padding: 90px 60px;
+    }
+    
+    .menu-panel ul li a {
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hamburger-menu {
+        width: 45px;
+        height: 40px;
+        margin-top: -35px;
+        margin-right: 25px;
+    }
+    
+    .hamburger-menu .bar {
+        height: 5px;
+    }
+    
+    .menu-panel {
+        width: 100%;
+        right: -100%;
+        padding: 80px 40px;
+    }
+    
+    .menu-panel ul li {
+        margin: 25px 0;
+    }
+    
+    .menu-panel ul li a {
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hamburger-menu {
+        width: 40px;
+        height: 35px;
+        margin-top: -30px;
+        margin-right: 20px;
+    }
+    
+    .hamburger-menu .bar {
+        height: 4px;
+    }
+    
+    .menu-panel {
+        padding: 70px 30px;
+    }
+    
+    .menu-panel ul li {
+        margin: 20px 0;
+    }
+    
+    .menu-panel ul li a {
+        font-size: 1.4rem;
+        letter-spacing: 0.5px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .text-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .arc-container, .diz-container {
+        width: 100%;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .footer-left, .footer-center, .footer-right {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .social-icon {
+        margin: 0 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo {
+        width: 120px;
+    }
+    
+    .word {
+        font-size: 3rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
     }
 }
 
