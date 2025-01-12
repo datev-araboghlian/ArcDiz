@@ -1,21 +1,35 @@
-/* General Styles */
+/* CSS Reset and Base Styles */
+:root {
+    --background-color: #dddddd;
+    --text-color: #000000;
+    --footer-bg: #333333;
+    --footer-color: #ffffff;
+    --shadow-color: #e6e6e6;
+    --transition-speed: 0.5s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 html, body {
     width: 100%;
     height: 100%;
-    margin: 0;
-    padding: 0;
     overflow: hidden;
-    background: #dddddd;
+    background: var(--background-color);
 }
 
 body {
     min-height: 100vh;
     background: transparent;
+    font-family: 'Helvetica Neue', sans-serif;
 }
 
+/* Header Styles */
 header {
     position: fixed;
-    z-index: 100;
     top: 20px;
     left: 20px;
     z-index: 100;
@@ -32,18 +46,8 @@ header {
 }
 
 .logo {
-    width: 200px;
+    width: clamp(150px, 15vw, 200px);
     height: auto;
-}
-
-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
 }
 
 /* Main Content Styles */
@@ -65,94 +69,75 @@ footer {
 
 .arc-container, .diz-container {
     position: fixed;
-    width: 30rem;
+    width: clamp(15rem, 25vw, 30rem);
     overflow: hidden;
     text-align: center;
 }
 
 .arc-container {
-    left: 40rem;
-    top: 15rem;
+    left: 28rem;
+    top: 9rem;
     transform: translateY(0);
-    width: 25rem;
+    width: 40rem;
+    overflow: hidden;
 }
 
 .diz-container {
-    right: 34rem;
+    right: 25rem;
     bottom: 15rem;
     transform: translateY(0);
-    width: 25rem;
-}
-
-@keyframes slide-in {
-    from {
-        transform: translateY(100%);
-    }
-    to {
-        transform: translateY(0);
-    }
+    width: 40rem;
+    overflow: hidden;
 }
 
 .arc, .diz {
-    font-family: 'Helvetica Neue', sans-serif;
-    font-size: 7rem;
     font-weight: bold;
-    color: black;
+    color: var(--text-color);
     text-decoration: none;
     display: inline-block;
     cursor: pointer;
-    text-shadow: -1px -1px 0 #e6e6e6,  
-                  1px -1px 0 #e6e6e6,
-                 -1px  1px 0 #e6e6e6,
-                  1px  1px 0 #e6e6e6;
     z-index: 2;
 }
 
 .arc span, .diz span {
     transform: translateX(0);
     display: block;
-    transition: transform 0.5s ease;
-    font-size: 15rem;
+    transition: transform var(--transition-speed) ease;
+    font-size: clamp(8rem, 15vw, 15rem);
     font-weight: bold;
 }
 
-.arc span, .diz span, .arc small, .diz small, .menu-panel ul li a {
-    text-shadow: 
-        -1px -1px 0 #e6e6e6,
-        1px -1px 0 #e6e6e6,
-        -1px 1px 0 #e6e6e6,
-        1px 1px 0 #e6e6e6;
+.diz span, .diz small {
+    transform: translateX(-3rem);
 }
 
 .arc small, .diz small {
-    font-size: 2rem;
+    font-size: clamp(1.2rem, 2vw, 2rem);
     opacity: 0.8;
     display: block;
-    transition: transform 0.5s ease;
+    transition: transform var(--transition-speed) ease;
 }
 
+/* Text Shadows */
+.arc span, .diz span, .arc small, .diz small, .menu-panel ul li a {
+    text-shadow: 
+        -1px -1px 0 var(--shadow-color),
+        1px -1px 0 var(--shadow-color),
+        -1px 1px 0 var(--shadow-color),
+        1px 1px 0 var(--shadow-color);
+}
+
+/* Hover Animations */
 .arc:hover span, .arc:hover small {
     transform: translateX(-2rem);
 }
 
 .diz:hover span, .diz:hover small {
-    transform: translateX(2rem);
+    transform: translateX(0);
 }
 
-/* Canvas positioning */
-#background-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -4;
-    pointer-events: none;
-}
-
-#c,
-#blob-canvas,
-#particle-canvas {
+/* Canvas Positioning */
+#background-canvas, #c, #blob-canvas, #particle-canvas {
     position: fixed;
     top: 0;
     left: 0;
@@ -161,53 +146,92 @@ footer {
     pointer-events: none;
 }
 
-#c {
-    z-index: -3;
-}
+#background-canvas { z-index: -4; }
+#c { z-index: -3; }
+#blob-canvas { z-index: -2; }
+#particle-canvas { z-index: -1; }
 
-#blob-canvas {
-    z-index: -2;
-}
-
-#particle-canvas {
-    z-index: -1;
-}
-
-/* Hamburger Menu Styles */
-.hamburger-menu {
+/* Footer Styles */
+footer {
+    background: var(--footer-bg);
+    color: var(--footer-color);
     position: fixed;
-    top: 20px;
-    right: 20px;
-    cursor: pointer;
-    z-index: 1000;
-    padding: 15px;
-    transform: scale(1.2);
+    width: 100%;
+    bottom: 0;
+    padding: 1rem 3rem;
 }
 
-.bar {
-    width: 35px;
-    height: 4px;
-    background-color: black;
-    margin: 8px 0;
-    transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.hamburger-menu.active .bar:nth-child(1) {
-    transform: rotate(-45deg) translate(-8px, 6px) scaleX(1.2);
-    background-color: white;
+.footer-left {
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+    padding-left: 2rem;
 }
 
-.hamburger-menu.active .bar:nth-child(2) {
-    transform: scaleX(0);
-    opacity: 0;
+.footer-center {
+    text-align: center;
+    font-size: 1.2rem;
 }
 
-.hamburger-menu.active .bar:nth-child(3) {
-    transform: rotate(45deg) translate(-8px, -6px) scaleX(1.2);
-    background-color: white;
+.footer-right {
+    display: flex;
+    gap: 2rem;
+    padding-right: 2rem;
 }
 
-/* Sliding Panel Styles */
+.social-icon {
+    color: white;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.social-icon:hover {
+    transform: translateY(-2px);
+    opacity: 0.8;
+}
+
+.social-icon svg {
+    width: 28px;
+    height: 28px;
+    fill: none;
+    stroke: white;
+    stroke-width: 1.8;
+}
+
+@media screen and (max-width: 768px) {
+    footer {
+        padding: 0.8rem 1.5rem;
+    }
+    
+    .footer-left {
+        font-size: 1.1rem;
+        padding-left: 0;
+    }
+
+    .footer-center {
+        font-size: 1.1rem;
+    }
+    
+    .footer-right {
+        gap: 1.5rem;
+        padding-right: 0;
+    }
+    
+    .social-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+/* Menu Panel Styles */
 .menu-panel {
     position: fixed;
     top: 0;
@@ -225,15 +249,13 @@ footer {
 }
 
 .menu-panel ul {
+    padding: 2rem;
     list-style: none;
-    padding: 0;
-    margin-top: 100px;
-    margin-left: 50px;
+    margin-top: 80px;
 }
 
 .menu-panel ul li {
-    padding: 30px 0;
-    text-align: left;
+    margin: 2rem 0;
     opacity: 0;
     transform: translateX(50px);
     transition: all 0.4s ease;
@@ -247,19 +269,100 @@ footer {
 .menu-panel.active ul li:nth-child(1) { transition-delay: 0.1s; }
 .menu-panel.active ul li:nth-child(2) { transition-delay: 0.2s; }
 .menu-panel.active ul li:nth-child(3) { transition-delay: 0.3s; }
-.menu-panel.active ul li:nth-child(4) { transition-delay: 0.4s; }
 
 .menu-panel ul li a {
     color: white;
     text-decoration: none;
     font-size: 3rem;
-    transition: 0.3s;
-    font-weight: bold;
+    transition: all 0.3s ease;
     display: inline-block;
+    font-weight: bold;
 }
 
 .menu-panel ul li a:hover {
-    opacity: 0.7;
-    padding-left: 20px;
-    transform: scale(1.05);
+    transform: translateX(20px);
+    opacity: 0.8;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1000;
+    padding: 1rem;
+}
+
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.hamburger-menu.active .bar {
+    background-color: white;
+}
+
+.hamburger-menu.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-7px, 6px);
+}
+
+.hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-7px, -6px);
+}
+
+/* Media Queries */
+@media screen and (max-width: 1400px) {
+    .arc-container {
+        left: 3rem;
+    }
+    .diz-container {
+        right: 3rem;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .arc-container {
+        left: 2rem;
+    }
+    .diz-container {
+        right: 2rem;
+    }
+    .arc span, .diz span {
+        font-size: clamp(6rem, 12vw, 12rem);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .arc-container {
+        left: 1.5rem;
+    }
+    .diz-container {
+        right: 1.5rem;
+    }
+    .arc span, .diz span {
+        font-size: clamp(4rem, 10vw, 10rem);
+    }
+    .arc small, .diz small {
+        font-size: clamp(1rem, 1.5vw, 1.5rem);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .arc-container {
+        left: 1rem;
+    }
+    .diz-container {
+        right: 1rem;
+    }
+    .arc span, .diz span {
+        font-size: clamp(3rem, 8vw, 8rem);
+    }
 }
