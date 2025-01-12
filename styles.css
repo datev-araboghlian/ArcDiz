@@ -71,14 +71,14 @@ footer {
 }
 
 .arc-container {
-    left: 35rem;
+    left: 40rem;
     top: 15rem;
     transform: translateY(0);
     width: 25rem;
 }
 
 .diz-container {
-    right: 35rem;
+    right: 34rem;
     bottom: 15rem;
     transform: translateY(0);
     width: 25rem;
@@ -94,22 +94,34 @@ footer {
 }
 
 .arc, .diz {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 7rem;
+    font-weight: bold;
+    color: black;
     text-decoration: none;
-    color: inherit;
     display: inline-block;
     cursor: pointer;
+    text-shadow: -1px -1px 0 #e6e6e6,  
+                  1px -1px 0 #e6e6e6,
+                 -1px  1px 0 #e6e6e6,
+                  1px  1px 0 #e6e6e6;
+    z-index: 2;
 }
 
 .arc span, .diz span {
-    transform: translateX(3rem);
-    display: inline-block;
+    transform: translateX(0);
+    display: block;
     transition: transform 0.5s ease;
     font-size: 15rem;
     font-weight: bold;
 }
 
-.diz span {
-    transform: translateX(-3rem);
+.arc span, .diz span, .arc small, .diz small, .menu-panel ul li a {
+    text-shadow: 
+        -1px -1px 0 #e6e6e6,
+        1px -1px 0 #e6e6e6,
+        -1px 1px 0 #e6e6e6,
+        1px 1px 0 #e6e6e6;
 }
 
 .arc small, .diz small {
