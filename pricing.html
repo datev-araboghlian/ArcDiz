@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - ArcDiz</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32.png">
+    <link rel="icon" type="image/png" href="./assets/favicon-32.png">
+    <link rel="shortcut icon" href="./assets/favicon-32.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <canvas id="background-canvas"></canvas>
+    <canvas id="c"></canvas>
+    <canvas id="blob-canvas"></canvas>
+    <canvas id="particle-canvas"></canvas>
+    <div class="page-wrapper">
+        <header>
+            <a href="index.html" class="logo-link">
+                <img src="assets/ArcDiz_logo.png" alt="ArcDiz Logo" class="logo">
+            </a>
+            <button class="hamburger-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav class="menu-panel">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="architecture.html">Architecture Designs</a></li>
+                    <li><a href="interior.html">Interior Design Models</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section class="pricing-section">
+                <h1>Our Services & Pricing</h1>
+                <div class="pricing-container">
+                    <div class="pricing-card">
+                        <h2>Basic Design</h2>
+                        <div class="price">$1,500</div>
+                        <ul>
+                            <li>Initial Consultation</li>
+                            <li>2D Floor Plans</li>
+                            <li>Basic 3D Visualization</li>
+                            <li>1 Revision Round</li>
+                        </ul>
+                        <a href="#contact" class="cta-button">Get Started</a>
+                    </div>
+                    <div class="pricing-card featured">
+                        <h2>Professional</h2>
+                        <div class="price">$3,500</div>
+                        <ul>
+                            <li>Everything in Basic</li>
+                            <li>Detailed 3D Renderings</li>
+                            <li>Material Selection</li>
+                            <li>3 Revision Rounds</li>
+                            <li>Project Timeline</li>
+                        </ul>
+                        <a href="#contact" class="cta-button">Get Started</a>
+                    </div>
+                    <div class="pricing-card">
+                        <h2>Premium</h2>
+                        <div class="price">$7,000+</div>
+                        <ul>
+                            <li>Everything in Professional</li>
+                            <li>Full Project Management</li>
+                            <li>VR Visualization</li>
+                            <li>Unlimited Revisions</li>
+                            <li>Priority Support</li>
+                        </ul>
+                        <a href="#contact" class="cta-button">Get Started</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">What is the typical timeline for a project?</div>
+                        <div class="faq-answer">Project timelines vary based on complexity. Basic designs typically take 2-3 weeks, while comprehensive projects may take 2-3 months. We'll provide a detailed timeline during our initial consultation.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Do you offer revisions in your packages?</div>
+                        <div class="faq-answer">Yes, all our packages include revision rounds. Basic includes 1 revision, Professional includes 2 revisions, and Premium includes unlimited revisions within the project scope.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I upgrade my package later?</div>
+                        <div class="faq-answer">Absolutely! You can upgrade to a higher tier package at any time during the project. We'll simply adjust the pricing to reflect the upgrade.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What payment methods do you accept?</div>
+                        <div class="faq-answer">We accept all major credit cards, bank transfers, and digital payments. For larger projects, we can arrange a flexible payment schedule.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Do you work on international projects?</div>
+                        <div class="faq-answer">Yes, we work with clients worldwide. Our digital workflow and communication tools allow us to collaborate effectively across different time zones.</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p class="phone-number">+374 55 123456</p>
+                </div>
+                <div class="footer-center">
+                    <p>&copy; 2025 ArcDiz. All rights reserved.</p>
+                </div>
+                <div class="footer-right">
+                    <a href="https://www.instagram.com" target="_blank" class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="sphere.js"></script>
+    <script src="menu.js"></script>
+    <script src="faq.js"></script>
+</body>
+</html>

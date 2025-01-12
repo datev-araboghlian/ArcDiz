@@ -8,38 +8,37 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <a href="index.html" class="logo-link">
-            <img src="assets/ArcDiz_logo.png" alt="ArcDiz Logo" class="logo">
-        </a>
-        <div class="hamburger-menu">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
-        <nav class="menu-panel">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="architecture.html">Architecture Designs</a></li>
-                <li><a href="interior.html">Interior Design Models</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section class="centered">
-            <h1>Interior Design Models</h1>
-            <!-- Add your interior design content here -->
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 ArcDiz. All rights reserved.</p>
-    </footer>
-    <script>
-        document.querySelector('.hamburger-menu').addEventListener('click', function() {
-            this.classList.toggle('active');
-            document.querySelector('.menu-panel').classList.toggle('active');
-        });
-    </script>
+    <div id="sphere-container"></div>
+    <div class="page-wrapper">
+        <header>
+            <a href="index.html" class="logo-link">
+                <img src="assets/ArcDiz_logo.png" alt="ArcDiz Logo" class="logo">
+            </a>
+            <button class="hamburger-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav class="menu-panel">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="architecture.html">Architecture Designs</a></li>
+                    <li><a href="interior.html">Interior Design Models</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section class="centered">
+                <h1>Interior Design Models</h1>
+                <!-- Add your interior design content here -->
+            </section>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="sphere.js"></script>
+    <script src="menu.js"></script>
 </body>
 </html>
