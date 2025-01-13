@@ -44,7 +44,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    padding-bottom: 80px; /* Height of footer */
+    padding-bottom: clamp(3.5rem, 8vh, 5rem);
 }
 
 canvas {
@@ -361,13 +361,13 @@ body.menu-open .hamburger-menu .bar:nth-child(3) {
 
 /* Footer Styles */
 footer {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    background: var(--footer-bg);
+    background: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(10px);
-    padding: 15px 0;
+    padding: clamp(0.8rem, 2vh, 1.2rem) 0;
     z-index: 100;
 }
 
@@ -375,8 +375,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 40px;
-    color: var(--footer-color);
+    padding: 0 clamp(1.5rem, 4vw, 3rem);
 }
 
 .footer-left, .footer-center, .footer-right {
@@ -385,92 +384,52 @@ footer {
 }
 
 .phone-number {
-    color: var(--footer-color);
+    color: white;
+    text-decoration: none;
     margin: 0;
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
 }
 
 .footer-center p {
-    color: var(--footer-color);
+    color: white;
     margin: 0;
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
 }
 
 .social-icon {
-    margin-left: 20px;
+    margin-left: clamp(1rem, 2vw, 1.5rem);
     opacity: 0.8;
     transition: opacity 0.3s ease;
 }
 
 .social-icon svg {
-    stroke: var(--footer-color);
+    stroke: white;
+    width: clamp(1.2rem, 2vw, 1.5rem);
+    height: clamp(1.2rem, 2vw, 1.5rem);
 }
 
 .social-icon:hover {
     opacity: 1;
 }
 
-/* Mobile styles */
 @media screen and (max-width: 768px) {
-    footer {
-        padding: 12px 0;
-    }
-
     .footer-content {
         flex-direction: column;
         align-items: flex-start;
-        padding: 0 20px;
-        gap: 8px;
+        gap: 0.5rem;
     }
 
-    .footer-left {
+    .footer-left, .footer-center, .footer-right {
         width: 100%;
-        justify-content: flex-start;
-    }
-
-    .footer-center {
-        width: 100%;
-        justify-content: flex-start;
-        font-size: 0.9rem;
-    }
-
-    .footer-right {
-        width: 100%;
-        justify-content: flex-start;
-        gap: 15px;
     }
 
     .social-icon {
         margin-left: 0;
+        margin-right: clamp(0.8rem, 2vw, 1.2rem);
     }
 
-    .social-icon svg {
-        width: 20px;
-        height: 20px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    footer {
-        padding: 10px 0;
-    }
-
-    .footer-content {
-        padding: 0 15px;
-        gap: 6px;
-    }
-
-    .footer-center {
-        font-size: 0.85rem;
-    }
-
-    .social-icon svg {
-        width: 18px;
-        height: 18px;
-    }
-
-    .phone-number, .footer-center p {
-        font-size: 0.8rem;
+    .social-icon:last-child {
+        margin-right: 0;
     }
 }
 
