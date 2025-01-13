@@ -3,13 +3,18 @@
     "short_name": "ArcDiz",
     "icons": [
         {
-            "src": "./ArcDiz_tab_logo.png",
-            "sizes": "192x192",
+            "src": "favicon/favicon-16x16.png",
+            "sizes": "16x16",
             "type": "image/png"
         },
         {
-            "src": "./ArcDiz_tab_logo.png",
-            "sizes": "512x512",
+            "src": "favicon/favicon-32x32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        },
+        {
+            "src": "favicon/apple-touch-icon.png",
+            "sizes": "180x180",
             "type": "image/png"
         }
     ],

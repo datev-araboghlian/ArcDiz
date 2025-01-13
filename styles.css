@@ -44,7 +44,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    padding-bottom: clamp(3.5rem, 8vh, 5rem);
+    padding-bottom: clamp(4rem, 10vh, 6rem);
 }
 
 canvas {
@@ -413,23 +413,43 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
+    footer {
+        padding: clamp(1rem, 2vh, 1.5rem) 0;
+    }
+
     .footer-content {
         flex-direction: column;
         align-items: flex-start;
-        gap: 0.5rem;
+        gap: 0.8rem;
     }
 
-    .footer-left, .footer-center, .footer-right {
+    .footer-left {
+        order: 1;
+        width: 100%;
+    }
+
+    .footer-right {
+        order: 2;
+        width: 100%;
+        display: flex;
+        gap: clamp(1rem, 3vw, 1.5rem);
+    }
+
+    .footer-center {
+        order: 3;
         width: 100%;
     }
 
     .social-icon {
         margin-left: 0;
-        margin-right: clamp(0.8rem, 2vw, 1.2rem);
     }
 
-    .social-icon:last-child {
-        margin-right: 0;
+    .phone-number {
+        font-size: clamp(0.85rem, 1.4vw, 1rem);
+    }
+
+    .footer-center p {
+        font-size: clamp(0.8rem, 1.3vw, 0.9rem);
     }
 }
 
