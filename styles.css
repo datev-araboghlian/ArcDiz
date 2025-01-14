@@ -12,6 +12,23 @@ body {
     color: var(--text-color);
     cursor: url('assets/cursor.svg') 16 16, auto;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-wrapper {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 
 /* Header styles */
@@ -289,16 +306,51 @@ header {
     transform: translateX(-30px);
 }
 
-/* Footer Styles */
-footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
+/* Pricing section specific styles */
+.pricing-section {
+    padding: 60px 20px;
+    max-width: 1200px;
     width: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(10px);
-    padding: clamp(0.8rem, 2vh, 1.2rem) 0;
-    z-index: 100;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pricing-section h1 {
+    font-size: 3.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.pricing-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 40px 0;
+}
+
+.pricing-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 60px;
+}
+
+/* Footer styles */
+footer {
+    width: 100%;
+    background: var(--footer-bg);
+    color: var(--footer-color);
+    padding: clamp(1.5rem, 3vh, 2rem) 0;
+    margin-top: auto;
+    position: relative;
+    z-index: 2;
 }
 
 .footer-content {
@@ -570,6 +622,30 @@ footer {
     }
 }
 
+@media screen and (max-width: 768px) {
+    .pricing-section {
+        padding: 3rem 1rem;
+    }
+
+    .pricing-section h1 {
+        font-size: 3rem;
+    }
+
+    .pricing-card {
+        width: 100%;
+        max-width: 400px;
+        padding: 2rem;
+    }
+
+    .faq-section {
+        padding: 4rem 1rem;
+    }
+
+    .faq-section h2 {
+        font-size: 2.5rem;
+    }
+}
+
 @media (hover: hover) {
     .arc-container:hover,
     .diz-container:hover {
@@ -587,148 +663,64 @@ footer {
     }
 }
 
-/* CSS Reset and Base Styles */
-:root {
-    --background-color: #ddd6d6;
-    --text-color: #000000;
-    --footer-bg: #333333;
-    --footer-color: #ffffff;
-    --shadow-color: #e6e6e6;
-    --transition-speed: 0.5s;
+@keyframes slideUp {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
-/* Pricing Section Styles */
-.pricing-section {
-    padding: 40px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    color: var(--text-color);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 1;
-    margin-top: 80px;
-    height: auto;
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
-.pricing-section h1 {
-    font-size: 4rem;
-    margin-bottom: 4rem;
-    text-shadow: 
-        -1px -1px 0 #fff,
-        1px -1px 0 #fff,
-        -1px 1px 0 #fff,
-        1px 1px 0 #fff,
-        0 0 10px rgba(255, 255, 255, 0.8);
+/* Apply custom cursor to all interactive elements */
+a,
+button,
+.menu-toggle,
+.hamburger-menu,
+.logo-link,
+.arc-container,
+.diz-container,
+.menu-panel,
+.menu-panel *,
+.social-icon,
+[role="button"],
+[tabindex="0"] {
+    cursor: url('assets/cursor.svg') 16 16, auto !important;
 }
 
-.pricing-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 40px;
-    width: 100%;
-}
-
-.pricing-card {
-    flex: 0 1 350px;
-    max-width: 350px;
-    height: auto;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 2px solid #000;
-    border-radius: 20px;
-    padding: 3rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 
-        0 5px 15px rgba(0, 0, 0, 0.2),
-        0 0 20px rgba(255, 255, 255, 0.1),
-        0 0 30px rgba(255, 255, 255, 0.05);
-    cursor: url('assets/cursor.svg') 16 16, auto;
-}
-
-.pricing-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 
-        0 15px 30px rgba(0, 0, 0, 0.3),
-        0 0 30px rgba(255, 255, 255, 0.2),
-        0 0 50px rgba(255, 255, 255, 0.1);
-}
-
-.pricing-card h2 {
-    font-size: 2.2rem;
-    margin-bottom: 1.5rem;
-    text-shadow: 
-        -1px -1px 0 #000,
-        1px -1px 0 #000,
-        -1px 1px 0 #000,
-        1px 1px 0 #000,
-        0 0 20px rgba(255, 255, 255, 0.5);
-}
-
-.pricing-card .price {
-    font-size: 3.5rem;
-    font-weight: bold;
-    margin: 1.5rem 0;
-    text-shadow: 
-        -1px -1px 0 #000,
-        1px -1px 0 #000,
-        -1px 1px 0 #000,
-        1px 1px 0 #000,
-        0 0 20px rgba(255, 255, 255, 0.5);
-}
-
-.pricing-card li {
-    margin: 1rem 0;
-    font-size: 1.3rem;
-    transition: transform 0.3s ease, text-shadow 0.3s ease;
-    cursor: url('assets/cursor.svg') 16 16, auto;
-}
-
-.pricing-card li:hover {
-    transform: translateX(10px);
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-}
-
-.cta-button {
-    display: inline-block;
-    padding: 1.2rem 2.5rem;
-    background: transparent;
-    color: var(--text-color);
-    text-decoration: none;
-    border: 2px solid #000;
-    border-radius: 30px;
-    font-weight: 500;
-    font-size: 1.2rem;
-    transition: all 0.3s ease;
-    margin-top: 2rem;
-    box-shadow: 
-        0 5px 15px rgba(0, 0, 0, 0.1),
-        0 0 10px rgba(255, 255, 255, 0.1);
-    cursor: url('assets/cursor.svg') 16 16, auto;
-}
-
-.cta-button:hover {
-    background: var(--text-color);
-    color: var(--background-color);
-    transform: scale(1.05);
-    box-shadow: 
-        0 8px 20px rgba(0, 0, 0, 0.2),
-        0 0 20px rgba(255, 255, 255, 0.2);
+/* Ensure custom cursor persists on hover states */
+a:hover,
+button:hover,
+.menu-toggle:hover,
+.hamburger-menu:hover,
+.logo-link:hover,
+.arc-container:hover,
+.diz-container:hover,
+.menu-panel:hover,
+.menu-panel *:hover,
+.social-icon:hover,
+[role="button"]:hover,
+[tabindex="0"]:hover {
+    cursor: url('assets/cursor.svg') 16 16, auto !important;
 }
 
 /* FAQ Section Styles */
 .faq-section {
-    padding: 40px 20px 80px;
+    width: 100%;
+    padding: 60px 20px;
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
     z-index: 2;
-    height: auto;
 }
 
 .faq-section h2 {
@@ -939,52 +931,150 @@ footer {
     }
 }
 
-@keyframes slideUp {
-    0% {
-        transform: translateY(100%);
-    }
-    100% {
-        transform: translateY(0);
-    }
+/* Canvas positioning */
+#background-canvas,
+#c,
+#blob-canvas,
+#particle-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
 }
 
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+/* CSS Reset and Base Styles */
+:root {
+    --background-color: #ddd6d6;
+    --text-color: #000000;
+    --footer-bg: #333333;
+    --footer-color: #ffffff;
+    --shadow-color: #e6e6e6;
+    --transition-speed: 0.5s;
 }
 
-/* Apply custom cursor to all interactive elements */
-a,
-button,
-.menu-toggle,
-.hamburger-menu,
-.logo-link,
-.arc-container,
-.diz-container,
-.menu-panel,
-.menu-panel *,
-.social-icon,
-[role="button"],
-[tabindex="0"] {
-    cursor: url('assets/cursor.svg') 16 16, auto !important;
+/* Pricing Section Styles */
+.pricing-section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: var(--text-color);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    margin-top: 80px;
+    height: auto;
 }
 
-/* Ensure custom cursor persists on hover states */
-a:hover,
-button:hover,
-.menu-toggle:hover,
-.hamburger-menu:hover,
-.logo-link:hover,
-.arc-container:hover,
-.diz-container:hover,
-.menu-panel:hover,
-.menu-panel *:hover,
-.social-icon:hover,
-[role="button"]:hover,
-[tabindex="0"]:hover {
-    cursor: url('assets/cursor.svg') 16 16, auto !important;
+.pricing-section h1 {
+    font-size: 4rem;
+    margin-bottom: 4rem;
+    text-shadow: 
+        -1px -1px 0 #fff,
+        1px -1px 0 #fff,
+        -1px 1px 0 #fff,
+        1px 1px 0 #fff,
+        0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.pricing-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.pricing-card {
+    flex: 0 1 350px;
+    max-width: 350px;
+    height: auto;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid #000;
+    border-radius: 20px;
+    padding: 3rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 
+        0 5px 15px rgba(0, 0, 0, 0.2),
+        0 0 20px rgba(255, 255, 255, 0.1),
+        0 0 30px rgba(255, 255, 255, 0.05);
+    cursor: url('assets/cursor.svg') 16 16, auto;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 
+        0 15px 30px rgba(0, 0, 0, 0.3),
+        0 0 30px rgba(255, 255, 255, 0.2),
+        0 0 50px rgba(255, 255, 255, 0.1);
+}
+
+.pricing-card h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000,
+        0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.pricing-card .price {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin: 1.5rem 0;
+    text-shadow: 
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000,
+        0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.pricing-card li {
+    margin: 1rem 0;
+    font-size: 1.3rem;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+    cursor: url('assets/cursor.svg') 16 16, auto;
+}
+
+.pricing-card li:hover {
+    transform: translateX(10px);
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1.2rem 2.5rem;
+    background: transparent;
+    color: var(--text-color);
+    text-decoration: none;
+    border: 2px solid #000;
+    border-radius: 30px;
+    font-weight: 500;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    margin-top: 2rem;
+    box-shadow: 
+        0 5px 15px rgba(0, 0, 0, 0.1),
+        0 0 10px rgba(255, 255, 255, 0.1);
+    cursor: url('assets/cursor.svg') 16 16, auto;
+}
+
+.cta-button:hover {
+    background: var(--text-color);
+    color: var(--background-color);
+    transform: scale(1.05);
+    box-shadow: 
+        0 8px 20px rgba(0, 0, 0, 0.2),
+        0 0 20px rgba(255, 255, 255, 0.2);
 }
