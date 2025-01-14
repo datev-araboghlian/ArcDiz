@@ -37,6 +37,7 @@ header {
     align-items: center;
     height: 100%;
     padding: clamp(0.5rem, 1vh, 1rem) 0;
+    cursor: url('assets/cursor.svg') 16 16, auto;
 }
 
 .logo {
@@ -59,7 +60,6 @@ header {
     width: 48px;
     height: 48px;
     opacity: 0;
-    cursor: pointer;
     z-index: 1001;
 }
 
@@ -103,6 +103,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: url('assets/cursor.svg') 16 16, auto;
 }
 
 /* Menu animation styles */
@@ -137,25 +138,49 @@ header {
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: url('assets/cursor.svg') 16 16, auto;
 }
 
 .menu-toggle:checked ~ .menu-panel ul li {
     opacity: 1;
     transform: translateY(0);
+    transition-delay: calc(0.1s * var(--i));
 }
+
+.menu-panel ul li:nth-child(1) { --i: 1; }
+.menu-panel ul li:nth-child(2) { --i: 2; }
+.menu-panel ul li:nth-child(3) { --i: 3; }
+.menu-panel ul li:nth-child(4) { --i: 4; }
+.menu-panel ul li:nth-child(5) { --i: 5; }
 
 .menu-panel ul li a {
     color: #fff;
     text-decoration: none;
     font-size: 1.5rem;
-    transition: color 0.3s ease;
-    cursor: url('assets/cursor.svg') 16 16, auto;
     padding: 0.5rem 1rem;
     display: inline-block;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.menu-panel ul li a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #fff;
+    transform: translateX(-50%);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .menu-panel ul li a:hover {
-    color: #ddd6d6;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.menu-panel ul li a:hover::before {
+    width: calc(100% - 2rem);
 }
 
 /* Main Content Styles */
@@ -183,6 +208,7 @@ header {
     justify-content: center;
     align-items: center;
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: url('assets/cursor.svg') 16 16, auto;
 }
 
 .arc, .diz {
@@ -292,6 +318,7 @@ footer {
     text-decoration: none;
     margin: 0;
     font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+    cursor: url('assets/cursor.svg') 16 16, auto;
 }
 
 .footer-center p {
@@ -304,6 +331,7 @@ footer {
     margin-left: clamp(1rem, 2vw, 1.5rem);
     opacity: 0.8;
     transition: opacity 0.3s ease;
+    cursor: url('assets/cursor.svg') 16 16, auto;
 }
 
 .social-icon svg {
@@ -620,6 +648,7 @@ footer {
         0 5px 15px rgba(0, 0, 0, 0.2),
         0 0 20px rgba(255, 255, 255, 0.1),
         0 0 30px rgba(255, 255, 255, 0.05);
+    cursor: url('assets/cursor.svg') 16 16, auto;
 }
 
 .pricing-card:hover {
@@ -657,8 +686,7 @@ footer {
     margin: 1rem 0;
     font-size: 1.3rem;
     transition: transform 0.3s ease, text-shadow 0.3s ease;
-    cursor: default;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    cursor: url('assets/cursor.svg') 16 16, auto;
 }
 
 .pricing-card li:hover {
@@ -681,6 +709,7 @@ footer {
     box-shadow: 
         0 5px 15px rgba(0, 0, 0, 0.1),
         0 0 10px rgba(255, 255, 255, 0.1);
+    cursor: url('assets/cursor.svg') 16 16, auto;
 }
 
 .cta-button:hover {
@@ -722,11 +751,7 @@ footer {
     border-radius: 10px;
     overflow: hidden;
     transition: all 0.3s ease;
-    cursor: pointer;
-    border: 2px solid #000;
-    box-shadow: 
-        0 5px 15px rgba(0, 0, 0, 0.2),
-        0 0 0 2px rgba(0, 0, 0, 0.1);
+    cursor: url('assets/cursor.svg') 16 16, auto;
 }
 
 .faq-item:hover {
@@ -751,6 +776,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: url('assets/cursor.svg') 16 16, auto;
 }
 
 .faq-question::after {
@@ -929,4 +955,36 @@ footer {
     100% {
         opacity: 1;
     }
+}
+
+/* Apply custom cursor to all interactive elements */
+a,
+button,
+.menu-toggle,
+.hamburger-menu,
+.logo-link,
+.arc-container,
+.diz-container,
+.menu-panel,
+.menu-panel *,
+.social-icon,
+[role="button"],
+[tabindex="0"] {
+    cursor: url('assets/cursor.svg') 16 16, auto !important;
+}
+
+/* Ensure custom cursor persists on hover states */
+a:hover,
+button:hover,
+.menu-toggle:hover,
+.hamburger-menu:hover,
+.logo-link:hover,
+.arc-container:hover,
+.diz-container:hover,
+.menu-panel:hover,
+.menu-panel *:hover,
+.social-icon:hover,
+[role="button"]:hover,
+[tabindex="0"]:hover {
+    cursor: url('assets/cursor.svg') 16 16, auto !important;
 }
