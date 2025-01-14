@@ -68,92 +68,104 @@ header {
     transform: scale(1.05);
 }
 
-/* Navigation menu styles */
+/* Menu toggle and hamburger */
 .menu-toggle {
-    position: absolute;
-    right: clamp(1.5rem, 4vw, 3rem);
-    top: 50%;
-    transform: translateY(-50%);
-    width: 48px;
-    height: 48px;
-    opacity: 0;
-    z-index: 1001;
+    display: none;
 }
 
 .hamburger-menu {
-    position: absolute;
-    right: clamp(1.5rem, 4vw, 3rem);
-    top: 50%;
-    transform: translateY(-50%);
+    position: fixed;
+    top: 20px;
+    right: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 32px;
-    height: 24px;
+    width: 30px;
+    height: 25px;
     background: none;
     border: none;
     padding: 0;
     z-index: 1001;
-    cursor: url('assets/cursor.svg') 16 16, auto;
+    cursor: pointer;
 }
 
 .bar {
     width: 100%;
     height: 3px;
-    background-color: #000;
-    display: block;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    transform-origin: center;
+    background-color: var(--text-color);
+    transition: all 0.3s ease;
 }
 
-/* Menu panel styles */
+.menu-toggle:checked ~ .hamburger-menu .bar {
+    background-color: #fff;
+}
+
+/* Menu Panel Styles */
 .menu-panel {
     position: fixed;
     top: 0;
-    right: 0;
+    right: -100%;
     width: 300px;
     height: 100vh;
     background: rgba(0, 0, 0, 0.95);
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
+    transition: right 0.3s ease;
     backdrop-filter: blur(10px);
     z-index: 1000;
     box-shadow: -5px 0 30px rgba(0, 0, 0, 0.3);
 }
 
 .menu-toggle:checked ~ .menu-panel {
-    opacity: 1;
-    visibility: visible;
+    right: 0;
 }
 
+/* Close button */
+.menu-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 1002;
+    display: none;
+}
+
+.menu-close::before,
+.menu-close::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+}
+
+.menu-close::before {
+    transform: rotate(45deg);
+}
+
+.menu-close::after {
+    transform: rotate(-45deg);
+}
+
+/* Menu items styles */
 .menu-panel ul {
     list-style: none;
     padding: 0;
     margin: 0;
     width: 100%;
+    text-align: center;
 }
 
 .menu-panel ul li {
-    margin: 25px 0;
-    padding: 0 30px;
+    margin: 2rem 0;
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    text-align: right;
-}
-
-.menu-panel ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.3rem;
-    padding: 0.5rem 1rem;
-    display: inline-block;
-    position: relative;
-    transition: color 0.3s ease;
 }
 
 .menu-toggle:checked ~ .menu-panel ul li {
@@ -167,6 +179,16 @@ header {
 .menu-panel ul li:nth-child(3) { --i: 3; }
 .menu-panel ul li:nth-child(4) { --i: 4; }
 .menu-panel ul li:nth-child(5) { --i: 5; }
+
+.menu-panel ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    position: relative;
+    transition: color 0.3s ease;
+}
 
 .menu-panel ul li a::before {
     content: '';
@@ -190,20 +212,70 @@ header {
 
 @media screen and (max-width: 768px) {
     .menu-panel {
-        width: 250px;
+        width: 100%;
+    }
+
+    .menu-close {
+        display: block;
+    }
+
+    .hamburger-menu {
+        top: 15px;
+        right: 15px;
     }
 
     .menu-panel ul li {
-        margin: 20px 0;
-        padding: 0 20px;
+        margin: 1.5rem 0;
     }
 
     .menu-panel ul li a {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
     }
 }
 
 @media screen and (max-width: 480px) {
+    .hamburger-menu {
+        top: 10px;
+        right: 10px;
+        width: 25px;
+        height: 20px;
+    }
+
+    .menu-close {
+        top: 15px;
+        right: 15px;
+        width: 25px;
+        height: 25px;
+    }
+
+    .menu-panel ul li {
+        margin: 1.2rem 0;
+    }
+
+    .menu-panel ul li a {
+        font-size: 1.2rem;
+    }
+}
+
+/* Menu animation styles */
+.menu-toggle:checked ~ .hamburger-menu .bar:nth-child(1) {
+    transform: translateY(11px) rotate(45deg);
+}
+
+.menu-toggle:checked ~ .hamburger-menu .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle:checked ~ .hamburger-menu .bar:nth-child(3) {
+    transform: translateY(-11px) rotate(-45deg);
+}
+
+@media screen and (max-width: 768px) {
+    .hamburger-menu {
+        top: 15px;
+        right: 15px;
+    }
+
     .menu-panel {
         width: 200px;
     }
@@ -213,25 +285,30 @@ header {
     }
 
     .menu-panel ul li a {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 }
 
-/* Menu animation styles */
-.menu-toggle:checked ~ .hamburger-menu .bar {
-    background-color: #fff;
-}
+@media screen and (max-width: 480px) {
+    .hamburger-menu {
+        top: 10px;
+        right: 10px;
+        width: 25px;
+        height: 20px;
+    }
 
-.menu-toggle:checked ~ .hamburger-menu .bar:nth-child(1) {
-    transform: translateY(10.5px) rotate(45deg);
-}
+    .menu-panel {
+        width: 180px;
+    }
 
-.menu-toggle:checked ~ .hamburger-menu .bar:nth-child(2) {
-    opacity: 0;
-}
+    .menu-panel ul li {
+        margin: 12px 0;
+    }
 
-.menu-toggle:checked ~ .hamburger-menu .bar:nth-child(3) {
-    transform: translateY(-10.5px) rotate(-45deg);
+    .menu-panel ul li a {
+        font-size: 1rem;
+        padding: 0.4rem 0.8rem;
+    }
 }
 
 /* Main Content Styles */
@@ -435,18 +512,43 @@ footer {
 
 /* Responsive styles */
 @media screen and (max-width: 768px) {
-    .logo {
-        height: clamp(3rem, 9vh, 5.5rem);
+    .hamburger-menu {
+        top: 15px;
+        right: 15px;
+    }
+
+    .menu-panel {
+        width: 200px;
+    }
+
+    .menu-panel ul li {
+        margin: 15px 0;
+    }
+
+    .menu-panel ul li a {
+        font-size: 1.1rem;
     }
 }
 
 @media screen and (max-width: 480px) {
-    .logo {
-        height: clamp(2.5rem, 8vh, 5rem);
+    .hamburger-menu {
+        top: 10px;
+        right: 10px;
+        width: 25px;
+        height: 20px;
     }
-    
+
     .menu-panel {
-        width: 100%;
+        width: 180px;
+    }
+
+    .menu-panel ul li {
+        margin: 12px 0;
+    }
+
+    .menu-panel ul li a {
+        font-size: 1rem;
+        padding: 0.4rem 0.8rem;
     }
 }
 
