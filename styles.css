@@ -6,7 +6,7 @@
 }
 
 :root {
-    --background-color: #faeee4;
+    --background-color: #f9f0ea;
     --text-color: #333;
     --footer-bg: #2D2D2D;
 }
@@ -1054,6 +1054,7 @@ main {
     justify-content: center;
     align-items: center;
     height: 100%;
+    transform: translate(20px, 20px);
 }
 
 .logo-text {
@@ -1071,7 +1072,7 @@ main {
 }
 
 .diz-group {
-    margin-top: 40px;
+    margin-top: 60px; /* Add significant margin to move Diz container lower */
 }
 
 .arc, .diz {
@@ -1148,10 +1149,12 @@ main {
     bottom: -2.5rem;
     left: 50%;
     font-family: 'Montserrat', sans-serif;
+    color: #666666;
 }
 
 .arc-group .subtitle {
-    transform: translateX(calc(-50% + 1.5rem));
+    transform: translateX(30px);
+    padding-left: 40px;
 }
 
 .arc-group:hover .subtitle {
@@ -1160,7 +1163,8 @@ main {
 }
 
 .diz-group .subtitle {
-    transform: translateX(calc(-50% - 1.5rem));
+    transform: translateX(-30px);
+    padding-right: 40px;
 }
 
 .diz-group:hover .subtitle {
@@ -1216,7 +1220,7 @@ main {
     }
 
     .arc-group .subtitle {
-        transform: translateX(calc(-50% + 1rem));
+        transform: translateX(1rem);
     }
 
     .arc-group:hover .subtitle {
@@ -1224,7 +1228,7 @@ main {
     }
 
     .diz-group .subtitle {
-        transform: translateX(calc(-50% - 1rem));
+        transform: translateX(-1rem);
     }
 
     .diz-group:hover .subtitle {
