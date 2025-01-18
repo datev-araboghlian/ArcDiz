@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ArcDiz - Pricing</title>
+    <title>Pricing - ArcDiz</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/ArcDiz_tab_logo.png">
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <canvas id="background-canvas"></canvas>
-    <canvas id="c"></canvas>
-    <canvas id="blob-canvas"></canvas>
-    <canvas id="particle-canvas"></canvas>
-    <div class="page-wrapper">
-        <header>
+    <div class="page-wrapper scrollable">
+        <div class="nav-elements">
             <a href="index.html" class="logo-link">
                 <img src="assets/ArcDiz_logo.png" alt="ArcDiz Logo" class="logo">
             </a>
             <input type="checkbox" id="menu-toggle" class="menu-toggle">
-            <label for="menu-toggle" class="hamburger-menu">
+            <label for="menu-toggle" class="menu-button">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -29,52 +29,56 @@
             <nav class="menu-panel">
                 <label for="menu-toggle" class="menu-close"></label>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="architecture.html">Architecture Designs</a></li>
-                    <li><a href="interior.html">Interior Design Models</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="index.html" class="menu-link">Home</a></li>
+                    <li><a href="architecture.html" class="menu-link">Architectural Design</a></li>
+                    <li><a href="interior.html" class="menu-link">Interior Design</a></li>
+                    <li><a href="pricing.html" class="menu-link">Pricing</a></li>
+                    <li><a href="contact.html" class="menu-link">Contact Us</a></li>
                 </ul>
             </nav>
-        </header>
-        <main>
+        </div>
+
+        <main class="pricing-main">
             <section class="pricing-section">
-                <h1>Our Services & Pricing</h1>
+                <h1>Our Pricing Plans</h1>
                 <div class="pricing-container">
                     <div class="pricing-card">
-                        <h2>Basic Design</h2>
-                        <div class="price">$1,500</div>
+                        <h2>Basic</h2>
+                        <p class="price">$999</p>
                         <ul>
-                            <li>Initial Consultation</li>
                             <li>2D Floor Plans</li>
                             <li>Basic 3D Visualization</li>
-                            <li>1 Revision Round</li>
+                            <li>2 Revision Rounds</li>
+                            <li>14 Days Delivery</li>
                         </ul>
-                        <a href="#contact" class="cta-button">Get Started</a>
+                        <a href="contact.html" class="cta-button">Get Started</a>
                     </div>
-                    <div class="pricing-card featured">
+                    
+                    <div class="pricing-card">
                         <h2>Professional</h2>
-                        <div class="price">$3,500</div>
+                        <p class="price">$1,999</p>
                         <ul>
-                            <li>Everything in Basic</li>
-                            <li>Detailed 3D Renderings</li>
-                            <li>Material Selection</li>
-                            <li>3 Revision Rounds</li>
-                            <li>Project Timeline</li>
+                            <li>2D & 3D Floor Plans</li>
+                            <li>High-Quality 3D Renders</li>
+                            <li>4 Revision Rounds</li>
+                            <li>21 Days Delivery</li>
+                            <li>Material Specifications</li>
                         </ul>
-                        <a href="#contact" class="cta-button">Get Started</a>
+                        <a href="contact.html" class="cta-button">Get Started</a>
                     </div>
+                    
                     <div class="pricing-card">
                         <h2>Premium</h2>
-                        <div class="price">$7,000+</div>
+                        <p class="price">$2,999</p>
                         <ul>
-                            <li>Everything in Professional</li>
-                            <li>Full Project Management</li>
-                            <li>VR Visualization</li>
+                            <li>Complete Project Documentation</li>
+                            <li>Photorealistic 3D Renders</li>
                             <li>Unlimited Revisions</li>
-                            <li>Priority Support</li>
+                            <li>30 Days Delivery</li>
+                            <li>Material & Furniture Specifications</li>
+                            <li>Project Management</li>
                         </ul>
-                        <a href="#contact" class="cta-button">Get Started</a>
+                        <a href="contact.html" class="cta-button">Get Started</a>
                     </div>
                 </div>
             </section>
@@ -83,56 +87,53 @@
                 <h2>Frequently Asked Questions</h2>
                 <div class="faq-container">
                     <div class="faq-item">
-                        <div class="faq-question">What is the typical timeline for a project?</div>
-                        <div class="faq-answer">Project timelines vary based on complexity. Basic designs typically take 2-3 weeks, while comprehensive projects may take 2-3 months. We'll provide a detailed timeline during our initial consultation.</div>
+                        <div class="faq-question">What's included in the basic package?</div>
+                        <div class="faq-answer">Our basic package includes 2D floor plans, basic 3D visualization, and 2 revision rounds. Perfect for those looking to get a solid foundation for their project.</div>
                     </div>
+                    
                     <div class="faq-item">
-                        <div class="faq-question">Do you offer revisions in your packages?</div>
-                        <div class="faq-answer">Yes, all our packages include revision rounds. Basic includes 1 revision, Professional includes 2 revisions, and Premium includes unlimited revisions within the project scope.</div>
+                        <div class="faq-question">How long does each package take?</div>
+                        <div class="faq-answer">Delivery times vary by package: Basic (14 days), Professional (21 days), and Premium (30 days). These timeframes ensure quality work while meeting your deadlines.</div>
                     </div>
+                    
                     <div class="faq-item">
                         <div class="faq-question">Can I upgrade my package later?</div>
-                        <div class="faq-answer">Absolutely! You can upgrade to a higher tier package at any time during the project. We'll simply adjust the pricing to reflect the upgrade.</div>
+                        <div class="faq-answer">Yes, you can upgrade to a higher package at any time. We'll simply charge the difference and adjust the deliverables and timeline accordingly.</div>
                     </div>
+                    
                     <div class="faq-item">
                         <div class="faq-question">What payment methods do you accept?</div>
-                        <div class="faq-answer">We accept all major credit cards, bank transfers, and digital payments. For larger projects, we can arrange a flexible payment schedule.</div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">Do you work on international projects?</div>
-                        <div class="faq-answer">Yes, we work with clients worldwide. Our digital workflow and communication tools allow us to collaborate effectively across different time zones.</div>
+                        <div class="faq-answer">We accept all major credit cards, bank transfers, and PayPal. Payment plans are available for Professional and Premium packages.</div>
                     </div>
                 </div>
             </section>
         </main>
-        <footer>
+
+        <footer class="minimal-footer">
             <div class="footer-content">
                 <div class="footer-left">
-                    <p class="phone-number">+374 55 123456</p>
+                    <a href="tel:+37455600445" class="phone-number">
+                        <i class="fa fa-phone"></i>
+                        +374 55 600 445
+                    </a>
                 </div>
                 <div class="footer-center">
-                    <p>&copy; 2025 ArcDiz. All rights reserved.</p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com" target="_blank" class="social-icon">
+                            <img src="assets/instagram.svg" alt="Instagram" />
+                        </a>
+                        <a href="https://www.linkedin.com" target="_blank" class="social-icon">
+                            <img src="assets/linkedin.svg" alt="LinkedIn" />
+                        </a>
+                    </div>
                 </div>
                 <div class="footer-right">
-                    <a href="https://www.instagram.com" target="_blank" class="social-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                        </svg>
-                    </a>
-                    <a href="https://www.linkedin.com" target="_blank" class="social-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                            <rect x="2" y="9" width="4" height="12"/>
-                            <circle cx="4" cy="4" r="2"/>
-                        </svg>
-                    </a>
+                    <p class="copyright">&copy; 2025 ArcDiz. All rights reserved.</p>
                 </div>
             </div>
         </footer>
     </div>
-    <script src="sphere.js"></script>
+
     <script src="menu.js"></script>
     <script src="faq.js"></script>
 </body>

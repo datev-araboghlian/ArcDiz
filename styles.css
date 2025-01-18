@@ -801,60 +801,47 @@ main {
     transform: translateX(1rem);
 }
 
+/* Base subtitle styles */
 .subtitle {
     position: absolute;
     font-size: 1.5rem;
     font-weight: 600;
+    color: #666666;
     white-space: nowrap;
     opacity: 0;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    bottom: -1.5rem;
+    transition: opacity 0.3s ease;
     left: 50%;
-    font-family: 'Montserrat', sans-serif;
-    color: #666666;
+    transform: translateX(-50%);
 }
 
-@media screen and (max-width: 768px) {
-    .subtitle {
-        bottom: -1rem;
-    }
-}
-
+/* Arc subtitle specific */
 .arc-group .subtitle {
-    transform: translateX(30px);
-    padding-left: 40px;
-    bottom: -0.1rem;
+    bottom: 1rem;
 }
 
-.arc-group:hover .subtitle {
-    opacity: 1;
-    transform: translateX(calc(-50% - 1.5rem));
-}
-
+/* Diz subtitle specific */
 .diz-group .subtitle {
-    transform: translateX(-30px);
-    padding-right: 40px;
+    bottom: -0.5rem;
 }
 
+/* Show subtitles on hover */
+.arc-group:hover .subtitle,
 .diz-group:hover .subtitle {
     opacity: 1;
-    transform: translateX(calc(-50% + 1.5rem));
 }
 
-/* Media Queries */
-@media screen and (max-width: 1200px) {
-    .center-logo {
-        transform: translate(15px, 15px);
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+    .subtitle {
+        font-size: 1.2rem;
     }
     
     .arc-group .subtitle {
-        padding-left: 30px;
-        transform: translateX(20px);
+        bottom: 0.5rem;
     }
     
     .diz-group .subtitle {
-        padding-right: 30px;
-        transform: translateX(-20px);
+        bottom: -0.3rem;
     }
 }
 

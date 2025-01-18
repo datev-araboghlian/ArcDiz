@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Architectural Design - ArcDiz</title>
+    <title>Contact Us - ArcDiz</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/ArcDiz_tab_logo.png">
@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <div class="page-wrapper scrollable">
+    <div class="page-wrapper">
         <div class="nav-elements">
             <a href="index.html" class="logo-link">
                 <img src="assets/ArcDiz_logo.png" alt="ArcDiz Logo" class="logo">
@@ -38,13 +38,42 @@
             </nav>
         </div>
 
-        <main class="architecture-main">
-            <div class="architecture-container">
-                <h1>Architectural Design</h1>
-                <section class="centered">
-                    <h1>Architecture Designs</h1>
-                    <!-- Add your architecture content here -->
-                </section>
+        <main class="contact-main">
+            <div class="contact-container">
+                <h1>Contact Us</h1>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fa fa-phone"></i>
+                        <p>+374 55 600 445</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa fa-envelope"></i>
+                        <p>info@arcdiz.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa fa-map-marker"></i>
+                        <p>Yerevan, Armenia</p>
+                    </div>
+                </div>
+                
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required>
+                        <label for="name">Your Name</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required>
+                        <label for="email">Your Email</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea id="message" name="message" required></textarea>
+                        <label for="message">Your Message</label>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
             </div>
         </main>
 
@@ -59,18 +88,10 @@
                 <div class="footer-center">
                     <div class="social-icons">
                         <a href="https://www.instagram.com" target="_blank" class="social-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                            </svg>
+                            <img src="assets/instagram.svg" alt="Instagram" />
                         </a>
                         <a href="https://www.linkedin.com" target="_blank" class="social-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                                <rect x="2" y="9" width="4" height="12"/>
-                                <circle cx="4" cy="4" r="2"/>
-                            </svg>
+                            <img src="assets/linkedin.svg" alt="LinkedIn" />
                         </a>
                     </div>
                 </div>
@@ -81,8 +102,6 @@
         </footer>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="sphere.js"></script>
     <script src="menu.js"></script>
 </body>
 </html>

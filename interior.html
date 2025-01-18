@@ -3,42 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ArcDiz - Interior Design</title>
+    <title>Interior Design - ArcDiz</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/ArcDiz_tab_logo.png">
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <div id="sphere-container"></div>
-    <div class="page-wrapper">
-        <header>
+    <div class="page-wrapper scrollable">
+        <div class="nav-elements">
             <a href="index.html" class="logo-link">
                 <img src="assets/ArcDiz_logo.png" alt="ArcDiz Logo" class="logo">
             </a>
             <input type="checkbox" id="menu-toggle" class="menu-toggle">
-            <label for="menu-toggle" class="hamburger-menu">
+            <label for="menu-toggle" class="menu-button">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </label>
             <nav class="menu-panel">
+                <label for="menu-toggle" class="menu-close"></label>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="architecture.html">Architecture Designs</a></li>
-                    <li><a href="interior.html">Interior Design Models</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="index.html" class="menu-link">Home</a></li>
+                    <li><a href="architecture.html" class="menu-link">Architectural Design</a></li>
+                    <li><a href="interior.html" class="menu-link">Interior Design</a></li>
+                    <li><a href="pricing.html" class="menu-link">Pricing</a></li>
+                    <li><a href="contact.html" class="menu-link">Contact Us</a></li>
                 </ul>
             </nav>
-        </header>
-        <main>
-            <section class="centered">
+        </div>
+
+        <main class="interior-main">
+            <div class="interior-container">
                 <h1>Interior Design Models</h1>
                 <!-- Add your interior design content here -->
-            </section>
+            </div>
         </main>
+
+        <footer class="minimal-footer">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <a href="tel:+37455600445" class="phone-number">
+                        <i class="fa fa-phone"></i>
+                        +374 55 600 445
+                    </a>
+                </div>
+                <div class="footer-center">
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com" target="_blank" class="social-icon">
+                            <img src="assets/instagram.svg" alt="Instagram" />
+                        </a>
+                        <a href="https://www.linkedin.com" target="_blank" class="social-icon">
+                            <img src="assets/linkedin.svg" alt="LinkedIn" />
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-right">
+                    <p class="copyright">&copy; 2025 ArcDiz. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
