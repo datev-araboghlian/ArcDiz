@@ -30,6 +30,7 @@
                 <label for="menu-toggle" class="menu-close"></label>
                 <ul>
                     <li><a href="index.html" class="menu-link">Home</a></li>
+                    <li><a href="about.html" class="menu-link">About</a></li>
                     <li><a href="architecture.html" class="menu-link">Architectural Design</a></li>
                     <li><a href="interior.html" class="menu-link">Interior Design</a></li>
                     <li><a href="pricing.html" class="menu-link">Pricing</a></li>
@@ -39,46 +40,84 @@
         </div>
 
         <main class="pricing-main">
-            <section class="services-section">
-                <h1 class="section-title">OUR<br>SERVICES</h1>
-                
-                <div class="service-tabs">
-                    <div class="tab active">DESIGN</div>
-                    <div class="tab">ARCHITECTURE</div>
+            <!-- Pricing Cards -->
+            <div class="pricing-cards-container">
+                <div class="pricing-card-new">
+                    <h3>Custom Planning</h3>
+                    <div class="price-tag">400$/m²</div>
+                    <ul class="features-list">
+                        <li>Design Concept</li>
+                        <li>Floor plan</li>
+                        <li>Proposal Layout</li>
+                        <li>WIFI/Installations</li>
+                        <li>Material Concept</li>
+                        <li>Collection/Catalog</li>
+                        <li>Furniture/Accessories</li>
+                    </ul>
+                    <button class="btn-consultation" onclick="openConsultationModal()">GET CONSULTATION</button>
                 </div>
-                
-                <div class="service-descriptions">
-                    <div class="service-description active">
-                        <p>ArcDiz offers interior design services. Our team will fill your home with style and create a comfortable design for your everyday life.</p>
-                        <div class="service-image">
-                            <img src="assets/interior-design.jpg" alt="Interior Design Service">
-                            <a href="interior.html" class="learn-more">LEARN MORE</a>
-                        </div>
-                    </div>
-                    <div class="service-description">
-                        <p>We take care of your peace of mind and worry-free planning and execution. First, we'll learn a little more about your lifestyle and find out what you see as your ideal home.</p>
-                        <div class="service-image">
-                            <img src="assets/architecture.jpg" alt="Architecture Service">
-                            <a href="architecture.html" class="learn-more">LEARN MORE</a>
-                        </div>
-                    </div>
+
+                <div class="pricing-card-new">
+                    <h3>Full Design</h3>
+                    <div class="price-tag">600$/m²</div>
+                    <ul class="features-list">
+                        <li>Design Concept</li>
+                        <li>Floor plan</li>
+                        <li>Proposal Layout</li>
+                        <li>WIFI/Installations</li>
+                        <li>Material Concept</li>
+                        <li>Collection/Catalog</li>
+                        <li>Furniture/Accessories</li>
+                        <li>Construction Drawings</li>
+                        <li>Furniture/Accessories</li>
+                    </ul>
+                    <button class="btn-consultation" onclick="openConsultationModal()">GET CONSULTATION</button>
                 </div>
-            </section>
+
+                <div class="pricing-card-new">
+                    <h3>Complete Package</h3>
+                    <div class="price-tag">Custom</div>
+                    <ul class="features-list">
+                        <li>Design Concept</li>
+                        <li>Floor plan</li>
+                        <li>Proposal Layout</li>
+                        <li>WIFI/Installations</li>
+                        <li>Material Concept</li>
+                        <li>Collection/Catalog</li>
+                        <li>Furniture/Accessories</li>
+                        <li>Construction Drawings</li>
+                        <li>Full Interior Implementation</li>
+                    </ul>
+                    <button class="btn-consultation" onclick="openConsultationModal()">LEARN MORE</button>
+                </div>
+            </div>
 
             <section class="faq-section">
-                <h2 class="section-title">FAQ</h2>
+                <h2 class="faq-title">FAQ</h2>
                 <div class="faq-container">
                     <div class="faq-item">
-                        <div class="question">What is the typical timeline for a project?</div>
-                        <div class="answer">Typically, our projects take 2-4 months depending on the scope and complexity.</div>
+                        <div class="question">Why is supervision necessary?</div>
+                        <div class="answer">Project implementation control is necessary so that you get the most accurate and successful result. Otherwise, there's a lot of difficulties, the potential for chaos/mismatch: materials, colors of objects/elements.</div>
                     </div>
                     <div class="faq-item">
-                        <div class="question">What is the typical timeline for a project?</div>
-                        <div class="answer">The timeline varies based on project size and requirements. Basic designs can be completed in 4-6 weeks.</div>
+                        <div class="question">Do you take into account the financial capabilities of the customer?</div>
+                        <div class="answer">Of course this is the main condition for successful consultation. We always ask you to clarify indicate the amount beyond which the customer is not ready to go.</div>
                     </div>
                     <div class="faq-item">
-                        <div class="question">What is the typical timeline for a project?</div>
-                        <div class="answer">For comprehensive architectural projects, expect 3-6 months from concept to completion.</div>
+                        <div class="question">Do you have construction crews you can trust?</div>
+                        <div class="answer">Both options are possible, the main thing for the ideal implementation of the project is the constructed actions of the customer.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="question">How often does the author control take place?</div>
+                        <div class="answer">The documentation does not include specified engineering projects: calculation of structural loads, electrical design, design of air conditioning, and ventilation systems.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="question">Do you provide full furniture packages?</div>
+                        <div class="answer">Absolutely. At ArcDiz we offer comprehensive furniture sourcing as a core part of our service. We have established trusted, long-term partnerships.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="question">Do you provide services remotely?</div>
+                        <div class="answer">Yes, services can be provided remotely and are always ready to meet the needs of customers from other cities and countries.</div>
                     </div>
                 </div>
             </section>
@@ -87,9 +126,9 @@
         <footer class="minimal-footer">
             <div class="footer-content">
                 <div class="footer-left">
-                    <a href="tel:+37455600445" class="phone-number">
+                    <a href="tel:+37433600445" class="phone-number">
                         <i class="fa fa-phone"></i>
-                        +374 55 600 445
+                        +374 33 600 445
                     </a>
                 </div>
                 <div class="footer-center">
@@ -109,7 +148,99 @@
         </footer>
     </div>
 
+    <!-- Modals -->
+    <div id="consultationModal" class="modal">
+        <div class="modal-content consultation-modal-content">
+            <span class="modal-close" onclick="closeConsultationModal()">&times;</span>
+            <h2>GET CONSULTATION</h2>
+            <form id="consultationForm" class="consultation-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Name*</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="surname">Surname</label>
+                        <input type="text" id="surname" name="surname">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email*</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="city">City*</label>
+                        <input type="text" id="city" name="city" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="area">Area*</label>
+                        <input type="text" id="area" name="area" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="attachment">Attachment (JPEG, JPG, PDF, DWG)</label>
+                    <input type="file" id="attachment" name="attachment" accept=".jpeg,.jpg,.pdf,.dwg">
+                    <button type="button" class="btn-choose-file">CHOOSE FILE</button>
+                </div>
+
+                <div class="form-group">
+                    <label>Type of object*</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="objectType" value="residential" required> Residential
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="objectType" value="commercial" required> Commercial
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </div>
+
+                <button type="submit" class="btn-send-request">SEND REQUEST</button>
+
+                <p class="form-note">* Mandatory Fields</p>
+                <p class="form-disclaimer">THE INFORMATION PROVIDED ON THE WEBSITE IS NOT A PUBLIC OFFER OR DISCLOSURE TO A THIRD PARTY.</p>
+            </form>
+        </div>
+    </div>
+
+    <div id="contactModal" class="modal">
+        <div class="modal-content contact-modal-content">
+            <span class="modal-close" onclick="closeContactModal()">&times;</span>
+            <h2>CONTACT US</h2>
+            <div class="contact-methods">
+                <div class="contact-method">
+                    <div class="contact-icon">icon</div>
+                    <p>WHATSAPP</p>
+                </div>
+                <div class="contact-method">
+                    <div class="contact-icon">icon</div>
+                    <p>+374 33 600 445</p>
+                </div>
+                <div class="contact-method">
+                    <div class="contact-icon">icon</div>
+                    <p>ARC.DIZ@HOTMAIL.COM</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="menu.js"></script>
     <script src="services.js"></script>
+    <script src="modals.js"></script>
 </body>
 </html>

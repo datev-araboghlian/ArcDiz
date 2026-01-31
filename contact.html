@@ -46,6 +46,7 @@
         <label for="menu-toggle" class="menu-close" aria-label="Close menu"></label>
         <ul>
           <li><a href="index.html" class="menu-link">Home</a></li>
+          <li><a href="about.html" class="menu-link">About</a></li>
           <li><a href="architecture.html" class="menu-link">Architectural Design</a></li>
           <li><a href="interior.html" class="menu-link">Interior Design</a></li>
           <li><a href="pricing.html" class="menu-link">Pricing</a></li>
@@ -55,95 +56,150 @@
     </div>
 
     <!-- Main -->
-    <main class="contact-main">
-      <div class="contact-container">
-        <h1>Contact Us</h1>
+    <main class="contact-main-new">
+      <div class="contact-hero">
+        <h1>Get In Touch</h1>
+        <p class="hero-subtitle">Let's bring your vision to life. Reach out to discuss your project.</p>
+      </div>
 
-        <!-- Contact Info -->
-        <section class="contact-info" aria-label="Contact information">
-          <div class="contact-item">
-            <i class="fa fa-phone" aria-hidden="true"></i>
-            <p><a href="tel:+37455600445">+374 55 600 445</a></p>
-          </div>
-          <div class="contact-item">
-            <i class="fa fa-envelope" aria-hidden="true"></i>
-            <p><a href="mailto:info@arcdiz.com">info@arcdiz.com</a></p>
-          </div>
-          <div class="contact-item">
-            <i class="fa fa-map-marker" aria-hidden="true"></i>
-            <p>
-              <a href="https://maps.google.com/?q=Yerevan%2C%20Armenia" target="_blank" rel="noopener">Yerevan, Armenia</a>
-            </p>
-          </div>
-        </section>
+      <div class="contact-container-new">
+        <div class="contact-layout">
+          <!-- Left Side - Contact Info -->
+          <div class="contact-info-section">
+            <h2>Contact Information</h2>
+            <p class="info-description">Ready to start your design journey? We're here to help transform your space into something extraordinary.</p>
+            
+            <div class="contact-methods-list">
+              <div class="contact-method-item">
+                <div class="method-icon">
+                  <i class="fa fa-phone"></i>
+                </div>
+                <div class="method-details">
+                  <h3>Phone</h3>
+                  <a href="tel:+37433600445">+374 33 600 445</a>
+                </div>
+              </div>
 
-        <!-- Contact Form -->
-        <form id="contactForm"
-              class="contact-form"
-              action="https://formspree.io/f/your_form_id"  <!-- TODO: replace with your Formspree ID -->
-              method="POST"
-              novalidate>
-          <!-- Honeypot (spam trap) -->
-          <div class="hp-field" aria-hidden="true">
-            <label for="website">Website</label>
-            <input id="website" name="website" tabindex="-1" autocomplete="off" />
-          </div>
+              <div class="contact-method-item">
+                <div class="method-icon">
+                  <i class="fa fa-envelope"></i>
+                </div>
+                <div class="method-details">
+                  <h3>Email</h3>
+                  <a href="mailto:arc.diz@hotmail.com">arc.diz@hotmail.com</a>
+                </div>
+              </div>
 
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">Your Name</label>
-              <input id="name" name="name" type="text" placeholder=" " required
-                     autocomplete="name" />
-              <span class="field-hint" id="nameHint">Enter your full name</span>
+              <div class="contact-method-item">
+                <div class="method-icon">
+                  <i class="fa fa-map-marker"></i>
+                </div>
+                <div class="method-details">
+                  <h3>Location</h3>
+                  <a href="https://maps.google.com/?q=Yerevan%2C%20Armenia" target="_blank" rel="noopener">Yerevan, Armenia</a>
+                </div>
+              </div>
+
+              <div class="contact-method-item">
+                <div class="method-icon">
+                  <i class="fa fa-whatsapp"></i>
+                </div>
+                <div class="method-details">
+                  <h3>WhatsApp</h3>
+                  <a href="https://wa.me/37433600445" target="_blank">+374 33 600 445</a>
+                </div>
+              </div>
             </div>
 
-            <div class="form-group">
-              <label for="email">Your Email</label>
-              <input id="email" name="email" type="email" placeholder=" " required
-                     autocomplete="email" inputmode="email" />
-              <span class="field-hint" id="emailHint">We’ll reply to this address</span>
+            <div class="social-connect">
+              <h3>Connect With Us</h3>
+              <div class="social-links-large">
+                <a href="https://www.instagram.com" target="_blank" class="social-link-large">
+                  <i class="fa fa-instagram"></i>
+                  <span>Instagram</span>
+                </a>
+                <a href="https://www.linkedin.com" target="_blank" class="social-link-large">
+                  <i class="fa fa-linkedin"></i>
+                  <span>LinkedIn</span>
+                </a>
+              </div>
             </div>
           </div>
 
-          <div class="form-row">
-            <div class="form-group">
-              <label for="phone">Phone (optional)</label>
-              <input id="phone" name="phone" type="tel" placeholder=" "
-                     autocomplete="tel" inputmode="tel" />
-            </div>
+          <!-- Right Side - Contact Form -->
+          <div class="contact-form-section">
+            <h2>Send Us A Message</h2>
+            <p class="form-intro">Fill out the form below and we'll get back to you within 24 hours.</p>
 
-            <div class="form-group">
-              <label for="subject">Subject</label>
-              <input id="subject" name="subject" type="text" placeholder=" "
-                     autocomplete="off" />
-            </div>
+            <form id="contactForm"
+                  class="contact-form-new"
+                  action="https://formspree.io/f/your_form_id"
+                  method="POST"
+                  novalidate>
+              <!-- Honeypot -->
+              <div class="hp-field" aria-hidden="true">
+                <input id="website" name="website" tabindex="-1" autocomplete="off" />
+              </div>
+
+              <div class="form-group-new">
+                <label for="name">Full Name *</label>
+                <input id="name" name="name" type="text" required autocomplete="name" />
+              </div>
+
+              <div class="form-row-new">
+                <div class="form-group-new">
+                  <label for="email">Email Address *</label>
+                  <input id="email" name="email" type="email" required autocomplete="email" />
+                </div>
+
+                <div class="form-group-new">
+                  <label for="phone">Phone Number</label>
+                  <input id="phone" name="phone" type="tel" autocomplete="tel" />
+                </div>
+              </div>
+
+              <div class="form-group-new">
+                <label for="subject">Subject</label>
+                <input id="subject" name="subject" type="text" autocomplete="off" />
+              </div>
+
+              <div class="form-group-new">
+                <label for="message">Your Message *</label>
+                <textarea id="message" name="message" rows="6" required></textarea>
+              </div>
+
+              <div class="form-consent-new">
+                <input type="checkbox" id="consent" name="consent" required />
+                <label for="consent">I agree to be contacted about my inquiry and understand my information will be handled according to the privacy policy.</label>
+              </div>
+
+              <button type="submit" class="submit-btn-new">
+                <span>Send Message</span>
+                <i class="fa fa-paper-plane"></i>
+              </button>
+
+              <p id="formStatus" class="form-status" aria-live="polite"></p>
+            </form>
           </div>
+        </div>
+      </div>
 
-          <div class="form-group">
-            <label for="message">Your Message</label>
-            <textarea id="message" name="message" rows="6" placeholder=" " required
-                      aria-describedby="msgHint"></textarea>
-            <span class="field-hint" id="msgHint">Tell us a bit about your project</span>
-          </div>
-
-          <div class="form-group form-consent">
-            <input type="checkbox" id="consent" name="consent" required />
-            <label for="consent">I agree to be contacted about my inquiry.</label>
-          </div>
-
-          <button type="submit" class="submit-btn">Send Message</button>
-
-          <p id="formStatus" class="form-status" aria-live="polite"></p>
-        </form>
+      <!-- Call to Action Section -->
+      <div class="contact-cta-section">
+        <div class="cta-content">
+          <h2>Ready to Start Your Project?</h2>
+          <p>Schedule a free consultation to discuss your vision and explore how we can help bring it to life.</p>
+          <button class="btn-cta-large" onclick="openConsultationModal()">Schedule Free Consultation</button>
+        </div>
       </div>
     </main>
 
     <footer class="minimal-footer">
       <div class="footer-content">
         <div class="footer-left">
-          <a href="tel:+37455600445" class="phone-number">
+          <a href="tel:+37433600445" class="phone-number">
             <i class="fa fa-phone"></i>
-            +374 55 600 445
+            +374 33 600 445
           </a>
         </div>
         <div class="footer-center">
@@ -165,6 +221,7 @@
 
   <!-- Defer scripts for performance -->
   <script defer src="menu.js"></script>
+  <script defer src="modals.js"></script>
 
   <!-- Page-specific JS -->
   <script>
@@ -225,5 +282,74 @@
       });
     })();
   </script>
+
+  <!-- Consultation Modal -->
+  <div id="consultationModal" class="modal">
+    <div class="modal-content consultation-modal-content">
+      <span class="modal-close" onclick="closeConsultationModal()">&times;</span>
+      <h2>Schedule Free Consultation</h2>
+      <form id="consultationForm" class="consultation-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="modal-name">Name*</label>
+            <input type="text" id="modal-name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="modal-surname">Surname</label>
+            <input type="text" id="modal-surname" name="surname">
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="modal-email">Email*</label>
+            <input type="email" id="modal-email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="modal-phone">Phone</label>
+            <input type="tel" id="modal-phone" name="phone">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="modal-city">City*</label>
+            <input type="text" id="modal-city" name="city" required>
+          </div>
+          <div class="form-group">
+            <label for="modal-area">Area*</label>
+            <input type="text" id="modal-area" name="area" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="modal-attachment">Attachment (JPEG, JPG, PDF, DWG)</label>
+          <input type="file" id="modal-attachment" name="attachment" accept=".jpeg,.jpg,.pdf,.dwg">
+        </div>
+
+        <div class="form-group">
+          <label>Type of object*</label>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input type="radio" name="objectType" value="residential" required> Residential
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="objectType" value="commercial" required> Commercial
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="modal-message">Message</label>
+          <textarea id="modal-message" name="message" rows="4"></textarea>
+        </div>
+
+        <button type="submit" class="btn-send-request">SEND REQUEST</button>
+
+        <p class="form-note">* Mandatory Fields</p>
+        <p class="form-disclaimer">The information provided on the website is not a public offer or disclosure to a third party.</p>
+      </form>
+    </div>
+  </div>
 </body>
 </html>
