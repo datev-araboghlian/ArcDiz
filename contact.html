@@ -12,11 +12,10 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Montserrat', sans-serif; background: #0a0a0a; color: #fff; min-height: 100vh; }
         
-        .nav-elements { background: #c8c8c8 !important; }
-        .nav-elements .logo { filter: none !important; }
-        
-        .contact-wrapper { display: flex; min-height: calc(100vh - 80px); }
-        .contact-page-container { padding-top: 80px; }
+        .contact-wrapper { display: flex; min-height: 600px; }
+        body { overflow-y: auto !important; }
+        .nav-elements .menu-button .bar { background-color: #000 !important; }
+        .nav-elements .menu-toggle:checked ~ .menu-button .bar { background-color: #fff !important; }
         
         /* Left side - Image/Visual */
         .contact-visual { 
@@ -235,6 +234,33 @@
         </div>
     </div>
     </div>
+
+    <footer class="expanded-footer" style="background:#1a1a1a; color:#fff; padding:50px 60px;">
+        <div class="footer-main" style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:40px; max-width:1200px; margin:0 auto;">
+            <div class="footer-column">
+                <h3 style="font-size:12px; color:#888; margin-bottom:20px; letter-spacing:2px;">About Us</h3>
+                <p style="font-size:13px; color:#ccc; margin-bottom:8px;"><i class="fa fa-map-marker" style="margin-right:10px;"></i> Armenia, Yerevan, 3/1 Pavstos Buzand St.</p>
+                <p style="font-size:13px; color:#ccc; margin-bottom:8px;"><i class="fa fa-envelope" style="margin-right:10px;"></i> <a href="mailto:info@arcdiz.com" style="color:#ccc; text-decoration:none;">info@arcdiz.com</a></p>
+                <p style="font-size:13px; color:#ccc;"><i class="fa fa-phone" style="margin-right:10px;"></i> <a href="tel:+37433600445" style="color:#ccc; text-decoration:none;">(+374) 33 600445</a></p>
+            </div>
+            <div class="footer-column">
+                <h3 style="font-size:12px; color:#888; margin-bottom:20px; letter-spacing:2px;">Our Pages</h3>
+                <ul style="list-style:none; padding:0; margin:0;">
+                    <li style="margin-bottom:10px;"><a href="interior.html" style="color:#ccc; text-decoration:none; font-size:13px;">Portfolio</a></li>
+                    <li style="margin-bottom:10px;"><a href="about.html" style="color:#ccc; text-decoration:none; font-size:13px;">About Us</a></li>
+                    <li style="margin-bottom:10px;"><a href="pricing.html" style="color:#ccc; text-decoration:none; font-size:13px;">Pricing</a></li>
+                    <li><a href="contact.html" style="color:#ccc; text-decoration:none; font-size:13px;">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3 style="font-size:12px; color:#888; margin-bottom:20px; letter-spacing:2px;">Get in Touch</h3>
+                <p style="font-size:13px; color:#ccc; line-height:1.7;">Ready to bring your design vision to life? Contact ArcDiz today to schedule a consultation.</p>
+            </div>
+        </div>
+        <div style="border-top:1px solid #333; margin-top:40px; padding-top:25px; text-align:center;">
+            <p style="font-size:11px; color:#666;">&copy; 2025 ArcDiz LLC, all rights reserved.</p>
+        </div>
+    </footer>
 
     <div id="contactPopup" onclick="if(event.target===this)closeModal()" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:999999;overflow-y:auto;">
         <div style="position:relative;background:#fff;max-width:550px;width:92%;margin:40px auto;padding:45px;border:1px solid #000;">
