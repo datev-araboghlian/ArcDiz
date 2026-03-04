@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interior Design - ArcDiz</title>
+    <title>Portfolio - ArcDiz</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/ArcDiz_tab_logo.png">
@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <div class="page-wrapper scrollable">
+    <div class="page-wrapper scrollable design-page">
         <div class="nav-elements">
             <a href="index.html" class="logo-link">
                 <img src="assets/ArcDiz_logo.png" alt="ArcDiz Logo" class="logo">
@@ -31,48 +31,231 @@
                 <ul>
                     <li><a href="index.html" class="menu-link">Home</a></li>
                     <li><a href="about.html" class="menu-link">About</a></li>
-                    <li><a href="architecture.html" class="menu-link">Architectural Design</a></li>
-                    <li><a href="interior.html" class="menu-link">Interior Design</a></li>
+                    <li><a href="interior.html" class="menu-link">Portfolio</a></li>
                     <li><a href="pricing.html" class="menu-link">Pricing</a></li>
                     <li><a href="contact.html" class="menu-link">Contact Us</a></li>
                 </ul>
             </nav>
         </div>
 
-        <main class="interior-main">
-            <div class="interior-container">
-                <h1>Interior Design Models</h1>
-                <!-- Add your interior design content here -->
+        <main class="design-main">
+            <div class="design-container">
+                <h1 class="design-title">DESIGN</h1>
+                
+                <!-- Filter Bar -->
+                <div class="filter-bar">
+                    <div class="filter-group filter-type">
+                        <button class="filter-btn active" data-filter="type" data-value="all">All</button>
+                        <button class="filter-btn" data-filter="type" data-value="residential">Residential</button>
+                        <button class="filter-btn" data-filter="type" data-value="commercial">Commercial</button>
+                    </div>
+                    
+                    <div class="filter-group filter-style">
+                        <div class="filter-dropdown">
+                            <button class="dropdown-btn">All styles <span class="dropdown-arrow">▼</span></button>
+                            <div class="dropdown-content">
+                                <a href="#" data-filter="style" data-value="all" class="active">All styles</a>
+                                <a href="#" data-filter="style" data-value="modern">Modern</a>
+                                <a href="#" data-filter="style" data-value="modern-classics">Modern Classics</a>
+                                <a href="#" data-filter="style" data-value="minimalist">Minimalist</a>
+                                <a href="#" data-filter="style" data-value="art-deco">Art Deco</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group filter-rooms">
+                        <span class="filter-label">Number of rooms</span>
+                        <button class="filter-btn active" data-filter="rooms" data-value="any">any</button>
+                        <button class="filter-btn" data-filter="rooms" data-value="2">2</button>
+                        <button class="filter-btn" data-filter="rooms" data-value="3">3</button>
+                        <button class="filter-btn" data-filter="rooms" data-value="4+">4+</button>
+                    </div>
+                    
+                    <div class="filter-group filter-property">
+                        <button class="filter-btn" data-filter="property" data-value="penthouse">penthouses</button>
+                        <button class="filter-btn" data-filter="property" data-value="house">houses</button>
+                    </div>
+                    
+                    <div class="filter-group filter-photos">
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="realPhotosToggle">
+                            <span class="toggle-slider"></span>
+                        </label>
+                        <span class="filter-label">with real photos</span>
+                    </div>
+                </div>
+                
+                <!-- Projects Grid -->
+                <div class="portfolio-grid" id="portfolioGrid">
+                    <!-- Project 1: Artisan -->
+                    <a href="projects/artisan.html" class="portfolio-item" 
+                       data-type="residential" 
+                       data-style="modern" 
+                       data-rooms="2" 
+                       data-property="apartment"
+                       data-real-photos="true">
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&h=400&fit=crop" alt="Artisan Project">
+                            <span class="real-photos-badge"><i class="fa fa-camera"></i> with real photos</span>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <h3 class="project-name">Artisan</h3>
+                            <div class="project-meta">
+                                <span class="project-type">2-room apartment</span>
+                                <span class="project-size">86 m²</span>
+                            </div>
+                            <span class="project-location">Moscow</span>
+                        </div>
+                    </a>
+                    
+                    <!-- Project 2 -->
+                    <a href="projects/modern-loft.html" class="portfolio-item" 
+                       data-type="residential" 
+                       data-style="modern" 
+                       data-rooms="3" 
+                       data-property="apartment"
+                       data-real-photos="true">
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=400&fit=crop" alt="Modern Loft">
+                            <span class="real-photos-badge"><i class="fa fa-camera"></i> with real photos</span>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <h3 class="project-name">Modern Loft</h3>
+                            <div class="project-meta">
+                                <span class="project-type">3-room apartment</span>
+                                <span class="project-size">120 m²</span>
+                            </div>
+                            <span class="project-location">Yerevan</span>
+                        </div>
+                    </a>
+                    
+                    <!-- Project 3 -->
+                    <a href="projects/minimalist-studio.html" class="portfolio-item" 
+                       data-type="residential" 
+                       data-style="minimalist" 
+                       data-rooms="2" 
+                       data-property="apartment"
+                       data-real-photos="false">
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&h=400&fit=crop" alt="Minimalist Studio">
+                        </div>
+                        <div class="portfolio-overlay">
+                            <h3 class="project-name">Minimalist Studio</h3>
+                            <div class="project-meta">
+                                <span class="project-type">2-room apartment</span>
+                                <span class="project-size">65 m²</span>
+                            </div>
+                            <span class="project-location">Yerevan</span>
+                        </div>
+                    </a>
+                    
+                    <!-- Project 4 -->
+                    <a href="projects/classic-penthouse.html" class="portfolio-item" 
+                       data-type="residential" 
+                       data-style="modern-classics" 
+                       data-rooms="4+" 
+                       data-property="penthouse"
+                       data-real-photos="false">
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop" alt="Classic Penthouse">
+                        </div>
+                        <div class="portfolio-overlay">
+                            <h3 class="project-name">Classic Penthouse</h3>
+                            <div class="project-meta">
+                                <span class="project-type">Penthouse</span>
+                                <span class="project-size">210 m²</span>
+                            </div>
+                            <span class="project-location">Dubai</span>
+                        </div>
+                    </a>
+                    
+                    <!-- Project 5 -->
+                    <a href="projects/urban-office.html" class="portfolio-item" 
+                       data-type="commercial" 
+                       data-style="modern" 
+                       data-rooms="any" 
+                       data-property="office"
+                       data-real-photos="true">
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop" alt="Urban Office">
+                            <span class="real-photos-badge"><i class="fa fa-camera"></i> with real photos</span>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <h3 class="project-name">Urban Office</h3>
+                            <div class="project-meta">
+                                <span class="project-type">Office space</span>
+                                <span class="project-size">350 m²</span>
+                            </div>
+                            <span class="project-location">Yerevan</span>
+                        </div>
+                    </a>
+                    
+                    <!-- Project 6 -->
+                    <a href="projects/luxury-villa.html" class="portfolio-item" 
+                       data-type="residential" 
+                       data-style="modern-classics" 
+                       data-rooms="4+" 
+                       data-property="house"
+                       data-real-photos="false">
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&h=400&fit=crop" alt="Luxury Villa">
+                        </div>
+                        <div class="portfolio-overlay">
+                            <h3 class="project-name">Luxury Villa</h3>
+                            <div class="project-meta">
+                                <span class="project-type">Private house</span>
+                                <span class="project-size">450 m²</span>
+                            </div>
+                            <span class="project-location">Armenia</span>
+                        </div>
+                    </a>
+                </div>
             </div>
         </main>
 
-        <footer class="minimal-footer">
-            <div class="footer-content">
-                <div class="footer-left">
-                    <a href="tel:+37433600445" class="phone-number">
-                        <i class="fa fa-phone"></i>
-                        +374 33 600 445
-                    </a>
-                </div>
-                <div class="footer-center">
-                    <div class="social-icons">
-                        <a href="https://www.instagram.com" target="_blank" class="social-icon">
-                            <img src="assets/instagram.svg" alt="Instagram" />
-                        </a>
-                        <a href="https://www.linkedin.com" target="_blank" class="social-icon">
-                            <img src="assets/linkedin.svg" alt="LinkedIn" />
-                        </a>
+        <footer class="expanded-footer">
+            <div class="footer-main">
+                <div class="footer-column footer-about-info">
+                    <h3>About Us</h3>
+                    <p><i class="fa fa-map-marker"></i> Armenia, Yerevan, 3/1 Pavstos Buzand St.</p>
+                    <p><i class="fa fa-envelope"></i> <a href="mailto:info@arcdiz.com">info@arcdiz.com</a></p>
+                    <p><i class="fa fa-phone"></i> <a href="tel:+37433600445">(+374) 33 600445</a></p>
+                    <div class="footer-social">
+                        <a href="https://facebook.com" target="_blank"><i class="fa fa-facebook"></i></a>
+                        <a href="https://instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
+                        <a href="https://linkedin.com" target="_blank"><i class="fa fa-linkedin"></i></a>
+                        <a href="https://behance.net" target="_blank"><i class="fa fa-behance"></i></a>
                     </div>
                 </div>
-                <div class="footer-right">
-                    <p class="copyright">&copy; 2025 ArcDiz. All rights reserved.</p>
+                
+                <div class="footer-column footer-links">
+                    <h3>Our pages</h3>
+                    <ul>
+                        <li><a href="interior.html">Portfolio</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column footer-cta">
+                    <h3>Get in Touch</h3>
+                    <p class="footer-cta-text">Ready to bring your design vision to life? Contact ArcDiz today to schedule a consultation. Let us help you create a space that reflects your unique style and personality.</p>
+                    <a href="contact.html" class="footer-cta-btn">SEND REQUEST</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 ArcDiz LLC, all rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Policies</a>
+                    <a href="#">Terms & Conditions</a>
                 </div>
             </div>
         </footer>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="sphere.js"></script>
     <script src="menu.js"></script>
+    <script src="portfolio.js"></script>
 </body>
 </html>
