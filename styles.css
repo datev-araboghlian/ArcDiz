@@ -15,22 +15,32 @@ body {
     min-height: 100vh;
     background-color: var(--background-color);
     color: var(--text-color);
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
-    overflow-x: hidden;
+}
+
+body.no-scroll {
+    overflow: hidden;
 }
 
 .page-wrapper {
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     background: transparent;
     overflow-y: auto;
+}
+
+/* Home page specific - no scroll */
+.page-wrapper.home-page {
+    height: 100vh;
     max-height: 100vh;
+    overflow: hidden;
 }
 
 main {
@@ -109,7 +119,7 @@ main {
 
 .bar {
     width: 100%;
-    height: 4px;
+    height: 2px;
     background-color: var(--text-color);
     transition: all 0.3s ease;
 }
@@ -184,7 +194,7 @@ main {
 
 .menu-button .bar {
     width: 100%;
-    height: 6px;
+    height: 2px;
     background-color: #fff;
     transition: all 0.3s ease-in-out;
     border-radius: 3px;
@@ -205,7 +215,7 @@ main {
 }
 
 .menu-toggle:checked ~ .menu-button .bar:nth-child(1) {
-    transform: translateY(18px) rotate(45deg);
+    transform: translateY(10px) rotate(45deg);
 }
 
 .menu-toggle:checked ~ .menu-button .bar:nth-child(2) {
@@ -213,7 +223,7 @@ main {
 }
 
 .menu-toggle:checked ~ .menu-button .bar:nth-child(3) {
-    transform: translateY(-18px) rotate(-45deg);
+    transform: translateY(-10px) rotate(-45deg);
 }
 
 /* Footer */
@@ -588,23 +598,20 @@ main {
 
 .faq-item {
     background: transparent;
-    border-radius: 10px;
+    border-radius: 0;
     overflow: hidden;
     transition: all 0.3s ease;
+    border-bottom: 1px solid #fff;
 }
 
 .faq-item:hover {
     background: transparent;
-    transform: translateY(-2px);
-    box-shadow: 
-        0 8px 20px rgba(0, 0, 0, 0.3),
-        0 0 0 2px rgba(0, 0, 0, 0.2);
+    transform: none;
+    box-shadow: none;
 }
 
 .faq-item.active {
-    box-shadow: 
-        0 8px 25px rgba(0, 0, 0, 0.3),
-        0 0 0 2px #000;
+    box-shadow: none;
 }
 
 .faq-question {
@@ -1072,7 +1079,7 @@ main {
 
 .arc, .diz {
     font-size: 11rem;
-    font-weight: 700;
+    font-weight: 400;
     line-height: 1.1;
     overflow: hidden;
     cursor: pointer;
@@ -1138,7 +1145,7 @@ main {
 .subtitle {
     position: absolute;
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 400;
     color: #666666;
     white-space: nowrap;
     opacity: 0;
@@ -1150,11 +1157,19 @@ main {
 /* Arc subtitle specific */
 .arc-group .subtitle {
     bottom: 1rem;
+    text-align: left;
+    left: 0;
+    right: auto;
+    transform: none;
 }
 
 /* Diz subtitle specific */
 .diz-group .subtitle {
     bottom: -0.5rem;
+    text-align: right;
+    right: 2rem;
+    left: auto;
+    transform: none;
 }
 
 /* Show subtitles on hover */
@@ -1287,7 +1302,7 @@ main {
     flex-direction: column;
     transition: transform .2s ease, box-shadow .2s ease;
   }
-  .card:hover { transform: translateY(-3px); box-shadow: 0 10px 26px rgba(0,0,0,.35); }
+  .card:hover { transform: none; box-shadow: none; }
   
   .card-media img {
     display: block;
@@ -1501,7 +1516,7 @@ main {
 
 .founder-image-wrapper h2 {
     font-size: 2rem;
-    margin-bottom: 15px;
+    margin-bottom: 4px;
     font-weight: 600;
 }
 
@@ -1538,7 +1553,7 @@ main {
 
 .tagline-section {
     text-align: center;
-    padding: 60px 20px;
+    padding: 25px 20px;
     background-color: #000;
     color: #fff;
     margin: 60px 0;
@@ -2444,6 +2459,95 @@ main {
     margin: 0 auto;
 }
 
+/* Category Tabs */
+.category-tabs {
+    display: flex;
+    gap: 40px;
+    position: relative;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+.category-tab {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    padding: 10px 0;
+    color: rgba(0, 0, 0, 0.4);
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.category-tab.active {
+    color: #000;
+}
+
+.category-tab:hover {
+    color: #000;
+}
+
+.tab-underline {
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    background: #000;
+    transition: left 0.4s ease, width 0.4s ease;
+}
+
+/* Content Slider */
+.content-slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.content-panel {
+    display: none;
+    animation: slideIn 0.4s ease;
+}
+
+.content-panel.active {
+    display: block;
+}
+
+.content-panel.slide-out-left {
+    animation: slideOutLeft 0.4s ease forwards;
+}
+
+.content-panel.slide-out-right {
+    animation: slideOutRight 0.4s ease forwards;
+}
+
+.content-panel.slide-in-left {
+    animation: slideInLeft 0.4s ease forwards;
+}
+
+.content-panel.slide-in-right {
+    animation: slideInRight 0.4s ease forwards;
+}
+
+@keyframes slideOutLeft {
+    from { transform: translateX(0); opacity: 1; }
+    to { transform: translateX(-100%); opacity: 0; }
+}
+
+@keyframes slideOutRight {
+    from { transform: translateX(0); opacity: 1; }
+    to { transform: translateX(100%); opacity: 0; }
+}
+
+@keyframes slideInLeft {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
 .design-title {
     font-size: 1rem;
     font-weight: 400;
@@ -2659,7 +2763,7 @@ main {
     padding: 5px 10px;
     font-size: 0.7rem;
     border-radius: 3px;
-    border: 1px solid #fff;
+    border: none;
     display: flex;
     align-items: center;
     gap: 5px;
@@ -2817,6 +2921,64 @@ main {
     max-width: 1400px;
     margin: 0 auto;
     padding-top: 40px;
+}
+
+/* Breadcrumb Navigation */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+}
+
+.breadcrumb a {
+    color: #666;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+
+.breadcrumb a:hover {
+    color: #000;
+}
+
+.breadcrumb-separator {
+    color: #999;
+    font-size: 1rem;
+}
+
+.breadcrumb-current {
+    color: #999;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: #555;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, background 0.2s ease;
+    z-index: 999;
+}
+
+.back-to-top:hover {
+    background: #333;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
 }
 
 /* Back link */
@@ -3610,9 +3772,9 @@ main {
 }
 
 .footer-column h3 {
-    font-size: 0.85rem;
-    font-weight: 400;
-    color: #888;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
     margin-bottom: 25px;
     letter-spacing: 0.05em;
 }

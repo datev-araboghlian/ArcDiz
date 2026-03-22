@@ -125,4 +125,77 @@ document.addEventListener('DOMContentLoaded', function() {
             filterItems();
         });
     }
+    
+    // Category Tabs (Interior Design / Architecture)
+    const categoryTabs = document.querySelectorAll('.category-tab');
+    const tabUnderline = document.querySelector('.tab-underline');
+    const contentPanels = document.querySelectorAll('.content-panel');
+    
+    // Initialize underline position
+    function updateUnderline(tab) {
+        if (tabUnderline && tab) {
+            tabUnderline.style.left = tab.offsetLeft + 'px';
+            tabUnderline.style.width = tab.offsetWidth + 'px';
+        }
+    }
+    
+    // Set initial underline position
+    const activeTab = document.querySelector('.category-tab.active');
+    if (activeTab) {
+        updateUnderline(activeTab);
+    }
+    
+    // Handle tab clicks
+    categoryTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            const category = this.dataset.category;
+            const currentActive = document.querySelector('.category-tab.active');
+            
+            if (this === currentActive) return;
+            
+            // Determine slide direction
+            const tabs = Array.from(categoryTabs);
+            const currentIndex = tabs.indexOf(currentActive);
+            const newIndex = tabs.indexOf(this);
+            const slideLeft = newIndex > currentIndex;
+            
+            // Update tab active states
+            categoryTabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Animate underline
+            updateUnderline(this);
+            
+            // Get panels
+            const currentPanel = document.querySelector('.content-panel.active');
+            const newPanel = document.querySelector(`.${category}-panel`);
+            
+            if (currentPanel && newPanel) {
+                // Slide out current panel
+                currentPanel.classList.remove('active');
+                currentPanel.style.display = 'block';
+                currentPanel.classList.add(slideLeft ? 'slide-out-left' : 'slide-out-right');
+                
+                // Slide in new panel
+                newPanel.style.display = 'block';
+                newPanel.classList.add(slideLeft ? 'slide-in-left' : 'slide-in-right');
+                
+                // Clean up after animation
+                setTimeout(() => {
+                    currentPanel.style.display = 'none';
+                    currentPanel.classList.remove('slide-out-left', 'slide-out-right');
+                    newPanel.classList.remove('slide-in-left', 'slide-in-right');
+                    newPanel.classList.add('active');
+                }, 400);
+            }
+        });
+    });
+    
+    // Update underline on window resize
+    window.addEventListener('resize', () => {
+        const activeTab = document.querySelector('.category-tab.active');
+        if (activeTab) {
+            updateUnderline(activeTab);
+        }
+    });
 });

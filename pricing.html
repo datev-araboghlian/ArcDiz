@@ -20,14 +20,14 @@
         
                 
         /* Title */
-        .title small { font-size: 24px; color: #888; letter-spacing: 6px; }
+        .title small { font-size: 28px; color: #fff; letter-spacing: 6px; margin-bottom: 10px; display: block; }
         .title h1 { font-size: 72px; font-weight: 700; margin-bottom: 35px; }
         
         /* Design */
         .design-sec { border-bottom: 1px solid #ddd; padding-bottom: 20px; margin-bottom: 25px; }
         .design-sec h2 { font-size: 14px; font-weight: 600; letter-spacing: 1px; border-bottom: 1px solid #999; display: inline-block; padding-bottom: 5px; margin-bottom: 12px; }
         .design-text { display: flex; gap: 30px; }
-        .design-text p { flex: 1; font-size: 14px; color: #666; line-height: 1.8; }
+        .design-text p { flex: 1; font-size: 14px; color: #fff; line-height: 1.8; }
         
         /* Cards */
         .cards { display: flex; gap: 15px; margin-bottom: 30px; }
@@ -42,11 +42,11 @@
         .card-list li .check { color: #4a4a4a; font-weight: bold; }
         .card-list li .cross { color: #999; font-weight: bold; }
         .card-list li.unavailable { color: #999; }
-        .card-btn { width: 100%; padding: 12px; background: #333; border: none; color: #fff; font-size: 12px; letter-spacing: 1px; cursor: pointer; }
-        .card-btn:hover { background: #444; }
+        .card-btn { width: 100%; padding: 12px; background: #1a1a1a; border: none; color: #fff; font-size: 12px; letter-spacing: 1px; cursor: pointer; border-radius: 10px; }
+        .card-btn:hover { background: #666666; }
         
         /* Slider/Calculator */
-        .calc { margin: 20px 0 15px; background: #1a1a1a; padding: 20px; }
+        .calc { margin: 20px 0 15px; background: #333333; padding: 20px; border-radius: 10px; }
         .calc-title { font-size: 12px; color: #ccc; margin-bottom: 10px; }
         .calc-input { width: 60px; padding: 6px 8px; background: #333; border: 1px solid #555; color: #fff; font-size: 14px; margin-bottom: 8px; }
         .calc-slider { width: 100%; -webkit-appearance: none; height: 3px; background: #fff; outline: none; margin: 10px 0; }
@@ -60,27 +60,27 @@
         /* CTA */
         .cta { text-align: center; margin-bottom: 35px; }
         .cta-btn { padding: 16px 60px; background: #666; border: none; color: #fff; font-size: 14px; letter-spacing: 2px; cursor: pointer; border-radius: 10px; transition: all 0.3s; }
-        .cta-btn:hover { background: #f5f0e6; color: #333; }
+        .cta-btn:hover { background: #fff; color: #000; }
         .cta p { font-size: 11px; color: #999; margin-top: 12px; }
         
         /* Additional */
         .additional-wrap { background: #1a1a1a; padding: 50px 60px; margin: 0 -60px; }
         .additional h2 { font-size: 14px; font-weight: 600; letter-spacing: 2px; margin-bottom: 25px; color: #fff; }
-        .box { display: flex; justify-content: space-between; align-items: center; padding: 25px 30px; background: #f5f5f5; margin-bottom: 15px; border: none; }
-        .box-left { flex: 1; }
+        .box { display: flex; justify-content: space-between; align-items: center; padding: 25px 30px; background: #f5f5f5; margin-bottom: 15px; border: none; border-radius: 10px; }
+        .box-left { flex: 1; max-width: 70%; }
         .box-left h3 { font-size: 15px; font-weight: 600; margin-bottom: 15px; color: #000; letter-spacing: 1px; }
         .box-left ul { list-style: none; }
         .box-left li { font-size: 12px; color: #555; line-height: 1.9; padding-left: 14px; position: relative; text-transform: uppercase; }
         .box-left li::before { content: "•"; position: absolute; left: 0; }
         .box-right { text-align: right; min-width: 140px; }
-        .price-btn { padding: 12px 30px; background: #1a1a1a; color: #fff; border: none; font-size: 12px; letter-spacing: 1px; cursor: pointer; transition: all 0.3s; }
-        .price-btn:hover { background: #666; }
+        .price-btn { padding: 12px 30px; background: #1a1a1a; color: #fff; border: none; font-size: 12px; letter-spacing: 1px; cursor: pointer; transition: all 0.3s; border-radius: 10px; min-width: 180px; text-align: center; display: inline-block; }
+        .price-btn:hover { background: #666666; }
         
         /* FAQ */
         .faq { padding: 60px 0; background: #1a1a1a; margin: 0 -60px; padding: 60px 60px; }
         .faq h2 { font-size: 42px; font-weight: 400; margin-bottom: 50px; color: #fff; }
         .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 60px; }
-        .faq-item { padding: 22px 0; border-bottom: 1px solid #444; cursor: pointer; }
+        .faq-item { padding: 22px 0; border-bottom: 1px solid #fff; cursor: pointer; background: none; }
         .faq-q { font-size: 15px; font-weight: 400; color: #fff; display: flex; align-items: flex-start; gap: 12px; line-height: 1.5; }
         .faq-q::before { content: ">"; color: #888; font-size: 14px; flex-shrink: 0; }
         .faq-item:hover .faq-q { color: #fff; }
@@ -126,6 +126,16 @@
         .submit-btn:hover { background: #444; }
         .form-note { font-size: 12px; color: #000; margin-top: 30px; font-variant: small-caps; }
         .form-disclaimer { font-size: 11px; color: #000; margin-top: 15px; line-height: 1.8; font-variant: small-caps; }
+        
+        /* Pricing Tabs */
+        .pricing-tabs { display: flex; gap: 40px; position: relative; margin-bottom: 20px; justify-content: flex-start; }
+        .pricing-tab { background: none; border: none; font-size: 1.1rem; font-weight: 500; font-family: 'Montserrat', sans-serif; cursor: pointer; padding: 10px 0; color: rgba(255,255,255,0.4); transition: color 0.3s ease; }
+        .pricing-tab.active { color: #fff; }
+        .pricing-tab:hover { color: #fff; }
+        .pricing-tab-underline { position: absolute; bottom: 0; height: 2px; background: #fff; transition: left 0.4s ease, width 0.4s ease; }
+        .pricing-content-slider { position: relative; overflow: hidden; }
+        .pricing-panel { display: none; }
+        .pricing-panel.active { display: block; }
         
         @media (max-width: 768px) {
             .design-text, .cards, .faq-grid, .foot-grid { flex-direction: column; }
@@ -145,14 +155,14 @@
         
                 
         /* Title */
-        .title small { font-size: 24px; color: #888; letter-spacing: 6px; }
+        .title small { font-size: 28px; color: #fff; letter-spacing: 6px; margin-bottom: 10px; display: block; }
         .title h1 { font-size: 72px; font-weight: 700; margin-bottom: 35px; }
         
         /* Design */
         .design-sec { border-bottom: 1px solid #ddd; padding-bottom: 20px; margin-bottom: 25px; }
         .design-sec h2 { font-size: 14px; font-weight: 600; letter-spacing: 1px; border-bottom: 1px solid #999; display: inline-block; padding-bottom: 5px; margin-bottom: 12px; }
         .design-text { display: flex; gap: 30px; }
-        .design-text p { flex: 1; font-size: 14px; color: #666; line-height: 1.8; }
+        .design-text p { flex: 1; font-size: 14px; color: #fff; line-height: 1.8; }
         
         /* Cards */
         .cards { display: flex; gap: 15px; margin-bottom: 30px; }
@@ -167,11 +177,11 @@
         .card-list li .check { color: #4a4a4a; font-weight: bold; }
         .card-list li .cross { color: #999; font-weight: bold; }
         .card-list li.unavailable { color: #999; }
-        .card-btn { width: 100%; padding: 12px; background: #333; border: none; color: #fff; font-size: 12px; letter-spacing: 1px; cursor: pointer; }
-        .card-btn:hover { background: #444; }
+        .card-btn { width: 100%; padding: 12px; background: #1a1a1a; border: none; color: #fff; font-size: 12px; letter-spacing: 1px; cursor: pointer; border-radius: 10px; }
+        .card-btn:hover { background: #666666; }
         
         /* Slider/Calculator */
-        .calc { margin: 20px 0 15px; background: #1a1a1a; padding: 20px; }
+        .calc { margin: 20px 0 15px; background: #333333; padding: 20px; border-radius: 10px; }
         .calc-title { font-size: 12px; color: #ccc; margin-bottom: 10px; }
         .calc-input { width: 60px; padding: 6px 8px; background: #333; border: 1px solid #555; color: #fff; font-size: 14px; margin-bottom: 8px; }
         .calc-slider { width: 100%; -webkit-appearance: none; height: 3px; background: #fff; outline: none; margin: 10px 0; }
@@ -185,27 +195,27 @@
         /* CTA */
         .cta { text-align: center; margin-bottom: 35px; }
         .cta-btn { padding: 16px 60px; background: #666; border: none; color: #fff; font-size: 14px; letter-spacing: 2px; cursor: pointer; border-radius: 10px; transition: all 0.3s; }
-        .cta-btn:hover { background: #f5f0e6; color: #333; }
+        .cta-btn:hover { background: #fff; color: #000; }
         .cta p { font-size: 11px; color: #999; margin-top: 12px; }
         
         /* Additional */
         .additional-wrap { background: #1a1a1a; padding: 50px 60px; margin: 0 -60px; }
         .additional h2 { font-size: 14px; font-weight: 600; letter-spacing: 2px; margin-bottom: 25px; color: #fff; }
-        .box { display: flex; justify-content: space-between; align-items: center; padding: 25px 30px; background: #f5f5f5; margin-bottom: 15px; border: none; }
-        .box-left { flex: 1; }
+        .box { display: flex; justify-content: space-between; align-items: center; padding: 25px 30px; background: #f5f5f5; margin-bottom: 15px; border: none; border-radius: 10px; }
+        .box-left { flex: 1; max-width: 70%; }
         .box-left h3 { font-size: 15px; font-weight: 600; margin-bottom: 15px; color: #000; letter-spacing: 1px; }
         .box-left ul { list-style: none; }
         .box-left li { font-size: 12px; color: #555; line-height: 1.9; padding-left: 14px; position: relative; text-transform: uppercase; }
         .box-left li::before { content: "•"; position: absolute; left: 0; }
         .box-right { text-align: right; min-width: 140px; }
-        .price-btn { padding: 12px 30px; background: #1a1a1a; color: #fff; border: none; font-size: 12px; letter-spacing: 1px; cursor: pointer; transition: all 0.3s; }
-        .price-btn:hover { background: #666; }
+        .price-btn { padding: 12px 30px; background: #1a1a1a; color: #fff; border: none; font-size: 12px; letter-spacing: 1px; cursor: pointer; transition: all 0.3s; border-radius: 10px; min-width: 180px; text-align: center; display: inline-block; }
+        .price-btn:hover { background: #666666; }
         
         /* FAQ */
         .faq { padding: 60px 0; background: #1a1a1a; margin: 0 -60px; padding: 60px 60px; }
         .faq h2 { font-size: 42px; font-weight: 400; margin-bottom: 50px; color: #fff; }
         .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 60px; }
-        .faq-item { padding: 22px 0; border-bottom: 1px solid #444; cursor: pointer; }
+        .faq-item { padding: 22px 0; border-bottom: 1px solid #fff; cursor: pointer; background: none; }
         .faq-q { font-size: 15px; font-weight: 400; color: #fff; display: flex; align-items: flex-start; gap: 12px; line-height: 1.5; }
         .faq-q::before { content: ">"; color: #888; font-size: 14px; flex-shrink: 0; }
         .faq-item:hover .faq-q { color: #fff; }
@@ -251,6 +261,16 @@
         .submit-btn:hover { background: #444; }
         .form-note { font-size: 12px; color: #000; margin-top: 30px; font-variant: small-caps; }
         .form-disclaimer { font-size: 11px; color: #000; margin-top: 15px; line-height: 1.8; font-variant: small-caps; }
+        
+        /* Pricing Tabs */
+        .pricing-tabs { display: flex; gap: 40px; position: relative; margin-bottom: 20px; justify-content: flex-start; }
+        .pricing-tab { background: none; border: none; font-size: 1.1rem; font-weight: 500; font-family: 'Montserrat', sans-serif; cursor: pointer; padding: 10px 0; color: rgba(255,255,255,0.4); transition: color 0.3s ease; }
+        .pricing-tab.active { color: #fff; }
+        .pricing-tab:hover { color: #fff; }
+        .pricing-tab-underline { position: absolute; bottom: 0; height: 2px; background: #fff; transition: left 0.4s ease, width 0.4s ease; }
+        .pricing-content-slider { position: relative; overflow: hidden; }
+        .pricing-panel { display: none; }
+        .pricing-panel.active { display: block; }
                 
         @media (max-width: 768px) {
             .design-text, .cards, .faq-grid, .foot-grid { flex-direction: column; }
@@ -288,10 +308,25 @@
             <h1>SERVICES</h1>
         </div>
 
+        <!-- Category Tabs -->
+        <div class="pricing-tabs">
+            <button class="pricing-tab active" data-category="design">
+                <span>DESIGN</span>
+            </button>
+            <button class="pricing-tab" data-category="architecture">
+                <span>ARCHITECTURE</span>
+            </button>
+            <div class="pricing-tab-underline"></div>
+        </div>
+
+        <!-- Content Slider -->
+        <div class="pricing-content-slider">
+            <!-- Design Content -->
+            <div class="pricing-panel design-panel active">
+
         <section class="design-sec">
-            <h2>DESIGN</h2>
             <div class="design-text">
-                <p>Redbox Studio offers interior design services. Our team will fill your home with style and create a comfortable design for your everyday life.</p>
+                <p>ArcDiz offers interior design services. Our team will fill your home with style and create a comfortable design for your everyday life.</p>
                 <p>We take care of your peace of mind and worry-free planning and execution. First, let's learn a little more about you: lifestyle and find out what you see in your dream home.</p>
             </div>
         </section>
@@ -304,20 +339,20 @@
                     <ul class="card-list">
                         <li><span class="check">✓</span> Survey</li>
                         <li><span class="check">✓</span> Consultation</li>
-                        <li><span class="check">✓</span> White Visualization</li>
                         <li><span class="check">✓</span> Proposed Layout</li>
+                        <li class="unavailable"><span class="cross">✗</span> White Visualization</li>
                         <li class="unavailable"><span class="cross">✗</span> Design Concept</li>
                         <li class="unavailable"><span class="cross">✗</span> 3D Design</li>
-                        <li class="unavailable"><span class="cross">✗</span> 360 walkthrough</li>
                         <li class="unavailable"><span class="cross">✗</span> Construction Drawings</li>
+                        <li class="unavailable"><span class="cross">✗</span> 360 Walkthrough</li>
                         <li class="unavailable"><span class="cross">✗</span> Full furniture documentation</li>
                         <li class="unavailable"><span class="cross">✗</span> Schedules</li>
                     </ul>
                     <div class="calc">
                         <div class="calc-title">Please indicate the area of your house</div>
-                        <input type="number" class="calc-input" id="area1" value="30" min="30" max="300" onchange="updateCalc(1, 4000)">
-                        <input type="range" class="calc-slider" id="slider1" min="30" max="300" value="30" oninput="syncInput(1, 4000)">
-                        <div class="calc-range"><span>30</span><span>300*</span></div>
+                        <input type="number" class="calc-input" id="area1" value="30" min="30" max="600" onchange="updateCalc(1, 4000)">
+                        <input type="range" class="calc-slider" id="slider1" min="30" max="600" value="30" oninput="syncInput(1, 4000)">
+                        <div class="calc-range"><span>30</span><span>600*</span></div>
                         <div class="calc-sum">
                             <div class="calc-sum-label">Sum</div>
                             <div class="calc-sum-value" id="sum1">120,000֏</div>
@@ -329,24 +364,24 @@
             <div class="card">
                                 <div class="card-body">
                     <div class="card-label">Full Technical Project</div>
-                    <div class="card-price">10,000<span>֏/m²</span></div>
+                    <div class="card-price">12,500<span>֏/m²</span></div>
                     <ul class="card-list">
                         <li><span class="check">✓</span> Survey</li>
-                        <li><span class="check">✓</span> Design Concept</li>
                         <li><span class="check">✓</span> Consultation</li>
                         <li><span class="check">✓</span> Proposed Layout</li>
                         <li><span class="check">✓</span> White Visualization</li>
+                        <li><span class="check">✓</span> Design Concept</li>
                         <li><span class="check">✓</span> 3D Design</li>
-                        <li class="unavailable"><span class="cross">✗</span> 360 walkthrough</li>
-                        <li class="unavailable"><span class="cross">✗</span> Construction Drawings</li>
+                        <li><span class="check">✓</span> Construction Drawings</li>
+                        <li class="unavailable"><span class="cross">✗</span> 360 Walkthrough</li>
                         <li class="unavailable"><span class="cross">✗</span> Full furniture documentation</li>
                         <li class="unavailable"><span class="cross">✗</span> Schedules</li>
                     </ul>
                     <div class="calc">
                         <div class="calc-title">Please indicate the area of your house</div>
-                        <input type="number" class="calc-input" id="area2" value="30" min="30" max="300" onchange="updateCalc(2, 10000)">
-                        <input type="range" class="calc-slider" id="slider2" min="30" max="300" value="30" oninput="syncInput(2, 10000)">
-                        <div class="calc-range"><span>30</span><span>300*</span></div>
+                        <input type="number" class="calc-input" id="area2" value="30" min="30" max="600" onchange="updateCalc(2, 12500)">
+                        <input type="range" class="calc-slider" id="slider2" min="30" max="600" value="30" oninput="syncInput(2, 12500)">
+                        <div class="calc-range"><span>30</span><span>600*</span></div>
                         <div class="calc-sum">
                             <div class="calc-sum-label">Sum</div>
                             <div class="calc-sum-value" id="sum2">300,000֏</div>
@@ -361,21 +396,21 @@
                     <div class="card-price">15,000<span>֏/m²</span></div>
                     <ul class="card-list">
                         <li><span class="check">✓</span> Survey</li>
-                        <li><span class="check">✓</span> Design Concept</li>
                         <li><span class="check">✓</span> Consultation</li>
                         <li><span class="check">✓</span> Proposed Layout</li>
                         <li><span class="check">✓</span> White Visualization</li>
+                        <li><span class="check">✓</span> Design Concept</li>
                         <li><span class="check">✓</span> 3D Design</li>
-                        <li><span class="check">✓</span> 360 walkthrough</li>
                         <li><span class="check">✓</span> Construction Drawings</li>
+                        <li><span class="check">✓</span> 360 Walkthrough</li>
                         <li><span class="check">✓</span> Full furniture documentation</li>
                         <li><span class="check">✓</span> Schedules</li>
                     </ul>
                     <div class="calc">
                         <div class="calc-title">Please indicate the area of your house</div>
-                        <input type="number" class="calc-input" id="area3" value="30" min="30" max="300" onchange="updateCalc(3, 15000)">
-                        <input type="range" class="calc-slider" id="slider3" min="30" max="300" value="30" oninput="syncInput(3, 15000)">
-                        <div class="calc-range"><span>30</span><span>300*</span></div>
+                        <input type="number" class="calc-input" id="area3" value="30" min="30" max="600" onchange="updateCalc(3, 15000)">
+                        <input type="range" class="calc-slider" id="slider3" min="30" max="600" value="30" oninput="syncInput(3, 15000)">
+                        <div class="calc-range"><span>30</span><span>600*</span></div>
                         <div class="calc-sum">
                             <div class="calc-sum-label">Sum</div>
                             <div class="calc-sum-value" id="sum3">450,000֏</div>
@@ -424,12 +459,114 @@
                 <div class="box-left">
                     <h3>CONSTRUCTION</h3>
                     <ul>
-                        <li>The exact cost of repair work is calculated by the foreman after the design project has been developed according to the estimate.</li>
+                        <li>The exact cost of repair work is calculated by the foreman<br>after the design project has been developed according to the estimate</li>
                     </ul>
                 </div>
                 <div class="box-right"><a href="contact.html" class="price-btn" style="text-decoration:none;">Contact Us</a></div>
             </div>
         </section>
+        </div>
+
+            </div>
+            
+            <!-- Architecture Content -->
+            <div class="pricing-panel architecture-panel">
+                <section class="design-sec">
+                    <div class="design-text">
+                        <p>ArcDiz offers comprehensive architectural design services. From concept to completion, we create spaces that inspire and function beautifully.</p>
+                        <p>Our architects work closely with you to understand your vision, ensuring every detail reflects your needs and aspirations for your dream space.</p>
+                    </div>
+                </section>
+
+                <div class="cards">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-label">Concept Design</div>
+                            <div class="card-price">5000<span>֏/m²</span></div>
+                            <ul class="card-list">
+                                <li><span class="check">✓</span> Site Analysis</li>
+                                <li><span class="check">✓</span> Initial Consultation</li>
+                                <li><span class="check">✓</span> Concept Sketches</li>
+                                <li class="unavailable"><span class="cross">✗</span> 3D Visualization</li>
+                                <li class="unavailable"><span class="cross">✗</span> Technical Drawings</li>
+                                <li class="unavailable"><span class="cross">✗</span> Construction Documents</li>
+                                <li class="unavailable"><span class="cross">✗</span> Permit Assistance</li>
+                                <li class="unavailable"><span class="cross">✗</span> Site Supervision</li>
+                            </ul>
+                            <div class="calc">
+                                <div class="calc-title">Please indicate the area</div>
+                                <input type="number" class="calc-input" id="area4" value="30" min="30" max="600" onchange="updateCalc(4, 5000)">
+                                <input type="range" class="calc-slider" id="slider4" min="30" max="600" value="30" oninput="syncInput(4, 5000)">
+                                <div class="calc-range"><span>30</span><span>600*</span></div>
+                                <div class="calc-sum">
+                                    <div class="calc-sum-label">Sum</div>
+                                    <div class="calc-sum-value" id="sum4">150,000֏</div>
+                                </div>
+                            </div>
+                            <button class="card-btn" onclick="openModal()">LEARN MORE</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-label">Full Architecture Package</div>
+                            <div class="card-price">12,000<span>֏/m²</span></div>
+                            <ul class="card-list">
+                                <li><span class="check">✓</span> Site Analysis</li>
+                                <li><span class="check">✓</span> Initial Consultation</li>
+                                <li><span class="check">✓</span> Concept Sketches</li>
+                                <li><span class="check">✓</span> 3D Visualization</li>
+                                <li><span class="check">✓</span> Technical Drawings</li>
+                                <li><span class="check">✓</span> Construction Documents</li>
+                                <li class="unavailable"><span class="cross">✗</span> Permit Assistance</li>
+                                <li class="unavailable"><span class="cross">✗</span> Site Supervision</li>
+                            </ul>
+                            <div class="calc">
+                                <div class="calc-title">Please indicate the area</div>
+                                <input type="number" class="calc-input" id="area5" value="30" min="30" max="600" onchange="updateCalc(5, 12000)">
+                                <input type="range" class="calc-slider" id="slider5" min="30" max="600" value="30" oninput="syncInput(5, 12000)">
+                                <div class="calc-range"><span>30</span><span>600*</span></div>
+                                <div class="calc-sum">
+                                    <div class="calc-sum-label">Sum</div>
+                                    <div class="calc-sum-value" id="sum5">360,000֏</div>
+                                </div>
+                            </div>
+                            <button class="card-btn" onclick="openModal()">LEARN MORE</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-label">Premium Architecture</div>
+                            <div class="card-price">18,000<span>֏/m²</span></div>
+                            <ul class="card-list">
+                                <li><span class="check">✓</span> Site Analysis</li>
+                                <li><span class="check">✓</span> Initial Consultation</li>
+                                <li><span class="check">✓</span> Concept Sketches</li>
+                                <li><span class="check">✓</span> 3D Visualization</li>
+                                <li><span class="check">✓</span> Technical Drawings</li>
+                                <li><span class="check">✓</span> Construction Documents</li>
+                                <li><span class="check">✓</span> Permit Assistance</li>
+                                <li><span class="check">✓</span> Site Supervision</li>
+                            </ul>
+                            <div class="calc">
+                                <div class="calc-title">Please indicate the area</div>
+                                <input type="number" class="calc-input" id="area6" value="30" min="30" max="600" onchange="updateCalc(6, 18000)">
+                                <input type="range" class="calc-slider" id="slider6" min="30" max="600" value="30" oninput="syncInput(6, 18000)">
+                                <div class="calc-range"><span>30</span><span>600*</span></div>
+                                <div class="calc-sum">
+                                    <div class="calc-sum-label">Sum</div>
+                                    <div class="calc-sum-value" id="sum6">540,000֏</div>
+                                </div>
+                            </div>
+                            <button class="card-btn" onclick="openModal()">LEARN MORE</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cta">
+                    <button class="cta-btn" onclick="openModal()">GET CONSULTATION</button>
+                    <p>* A DISCOUNT APPLIES FOR AREAS OF 200 m² AND MORE</p>
+                </div>
+            </div>
         </div>
 
         <section class="faq">
@@ -602,5 +739,45 @@
             </form>
         </div>
     </div>
+
+    <script>
+        // Pricing Tabs
+        const pricingTabs = document.querySelectorAll('.pricing-tab');
+        const pricingUnderline = document.querySelector('.pricing-tab-underline');
+        const pricingPanels = document.querySelectorAll('.pricing-panel');
+        
+        function updatePricingUnderline(tab) {
+            if (pricingUnderline && tab) {
+                pricingUnderline.style.left = tab.offsetLeft + 'px';
+                pricingUnderline.style.width = tab.offsetWidth + 'px';
+            }
+        }
+        
+        const activePricingTab = document.querySelector('.pricing-tab.active');
+        if (activePricingTab) {
+            updatePricingUnderline(activePricingTab);
+        }
+        
+        pricingTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const category = this.dataset.category;
+                
+                pricingTabs.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                
+                updatePricingUnderline(this);
+                
+                pricingPanels.forEach(panel => panel.classList.remove('active'));
+                document.querySelector(`.${category}-panel`).classList.add('active');
+            });
+        });
+        
+        window.addEventListener('resize', () => {
+            const activeTab = document.querySelector('.pricing-tab.active');
+            if (activeTab) {
+                updatePricingUnderline(activeTab);
+            }
+        });
+    </script>
 </body>
 </html>

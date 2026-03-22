@@ -40,9 +40,22 @@
 
         <main class="design-main">
             <div class="design-container">
-                <h1 class="design-title">DESIGN</h1>
+                <!-- Category Tabs -->
+                <div class="category-tabs">
+                    <button class="category-tab active" data-category="design">
+                        <span>Interior Design</span>
+                    </button>
+                    <button class="category-tab" data-category="architecture">
+                        <span>Architecture</span>
+                    </button>
+                    <div class="tab-underline"></div>
+                </div>
                 
-                <!-- Filter Bar -->
+                <!-- Content Wrapper for Sliding -->
+                <div class="content-slider">
+                    <!-- Design Content -->
+                    <div class="content-panel design-panel active">
+                        <!-- Filter Bar -->
                 <div class="filter-bar">
                     <div class="filter-group filter-type">
                         <button class="filter-btn active" data-filter="type" data-value="all">All</button>
@@ -72,8 +85,8 @@
                     </div>
                     
                     <div class="filter-group filter-property">
-                        <button class="filter-btn" data-filter="property" data-value="penthouse">penthouses</button>
-                        <button class="filter-btn" data-filter="property" data-value="house">houses</button>
+                        <button class="filter-btn" data-filter="property" data-value="apartment">Apartments</button>
+                        <button class="filter-btn" data-filter="property" data-value="house">Houses</button>
                     </div>
                     
                     <div class="filter-group filter-photos">
@@ -209,6 +222,73 @@
                             <span class="project-location">Armenia</span>
                         </div>
                     </a>
+                </div>
+                    </div>
+                    
+                    <!-- Architecture Content -->
+                    <div class="content-panel architecture-panel">
+                        <div class="portfolio-grid">
+                            <!-- Architecture Project 1 -->
+                            <a href="#" class="portfolio-item">
+                                <div class="portfolio-image">
+                                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&h=400&fit=crop" alt="Modern Villa Blueprint">
+                                </div>
+                                <div class="portfolio-overlay">
+                                    <h3 class="project-name">Modern Villa</h3>
+                                    <div class="project-meta">
+                                        <span class="project-type">Residential</span>
+                                        <span class="project-size">320 m²</span>
+                                    </div>
+                                    <span class="project-location">Yerevan</span>
+                                </div>
+                            </a>
+                            
+                            <!-- Architecture Project 2 -->
+                            <a href="#" class="portfolio-item">
+                                <div class="portfolio-image">
+                                    <img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=600&h=400&fit=crop" alt="Office Complex">
+                                </div>
+                                <div class="portfolio-overlay">
+                                    <h3 class="project-name">Office Complex</h3>
+                                    <div class="project-meta">
+                                        <span class="project-type">Commercial</span>
+                                        <span class="project-size">1200 m²</span>
+                                    </div>
+                                    <span class="project-location">Dubai</span>
+                                </div>
+                            </a>
+                            
+                            <!-- Architecture Project 3 -->
+                            <a href="#" class="portfolio-item">
+                                <div class="portfolio-image">
+                                    <img src="https://images.unsplash.com/photo-1486718448742-163732cd1544?w=600&h=400&fit=crop" alt="Cultural Center">
+                                </div>
+                                <div class="portfolio-overlay">
+                                    <h3 class="project-name">Cultural Center</h3>
+                                    <div class="project-meta">
+                                        <span class="project-type">Public</span>
+                                        <span class="project-size">2500 m²</span>
+                                    </div>
+                                    <span class="project-location">Armenia</span>
+                                </div>
+                            </a>
+                            
+                            <!-- Architecture Project 4 -->
+                            <a href="#" class="portfolio-item">
+                                <div class="portfolio-image">
+                                    <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=600&h=400&fit=crop" alt="Residential Tower">
+                                </div>
+                                <div class="portfolio-overlay">
+                                    <h3 class="project-name">Residential Tower</h3>
+                                    <div class="project-meta">
+                                        <span class="project-type">Multi-family</span>
+                                        <span class="project-size">8500 m²</span>
+                                    </div>
+                                    <span class="project-location">Yerevan</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>

@@ -37,6 +37,15 @@
 
         <main class="project-main">
             <div class="project-container">
+                <!-- Breadcrumb Navigation -->
+                <nav class="breadcrumb">
+                    <a href="../index.html">Home</a>
+                    <span class="breadcrumb-separator">›</span>
+                    <a href="../interior.html">Portfolio</a>
+                    <span class="breadcrumb-separator">›</span>
+                    <span class="breadcrumb-current">Urban Office</span>
+                </nav>
+                
                 <div class="project-header">
                     <div class="project-info">
                         <h1 class="project-title">Urban Office</h1>
@@ -120,6 +129,24 @@
             </div>
         </footer>
     </div>
+<!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fa fa-chevron-up"></i>
+    </button>
+
     <script src="../menu.js"></script>
+    <script>
+        const backToTopBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>
