@@ -1128,7 +1128,7 @@ main {
 
 .diz span {
     display: block;
-    transform: translateX(-2rem);
+    transform: translateX(-0.5rem);
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     padding-right: 4rem;
 }
@@ -3781,7 +3781,7 @@ main {
 
 .footer-about-info p {
     font-size: 0.9rem;
-    color: #ccc;
+    color: #fff;
     margin-bottom: 12px;
     display: flex;
     align-items: center;
@@ -3789,12 +3789,12 @@ main {
 }
 
 .footer-about-info p i {
-    color: #888;
+    color: #fff;
     width: 16px;
 }
 
 .footer-about-info a {
-    color: #ccc;
+    color: #fff;
     text-decoration: none;
     transition: color 0.2s ease;
 }
@@ -3810,7 +3810,7 @@ main {
 }
 
 .footer-social a {
-    color: #888;
+    color: #fff;
     font-size: 1rem;
     transition: color 0.2s ease;
 }
@@ -3830,7 +3830,7 @@ main {
 }
 
 .footer-links a {
-    color: #ccc;
+    color: #fff;
     text-decoration: none;
     font-size: 0.9rem;
     transition: color 0.2s ease;
@@ -3842,7 +3842,7 @@ main {
 
 .footer-cta-text {
     font-size: 0.95rem;
-    color: #999;
+    color: #fff;
     line-height: 1.7;
     margin-bottom: 25px;
 }
@@ -3875,7 +3875,7 @@ main {
 
 .footer-bottom p {
     font-size: 0.8rem;
-    color: #666;
+    color: #fff;
     margin: 0;
 }
 
@@ -3886,7 +3886,7 @@ main {
 
 .footer-legal a {
     font-size: 0.8rem;
-    color: #666;
+    color: #fff;
     text-decoration: none;
     transition: color 0.2s ease;
 }

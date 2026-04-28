@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Design Premium Package – ArcDiz</title>
+    <link rel="icon" type="image/png" href="assets/ArcDiz_tab_logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; background: #f7f5f0; color: #1a1a1a; }
+
+        /* Force black logo + menu bars */
+        .nav-elements .logo { filter: none !important; }
+        .nav-elements .menu-button .bar { background-color: #000 !important; }
+        .nav-elements .menu-toggle:checked ~ .menu-button .bar { background-color: #fff !important; }
+
+        .cp-container { max-width: 1100px; margin: 0 auto; padding: 0 60px 60px; }
+
+        /* Title area with overlapping banner stripe */
+        .cp-title-area {
+            position: relative;
+            margin-top: 110px;
+            margin-bottom: 40px;
+            padding-bottom: 22px;
+        }
+        .cp-banner-bg {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 30px;
+            bottom: 0;
+            background: #c8c5bc;
+            z-index: 0;
+        }
+        .cp-title-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 60px;
+        }
+        .cp-breadcrumb {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 14px;
+            letter-spacing: 0.3px;
+        }
+        .cp-title-content h1 {
+            font-size: 42px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            line-height: 1.05;
+            margin: 22px 0 6px;
+        }
+        .cp-title-content .cp-subtitle {
+            font-size: 14px;
+            color: #333;
+            letter-spacing: 0.3px;
+        }
+
+        /* Sections */
+        .cp-section { margin-bottom: 50px; }
+        .cp-section-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 14px;
+        }
+        .cp-section p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        /* Overview row */
+        .cp-overview {
+            display: flex;
+            justify-content: space-between;
+            gap: 60px;
+            margin-bottom: 30px;
+        }
+        .cp-overview-text { flex: 1; max-width: 60%; }
+        .cp-overview-cost { text-align: right; min-width: 240px; }
+        .cp-overview-cost .cost-label {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .cp-overview-cost .cost-value {
+            font-size: 22px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        .cp-overview-cost .cost-value sup { font-size: 13px; }
+        .cp-overview-cost .cost-note {
+            font-size: 11px;
+            color: #777;
+            line-height: 1.5;
+            margin-bottom: 24px;
+        }
+        .cp-overview-cost .supervision-label {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .cp-overview-cost .supervision-value {
+            font-size: 22px;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+        .cp-overview-cost .supervision-note {
+            font-size: 12px;
+            color: #c0392b;
+            font-weight: 600;
+        }
+
+        /* Get Started button */
+        .cp-cta {
+            text-align: center;
+            margin: 30px 0 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        .cp-cta button {
+            background: #1a1a1a;
+            color: #fff;
+            border: none;
+            padding: 14px 60px;
+            font-size: 15px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border-radius: 30px;
+            font-family: inherit;
+            transition: all 0.3s;
+        }
+        .cp-cta button:hover { background: #444; }
+
+        /* What's Included */
+        .cp-included-label {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        /* Stage block */
+        .cp-stage-num {
+            font-size: 13px;
+            color: #777;
+            margin-bottom: 6px;
+        }
+        .cp-stage-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+        .cp-stage-desc {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 24px;
+        }
+        .cp-stage-desc p {
+            flex: 1;
+            font-size: 15px;
+            line-height: 1.7;
+            color: #333;
+        }
+        .cp-stage-subnote {
+            font-size: 15px;
+            color: #333;
+            margin-bottom: 18px;
+            line-height: 1.7;
+        }
+
+        /* Image grids */
+        .cp-img-grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+        .cp-img-card {
+            border: 1px solid #ccc;
+            background: #fff;
+            padding: 10px;
+        }
+        .cp-img-card.no-border {
+            border: none;
+            padding: 0;
+        }
+        .cp-img-card img {
+            width: 100%;
+            height: 340px;
+            object-fit: contain;
+            background: #fff;
+            display: block;
+        }
+        .cp-img-card.no-border img {
+            object-fit: cover;
+        }
+
+        /* 360 panorama embed (Kuula) */
+        .cp-360-embed {
+            margin: 30px 0 50px;
+            border: 1px solid #1a1a1a;
+            background: #000;
+            overflow: hidden;
+        }
+        .cp-360-embed iframe {
+            display: block;
+            width: 100%;
+            height: 500px;
+            border: 0;
+        }
+
+        /* Drawings bullet list section */
+        .cp-drawings-text {
+            margin-bottom: 24px;
+        }
+        .cp-drawings-text > .desc {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 22px;
+        }
+        .cp-drawings-text > .desc p {
+            flex: 1;
+            font-size: 15px;
+            line-height: 1.7;
+            color: #333;
+        }
+        .cp-drawings-text .docs-title {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .cp-drawings-text .docs-cols {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        .cp-drawings-text ul {
+            list-style: none;
+            font-size: 14px;
+            line-height: 1.9;
+            color: #333;
+        }
+        .cp-drawings-text ul li {
+            padding-left: 14px;
+            position: relative;
+        }
+        .cp-drawings-text ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+        }
+
+        /* Final sections */
+        .cp-final-section {
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        .cp-final-section:last-of-type {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .cp-final-section h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .cp-final-section p,
+        .cp-final-section ul {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .cp-container { padding: 0 30px 40px; }
+            .cp-overview { flex-direction: column; gap: 20px; }
+            .cp-overview-text { max-width: 100%; }
+            .cp-overview-cost { text-align: left; }
+            .cp-stage-desc, .cp-drawings-text > .desc { flex-direction: column; gap: 14px; }
+            .cp-img-grid-2, .cp-drawings-text .docs-cols { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-elements">
+        <a href="index.html" class="logo-link">
+            <img src="assets/ArcDiz_logo.png" alt="ArcDiz Logo" class="logo">
+        </a>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+        <nav class="menu-panel">
+            <label for="menu-toggle" class="menu-close"></label>
+            <ul>
+                <li><a href="index.html" class="menu-link">Home</a></li>
+                <li><a href="about.html" class="menu-link">About</a></li>
+                <li><a href="interior.html" class="menu-link">Portfolio</a></li>
+                <li><a href="pricing.html" class="menu-link">Pricing</a></li>
+                <li><a href="contact.html" class="menu-link">Contact Us</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Title area with overlapping banner stripe -->
+    <div class="cp-title-area">
+        <div class="cp-banner-bg"></div>
+        <div class="cp-title-content">
+            <p class="cp-breadcrumb">Pricing, Full Design Premium Package</p>
+            <h1>FULL DESIGN PREMIUM PACKAGE</h1>
+            <p class="cp-subtitle">(Complete Experience — high-end, fully detailed design)</p>
+        </div>
+    </div>
+
+    <div class="cp-container">
+        <!-- Overview -->
+        <div class="cp-section">
+            <div class="cp-overview">
+                <div class="cp-overview-text">
+                    <h2 class="cp-section-title">Overview</h2>
+                    <p>The Full Design Premium Package is a complete, all-inclusive architectural and interior design solution.</p>
+                    <p style="margin-top:10px;">It covers every stage of the project — from concept to the smallest construction detail.<br>This package is created for clients who want a fully controlled, high-end result with no guesswork.</p>
+                </div>
+                <div class="cp-overview-cost">
+                    <div class="cost-label">Project Cost:</div>
+                    <div class="cost-value">15,000֏/m<sup>2</sup></div>
+                    <div class="cost-note">* A discount applies for areas of 200 m² &amp; more</div>
+                    <div class="supervision-label">Supervision:</div>
+                    <div class="supervision-value">150,000֏/month*</div>
+                    <div class="supervision-note">ADD NOTE FOR SUPERVISION</div>
+                </div>
+            </div>
+            <div class="cp-cta">
+                <button onclick="window.location.href='contact.html'">Get Started</button>
+            </div>
+        </div>
+
+        <!-- What's Included -->
+        <div class="cp-included-label">What's Included</div>
+
+        <!-- Stage 1: Survey, Planning and Moodboard -->
+        <div class="cp-section">
+            <div class="cp-stage-num">Stage 1</div>
+            <h2 class="cp-stage-title">Surevy, Planning and Moodboard (Collage)</h2>
+            <div class="cp-stage-desc">
+                <p>Every project begins with precise site measurements and detailed documentation carried out by our specialists. This is followed by an in-depth consultation, where we collaborate with the client to develop a comprehensive technical brief and establish the overall design direction.</p>
+                <p>the atmosphere and character of each space. Our designers then prepare a curated moodboard, combining materials, colors, textures, and references to shape a clear visual identity. Every element is thoughtfully selected to ensure a cohesive design language, balancing functionality, comfort, and aesthetic harmony.</p>
+            </div>
+            <p class="cp-stage-subnote">Based on your preferences and lifestyle, we carefully define</p>
+
+            <div class="cp-img-grid-2">
+                <div class="cp-img-card">
+                    <img src="assets/construction/existing-plan.jpg" alt="Existing floor plan">
+                </div>
+                <div class="cp-img-card">
+                    <img src="assets/construction/proposed-plan.jpg" alt="Proposed floor plan">
+                </div>
+                <div class="cp-img-card no-border">
+                    <img src="assets/full-technical/moodboard.jpg" alt="Moodboard">
+                </div>
+                <div class="cp-img-card">
+                    <img src="assets/full-technical/furniture-plan.jpg" alt="Furniture layout plan">
+                </div>
+            </div>
+        </div>
+
+        <!-- Stage 2: 3D Visualization -->
+        <div class="cp-section">
+            <div class="cp-stage-num">Stage 2</div>
+            <h2 class="cp-stage-title">3D Visualization</h2>
+
+            <div class="cp-img-grid-2" style="margin-bottom:24px;">
+                <div class="cp-img-card no-border">
+                    <img src="assets/full-technical/render-1.jpg" alt="3D render 1">
+                </div>
+                <div class="cp-img-card no-border">
+                    <img src="assets/full-technical/render-2.jpg" alt="3D render 2">
+                </div>
+            </div>
+            <div class="cp-stage-desc">
+                <p>We create a detailed three-dimensional model of the space, and a 360° panorama allowing you to experience photorealistic visuals and gain a complete understanding of your future interior.</p>
+                <p>Professional 3D visualization is essential for establishing a clear and shared vision between the client and the designer. It also serves as a reliable reference for contractors and builders, supporting accurate execution, material selection, and attention to every technical detail.</p>
+            </div>
+            <div class="cp-stage-desc">
+                <p>At this stage, the designer carefully selects furniture, materials, and finishes from real, current manufacturer collections — ensuring that everything you see can be realistically implemented on site.</p>
+                <p>This phase allows full creative flexibility: colors can be refined, and decorative elements added or modified until the design feels exactly right within a normal limit.</p>
+            </div>
+
+            <div class="cp-img-grid-2">
+                <div class="cp-img-card no-border">
+                    <img src="assets/full-technical/render-3.jpg" alt="3D render 3">
+                </div>
+                <div class="cp-img-card no-border">
+                    <img src="assets/full-technical/render-4.jpg" alt="3D render 4">
+                </div>
+            </div>
+
+            <!-- 360 Panorama embed (Kuula) -->
+            <div class="cp-360-embed">
+                <iframe
+                    src="https://kuula.co/share/collection/7Mspy?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1"
+                    width="100%"
+                    height="500"
+                    frameborder="0"
+                    allow="xr-spatial-tracking; gyroscope; accelerometer"
+                    allowfullscreen
+                    scrolling="no"
+                    title="ArcDiz 360 panorama tour"></iframe>
+            </div>
+        </div>
+
+        <!-- Stage 3: Drawings -->
+        <div class="cp-section">
+            <div class="cp-stage-num">Stage 3</div>
+            <h2 class="cp-stage-title">Drawings</h2>
+
+            <div class="cp-drawings-text">
+                <div class="desc">
+                    <p>The composition of the documentation includes a basic set of drawings, it will be enough to control the process of some work at a construction site.</p>
+                    <p>We adhere to high requirements in the preparation of working documentation.</p>
+                </div>
+                <div class="docs-title">The composition of the working documentation:</div>
+                <div class="docs-cols">
+                    <ul>
+                        <li>Existing Plan</li>
+                        <li>Demolition Plan</li>
+                        <li>New Wall Plan</li>
+                        <li>Generic Furniture Plan</li>
+                        <li>Electrical Drawings</li>
+                        <li>Plumbing Plan</li>
+                        <li>HVAC</li>
+                        <li>Interior Elevation Plan</li>
+                    </ul>
+                    <ul>
+                        <li>Interior Elevations (Essential Ones)</li>
+                        <li>Door Schedules</li>
+                        <li>Floor Finishing Plan</li>
+                        <li>Wall Finishing Plan</li>
+                        <li>Skirting Plan</li>
+                        <li>Section(s)</li>
+                        <li>Reflected Ceiling Plan</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cp-img-grid-2">
+                <div class="cp-img-card">
+                    <img src="assets/full-technical/electrical-1.jpg" alt="Electrical Plan 01">
+                </div>
+                <div class="cp-img-card">
+                    <img src="assets/full-technical/electrical-2.jpg" alt="Electrical Plan 03">
+                </div>
+                <div class="cp-img-card">
+                    <img src="assets/construction/plumbing-plan.jpg" alt="Plumbing Plan">
+                </div>
+                <div class="cp-img-card">
+                    <img src="assets/full-technical/door-schedule.jpg" alt="Door Schedule">
+                </div>
+                <div class="cp-img-card">
+                    <img src="assets/full-technical/elevation.jpg" alt="Interior Elevation">
+                </div>
+                <div class="cp-img-card">
+                    <img src="assets/full-technical/tiles-plan.jpg" alt="Tile / Finishing Plan">
+                </div>
+            </div>
+        </div>
+
+        <!-- Stage 4: Equipment / Furniture Drawings -->
+        <div class="cp-section">
+            <div class="cp-stage-num">Stage 4</div>
+            <h2 class="cp-stage-title">Equipment/Furniture Drawings</h2>
+
+            <div class="cp-stage-desc">
+                <p>It helps to significantly reduce the time for the selection and purchase of the necessary finishing materials for the custom furniture.</p>
+                <p>All this is included in the interior design, in the form of a working documentation.</p>
+            </div>
+
+            <div class="cp-drawings-text">
+                <div class="docs-title">The list of works on a complete set:</div>
+                <div class="docs-cols">
+                    <ul>
+                        <li>Discussions with the experts to minimize the risk of human errors.</li>
+                        <li>Creation of the custom furniture drawings with all the needed details.</li>
+                    </ul>
+                    <ul>
+                        <li>Selection of custom made furniture finishing materials</li>
+                        <li>Logistics to the supply of goods, so that the items correspond to the schedule of the facility.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cp-img-grid-2">
+                <div class="cp-img-card">
+                    <img src="assets/full-technical/furniture-detail.jpg" alt="Furniture detail drawings 12">
+                </div>
+                <div class="cp-img-card">
+                    <img src="assets/full-technical/finish-plan.jpg" alt="Furniture detail drawings 16">
+                </div>
+            </div>
+        </div>
+
+        <!-- Who This is For -->
+        <div class="cp-final-section">
+            <h3>Who This is For</h3>
+            <p>Clients who want a luxury, fully managed design process<br>
+            Clients who value precision, detail, and aesthetics<br>
+            Those who want zero uncertainty during construction</p>
+        </div>
+
+        <!-- Result -->
+        <div class="cp-final-section">
+            <h3>Result</h3>
+            <p>You receive a complete, ready-to-build project, where every detail is defined — ensuring a seamless construction process and a refined final result.</p>
+        </div>
+    </div>
+
+    <footer class="expanded-footer">
+        <div class="footer-main">
+            <div class="footer-column footer-about-info">
+                <h3>About Us</h3>
+                <p><i class="fa fa-map-marker"></i> Armenia, Yerevan, 3/1 Pavstos Buzand St.</p>
+                <p><i class="fa fa-envelope"></i> <a href="mailto:info@arcdiz.com">info@arcdiz.com</a></p>
+                <p><i class="fa fa-phone"></i> <a href="tel:+37433600445">(+374) 33 600445</a></p>
+                <div class="footer-social">
+                    <a href="https://facebook.com" target="_blank"><i class="fa fa-facebook"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
+                    <a href="https://linkedin.com" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    <a href="https://behance.net" target="_blank"><i class="fa fa-behance"></i></a>
+                </div>
+            </div>
+            <div class="footer-column footer-links">
+                <h3>Our pages</h3>
+                <ul>
+                    <li><a href="interior.html">Portfolio</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column footer-cta">
+                <h3>Get in Touch</h3>
+                <p class="footer-cta-text">Ready to bring your design vision to life? Contact ArcDiz today to schedule a consultation. Let us help you create a space that reflects your unique style and personality.</p>
+                <a href="contact.html" class="footer-cta-btn">SEND REQUEST</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ArcDiz LLC, all rights reserved.</p>
+            <div class="footer-legal">
+                <a href="#">Policies</a>
+                <a href="#">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

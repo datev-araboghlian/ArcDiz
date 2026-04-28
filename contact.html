@@ -10,165 +10,156 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Montserrat', sans-serif; background: #0a0a0a; color: #fff; min-height: 100vh; overflow-y: auto !important; }
-        
-        .contact-wrapper { display: flex; min-height: 100vh; }
+        body { font-family: 'Montserrat', sans-serif; background: #1a1a1a; color: #fff; min-height: 100vh; overflow-y: auto !important; }
+
+        .contact-wrapper { display: flex; min-height: calc(100vh - 50px); }
+        .nav-elements .logo { filter: brightness(0) invert(1); }
         .nav-elements .menu-button .bar { background-color: #000 !important; }
         .nav-elements .menu-toggle:checked ~ .menu-button .bar { background-color: #fff !important; }
-        
-        /* Left side - Visual */
-        .contact-visual { 
-            flex: 0 0 40%; 
-            background: #2a2a2a;
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
+
+        /* Left side - Visual with background image */
+        .contact-visual {
+            flex: 0 0 38%;
+            background: url('assets/bg-contact.png') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             position: relative;
-            padding: 80px 40px;
+            padding: 80px 60px;
         }
         .visual-text {
-            font-size: 72px;
+            font-size: 68px;
             font-weight: 600;
-            letter-spacing: 8px;
-            writing-mode: vertical-rl;
-            text-orientation: mixed;
-            transform: rotate(180deg);
-            color: #fff;
-            text-transform: uppercase;
+            line-height: 1.2;
+            color: rgba(255, 255, 255, 0.7);
             font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.5px;
+            text-align: center;
         }
-        
-        /* Right side - Content */
+
+        /* Right side - Content with paper texture */
         .contact-content {
             flex: 1;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
-            align-items: flex-start;
-            padding: 120px 80px 140px;
-            background: #f8f8f8;
-            color: #000;
+            justify-content: center;
+            align-items: stretch;
+            padding: 90px 90px;
+            background: url('assets/bg-contact2.png') center/cover no-repeat, #ece4d6;
+            color: #1a1a1a;
             text-align: left;
         }
-        .contact-label {
-            font-size: 11px;
-            letter-spacing: 4px;
-            color: #999;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
         .contact-title {
-            font-size: 52px;
-            font-weight: 300;
-            margin-bottom: 80px;
-            line-height: 1.3;
-            font-family: 'Montserrat', sans-serif;
-        }
-        
-        /* Contact buttons row */
-        .contact-buttons {
-            display: flex;
-            gap: 40px;
-            margin-bottom: 80px;
-            width: 100%;
-        }
-        .contact-btn {
-            flex: 1;
-            padding: 18px 25px;
-            background: #1a1a1a;
-            color: #fff;
-            border: none;
-            text-align: center;
-            text-decoration: none;
-            transition: all 0.3s;
-            cursor: pointer;
-            border-radius: 30px;
-        }
-        .contact-btn:hover {
-            background: #fff;
+            font-size: 48px;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 18px;
             color: #1a1a1a;
-            box-shadow: inset 0 0 0 2px #1a1a1a;
         }
-        .contact-btn-label {
-            font-size: 12px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 5px;
-            display: block;
+        .contact-subtitle {
+            font-size: 17px;
+            font-weight: 500;
+            line-height: 1.6;
+            color: #1a1a1a;
+            margin-bottom: 55px;
+            max-width: 600px;
         }
-        .contact-btn-value {
-            font-size: 15px;
+
+        /* Contact info row */
+        .contact-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 16px;
             font-weight: 500;
         }
-        
-        /* Social icons */
-        .contact-socials {
-            display: flex;
-            width: 100%;
-            margin-bottom: 80px;
-            position: relative;
-        }
-        .social-left {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-        }
-        .social-center {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        .social-right {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-        }
-        .social-icon {
-            width: 50px;
-            height: 50px;
-            border: 2px solid #000;
+        .info-icon {
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
+            background: #1a1a1a;
+            color: #fff;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #000;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+        .info-item:hover .info-icon { background: #000; }
+
+        /* Social row with side lines */
+        .contact-socials {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 55px;
+        }
+        .social-line { flex: 1; height: 1px; background: #1a1a1a; opacity: 0.6; }
+        .social-icons { display: flex; gap: 22px; }
+        .social-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #1a1a1a;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-decoration: none;
-            font-size: 20px;
+            font-size: 18px;
             transition: all 0.3s;
         }
-        .social-icon:hover {
-            background: #000;
-            color: #fff;
-        }
-        
+        .social-icon:hover { background: #444; transform: translateY(-2px); }
+
         /* Send Request button */
+        .send-btn-wrap { display: flex; justify-content: center; }
         .send-btn {
-            width: 100%;
-            padding: 20px 80px;
-            border: 2px solid #000;
-            background: transparent;
-            color: #000;
-            font-size: 14px;
+            padding: 18px 70px;
+            border: 1.5px solid #1a1a1a;
+            background: #1a1a1a;
+            color: #fff;
+            font-size: 13px;
             font-weight: 500;
             letter-spacing: 3px;
             text-transform: uppercase;
             cursor: pointer;
             transition: all 0.3s;
-            border-radius: 30px;
-            margin-top: auto;
+            border-radius: 40px;
         }
-        .send-btn:hover {
-            background: #000;
+        .send-btn:hover { background: transparent; color: #1a1a1a; }
+
+        /* Bottom bar */
+        .contact-bottom-bar {
+            background: #1a1a1a;
             color: #fff;
+            padding: 18px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
         }
-        
+        .contact-bottom-bar p { margin: 0; }
+        .contact-bottom-bar .legal { display: flex; gap: 30px; }
+        .contact-bottom-bar a { color: #fff; text-decoration: none; }
+        .contact-bottom-bar a:hover { opacity: 0.7; }
+
         @media (max-width: 900px) {
             .contact-wrapper { flex-direction: column; }
-            .contact-visual { flex: none; min-height: 300px; padding: 60px 30px; }
+            .contact-visual { flex: none; min-height: 280px; padding: 50px 30px; }
             .contact-content { padding: 50px 30px; }
             .contact-title { font-size: 32px; }
-            .visual-text { font-size: 50px; }
-            .contact-buttons { flex-direction: column; }
+            .visual-text { font-size: 28px; }
+            .contact-info { flex-direction: column; align-items: flex-start; gap: 18px; }
+            .contact-bottom-bar { flex-direction: column; gap: 8px; text-align: center; }
         }
     </style>
 </head>
@@ -195,82 +186,50 @@
         </nav>
     </div>
 
-    <div class="contact-page-container">
     <div class="contact-wrapper">
         <div class="contact-visual">
-            <span class="visual-text">Contact Us</span>
+            <span class="visual-text">Let's create<br>something<br>beautiful</span>
         </div>
-        
+
         <div class="contact-content">
-            <p class="contact-label">Get in Touch</p>
-            <h1 class="contact-title">Let's Create<br>Something Beautiful</h1>
-            
-            <div class="contact-buttons">
-                <a href="tel:+37433600445" class="contact-btn">
-                    <span class="contact-btn-label">Call Us</span>
-                    <span class="contact-btn-value">+374 33 600 445</span>
+            <h1 class="contact-title">Let's talk about your project.</h1>
+            <p class="contact-subtitle">Start your journey with us. Let's begin a conversation about your vision and how we can bring it to life.</p>
+
+            <div class="contact-info">
+                <a href="tel:+37433600445" class="info-item">
+                    <span class="info-icon"><i class="fa fa-phone"></i></span>
+                    <span>+374 33 600 445</span>
                 </a>
-                <a href="mailto:arc.diz@hotmail.com" class="contact-btn">
-                    <span class="contact-btn-label">Email Us</span>
-                    <span class="contact-btn-value">arc.diz@hotmail.com</span>
+                <a href="mailto:arc.diz@hotmail.com" class="info-item">
+                    <span class="info-icon"><i class="fa fa-envelope"></i></span>
+                    <span>arc.diz@hotmail.com</span>
                 </a>
             </div>
-            
+
             <div class="contact-socials">
-                <div class="social-left">
+                <div class="social-line"></div>
+                <div class="social-icons">
                     <a href="https://www.facebook.com" target="_blank" class="social-icon"><i class="fa fa-facebook"></i></a>
-                </div>
-                <a href="https://www.instagram.com" target="_blank" class="social-icon social-center"><i class="fa fa-instagram"></i></a>
-                <div class="social-right">
+                    <a href="https://www.instagram.com" target="_blank" class="social-icon"><i class="fa fa-instagram"></i></a>
+                    <a href="https://wa.me/37433600445" target="_blank" class="social-icon"><i class="fa fa-whatsapp"></i></a>
                     <a href="https://www.linkedin.com" target="_blank" class="social-icon"><i class="fa fa-linkedin"></i></a>
                 </div>
+                <div class="social-line"></div>
             </div>
 
-            <button class="send-btn" onclick="openModal()">Send Request</button>
+            <div class="send-btn-wrap">
+                <button class="send-btn" onclick="openModal()">Send Request</button>
+            </div>
         </div>
     </div>
-    </div>
 
-    <footer class="expanded-footer">
-            <div class="footer-main">
-                <div class="footer-column footer-about-info">
-                    <h3>About Us</h3>
-                    <p><i class="fa fa-map-marker"></i> Armenia, Yerevan, 3/1 Pavstos Buzand St.</p>
-                    <p><i class="fa fa-envelope"></i> <a href="mailto:info@arcdiz.com">info@arcdiz.com</a></p>
-                    <p><i class="fa fa-phone"></i> <a href="tel:+37433600445">(+374) 33 600445</a></p>
-                    <div class="footer-social">
-                        <a href="https://facebook.com" target="_blank"><i class="fa fa-facebook"></i></a>
-                        <a href="https://instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
-                        <a href="https://linkedin.com" target="_blank"><i class="fa fa-linkedin"></i></a>
-                        <a href="https://behance.net" target="_blank"><i class="fa fa-behance"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-column footer-links">
-                    <h3>Our pages</h3>
-                    <ul>
-                        <li><a href="interior.html">Portfolio</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column footer-cta">
-                    <h3>Get in Touch</h3>
-                    <p class="footer-cta-text">Ready to bring your design vision to life? Contact ArcDiz today to schedule a consultation. Let us help you create a space that reflects your unique style and personality.</p>
-                    <a href="contact.html" class="footer-cta-btn">SEND REQUEST</a>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 ArcDiz LLC, all rights reserved.</p>
-                <div class="footer-legal">
-                    <a href="#">Policies</a>
-                    <a href="#">Terms & Conditions</a>
-                </div>
-            </div>
-        </footer>
+    <div class="contact-bottom-bar">
+        <p>&copy; 2026 ArcDiz, LLC, all rights reserved.</p>
+        <div class="legal">
+            <a href="#">Policies</a>
+            <a href="#">Terms & Conditions</a>
+        </div>
+    </div>
 
     <div id="contactPopup" onclick="if(event.target===this)closeModal()" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:999999;overflow-y:auto;">
         <div style="position:relative;background:#fff;max-width:550px;width:92%;margin:40px auto;padding:45px;border:1px solid #000;">
