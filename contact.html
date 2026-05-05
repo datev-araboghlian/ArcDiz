@@ -12,7 +12,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Montserrat', sans-serif; background: #1a1a1a; color: #fff; min-height: 100vh; overflow-y: auto !important; }
 
-        .contact-wrapper { display: flex; min-height: calc(100vh - 50px); }
+        .contact-wrapper { display: flex; min-height: 100vh; }
         .nav-elements .logo { filter: brightness(0) invert(1); }
         .nav-elements .menu-button .bar { background-color: #000 !important; }
         .nav-elements .menu-toggle:checked ~ .menu-button .bar { background-color: #fff !important; }
@@ -28,13 +28,15 @@
             padding: 80px 60px;
         }
         .visual-text {
-            font-size: 68px;
-            font-weight: 600;
-            line-height: 1.2;
+            font-size: 72px;
+            font-weight: 400;
+            line-height: 1.35;
             color: rgba(255, 255, 255, 0.7);
             font-family: 'Montserrat', sans-serif;
-            letter-spacing: 0.5px;
-            text-align: center;
+            letter-spacing: 0.3px;
+            text-align: left;
+            max-width: 100%;
+            margin-top: -18vh;
         }
 
         /* Right side - Content with paper texture */
@@ -42,27 +44,35 @@
             flex: 1;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: stretch;
-            padding: 90px 90px;
             background: url('assets/bg-contact2.png') center/cover no-repeat, #ece4d6;
             color: #1a1a1a;
             text-align: left;
         }
+        .contact-main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: stretch;
+            padding: 140px 90px 80px;
+        }
+        .contact-header { display: block; }
         .contact-title {
-            font-size: 48px;
-            font-weight: 600;
-            line-height: 1.2;
-            margin-bottom: 18px;
+            font-size: 72px;
+            font-weight: 400;
+            line-height: 1;
+            margin-bottom: 0;
             color: #1a1a1a;
+            letter-spacing: -0.5px;
         }
         .contact-subtitle {
-            font-size: 17px;
-            font-weight: 500;
-            line-height: 1.6;
-            color: #1a1a1a;
-            margin-bottom: 55px;
-            max-width: 600px;
+            font-size: 22px;
+            font-weight: 400;
+            line-height: 1.3;
+            color: rgba(26, 26, 26, 0.7);
+            margin-top: 18px;
+            margin-bottom: 0;
+            max-width: 720px;
         }
 
         /* Contact info row */
@@ -76,22 +86,22 @@
         .info-item {
             display: flex;
             align-items: center;
-            gap: 18px;
+            gap: 24px;
             color: #1a1a1a;
             text-decoration: none;
-            font-size: 16px;
+            font-size: 22px;
             font-weight: 500;
         }
         .info-icon {
-            width: 48px;
-            height: 48px;
+            width: 72px;
+            height: 72px;
             border-radius: 50%;
             background: #1a1a1a;
             color: #fff;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 18px;
+            font-size: 28px;
             flex-shrink: 0;
         }
         .info-item:hover .info-icon { background: #000; }
@@ -104,10 +114,10 @@
             margin-bottom: 55px;
         }
         .social-line { flex: 1; height: 1px; background: #1a1a1a; opacity: 0.6; }
-        .social-icons { display: flex; gap: 22px; }
+        .social-icons { display: flex; gap: 30px; }
         .social-icon {
-            width: 44px;
-            height: 44px;
+            width: 68px;
+            height: 68px;
             border-radius: 50%;
             background: #1a1a1a;
             color: #fff;
@@ -115,7 +125,7 @@
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 28px;
             transition: all 0.3s;
         }
         .social-icon:hover { background: #444; transform: translateY(-2px); }
@@ -137,7 +147,7 @@
         }
         .send-btn:hover { background: transparent; color: #1a1a1a; }
 
-        /* Bottom bar */
+        /* Bottom bar (spans only the right content column, leaves the photo column untouched) */
         .contact-bottom-bar {
             background: #1a1a1a;
             color: #fff;
@@ -192,42 +202,45 @@
         </div>
 
         <div class="contact-content">
-            <h1 class="contact-title">Let's talk about your project.</h1>
-            <p class="contact-subtitle">Start your journey with us. Let's begin a conversation about your vision and how we can bring it to life.</p>
-
-            <div class="contact-info">
-                <a href="tel:+37433600445" class="info-item">
-                    <span class="info-icon"><i class="fa fa-phone"></i></span>
-                    <span>+374 33 600 445</span>
-                </a>
-                <a href="mailto:arc.diz@hotmail.com" class="info-item">
-                    <span class="info-icon"><i class="fa fa-envelope"></i></span>
-                    <span>arc.diz@hotmail.com</span>
-                </a>
-            </div>
-
-            <div class="contact-socials">
-                <div class="social-line"></div>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com" target="_blank" class="social-icon"><i class="fa fa-facebook"></i></a>
-                    <a href="https://www.instagram.com" target="_blank" class="social-icon"><i class="fa fa-instagram"></i></a>
-                    <a href="https://wa.me/37433600445" target="_blank" class="social-icon"><i class="fa fa-whatsapp"></i></a>
-                    <a href="https://www.linkedin.com" target="_blank" class="social-icon"><i class="fa fa-linkedin"></i></a>
+            <div class="contact-main">
+                <div class="contact-header">
+                    <h1 class="contact-title">Let's talk about your project.</h1>
+                    <p class="contact-subtitle">Start your journey with us. Let's begin a conversation about your vision and how we can bring it to life.</p>
                 </div>
-                <div class="social-line"></div>
+
+                <div class="contact-info">
+                    <a href="tel:+37433600445" class="info-item">
+                        <span class="info-icon"><i class="fa fa-phone"></i></span>
+                        <span>+374 33 600 445</span>
+                    </a>
+                    <a href="mailto:arc.diz@hotmail.com" class="info-item">
+                        <span class="info-icon"><i class="fa fa-envelope"></i></span>
+                        <span>arc.diz@hotmail.com</span>
+                    </a>
+                </div>
+
+                <div class="contact-socials">
+                    <div class="social-line"></div>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com" target="_blank" class="social-icon"><i class="fa fa-instagram"></i></a>
+                        <a href="https://wa.me/37433600445" target="_blank" class="social-icon"><i class="fa fa-whatsapp"></i></a>
+                        <a href="https://www.linkedin.com" target="_blank" class="social-icon"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                    <div class="social-line"></div>
+                </div>
+
+                <div class="send-btn-wrap">
+                    <button class="send-btn" onclick="openModal()">Send Request</button>
+                </div>
             </div>
 
-            <div class="send-btn-wrap">
-                <button class="send-btn" onclick="openModal()">Send Request</button>
+            <div class="contact-bottom-bar">
+                <p>&copy; 2026 ArcDiz, LLC, all rights reserved.</p>
+                <div class="legal">
+                    <a href="#">Policies</a>
+                    <a href="#">Terms & Conditions</a>
+                </div>
             </div>
-        </div>
-    </div>
-
-    <div class="contact-bottom-bar">
-        <p>&copy; 2026 ArcDiz, LLC, all rights reserved.</p>
-        <div class="legal">
-            <a href="#">Policies</a>
-            <a href="#">Terms & Conditions</a>
         </div>
     </div>
 

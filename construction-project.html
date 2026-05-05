@@ -10,21 +10,21 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Montserrat', sans-serif; background: #f7f5f0; color: #1a1a1a; }
+        body { font-family: 'Montserrat', sans-serif; background: #f7f9f9; color: #1a1a1a; }
 
         /* Force black logo + menu bars on this page */
         .nav-elements .logo { filter: none !important; }
         .nav-elements .menu-button .bar { background-color: #000 !important; }
         .nav-elements .menu-toggle:checked ~ .menu-button .bar { background-color: #fff !important; }
 
-        .cp-container { max-width: 1100px; margin: 0 auto; padding: 0 60px 60px; }
+        .cp-container { max-width: 1280px; margin: 0 auto; padding: 0 60px 60px; }
 
         /* Title area with overlapping banner stripe */
         .cp-title-area {
             position: relative;
-            margin-top: 110px;
+            margin-top: 130px;
             margin-bottom: 40px;
-            padding-bottom: 22px;
+            padding-bottom: 4px;
         }
         .cp-banner-bg {
             position: absolute;
@@ -32,27 +32,30 @@
             right: 0;
             top: 30px;
             bottom: 0;
-            background: #c8c5bc;
+            background: #d3d3d2;
             z-index: 0;
         }
         .cp-title-content {
             position: relative;
             z-index: 1;
-            max-width: 1100px;
+            max-width: 1280px;
             margin: 0 auto;
             padding: 0 60px;
         }
-        .cp-breadcrumb {
-            font-size: 14px;
-            color: #555;
+        .cp-breadcrumb-nav {
             margin-bottom: 14px;
-            letter-spacing: 0.3px;
+        }
+        .cp-breadcrumb-nav,
+        .cp-breadcrumb-nav a,
+        .cp-breadcrumb-nav .breadcrumb-separator,
+        .cp-breadcrumb-nav .breadcrumb-current {
+            font-size: 14px;
         }
         .cp-title-content h1 {
-            font-size: 42px;
+            font-size: 56px;
             font-weight: 700;
-            letter-spacing: 1px;
-            line-height: 1.05;
+            letter-spacing: 1.5px;
+            line-height: 1;
             margin: 22px 0 6px;
         }
         .cp-title-content .cp-subtitle {
@@ -84,34 +87,34 @@
             margin-bottom: 30px;
         }
         .cp-overview-text { flex: 1; max-width: 60%; }
-        .cp-overview-cost { text-align: right; min-width: 180px; }
+        .cp-overview-cost { text-align: right; min-width: 200px; }
         .cp-overview-cost .cost-label {
-            font-size: 22px;
+            font-size: 28px;
             font-weight: 600;
             margin-bottom: 10px;
         }
         .cp-overview-cost .cost-value {
-            font-size: 22px;
+            font-size: 24px;
             font-weight: 500;
         }
-        .cp-overview-cost .cost-value sup { font-size: 13px; }
+        .cp-overview-cost .cost-value sup { font-size: 14px; }
 
         /* Get Started button */
         .cp-cta {
             text-align: center;
             margin: 30px 0 40px;
             padding-bottom: 40px;
-            border-bottom: 1px solid #1a1a1a;
+            border-bottom: 1px solid #ccc;
         }
         .cp-cta button {
             background: #1a1a1a;
             color: #fff;
             border: none;
-            padding: 14px 60px;
-            font-size: 15px;
-            letter-spacing: 1px;
+            padding: 11px 40px;
+            font-size: 13px;
+            letter-spacing: 0.8px;
             cursor: pointer;
-            border-radius: 30px;
+            border-radius: 24px;
             font-family: inherit;
             transition: all 0.3s;
         }
@@ -162,24 +165,18 @@
         }
         .cp-img-grid-2 .cp-img-card,
         .cp-img-grid-3 .cp-img-card { 
-            border: 1px solid #ccc;
-            background: #fff;
-            padding: 10px;
+            border: none;
+            background: transparent;
+            padding: 0;
         }
         .cp-img-card img {
             width: 100%;
-            height: 340px;
+            height: auto;
             object-fit: contain;
-            background: #fff;
+            background: transparent;
             display: block;
         }
-        .cp-img-card .caption {
-            font-size: 11px;
-            color: #888;
-            text-align: center;
-            margin-top: 8px;
-            letter-spacing: 0.5px;
-        }
+        .cp-img-card .caption { display: none; }
 
         .cp-img-grid-3 {
             display: grid;
@@ -195,7 +192,7 @@
             align-items: center;
             margin-bottom: 40px;
         }
-        .cp-drawings-bottom .cp-img-card img { height: 340px; }
+        .cp-drawings-bottom .cp-img-card img { height: auto; }
         .cp-drawings-bottom-text {
             font-size: 15px;
             line-height: 1.7;
@@ -219,13 +216,8 @@
 
         /* Final sections */
         .cp-final-section {
-            margin-bottom: 30px;
-            padding-bottom: 25px;
-            border-bottom: 1px solid #1a1a1a;
-        }
-        .cp-final-section:last-of-type {
-            border-bottom: none;
-            padding-bottom: 0;
+            padding: 28px 0;
+            border-top: 1px solid #ccc;
         }
         .cp-final-section h3 {
             font-size: 18px;
@@ -275,7 +267,13 @@
     <div class="cp-title-area">
         <div class="cp-banner-bg"></div>
         <div class="cp-title-content">
-            <p class="cp-breadcrumb">Pricing, Construction Project</p>
+            <nav class="breadcrumb cp-breadcrumb-nav">
+                <a href="index.html">Home</a>
+                <span class="breadcrumb-separator">›</span>
+                <a href="pricing.html">Pricing</a>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-current">Construction Project</span>
+            </nav>
             <h1>CONSTRUCTION PROJECT</h1>
             <p class="cp-subtitle">(Basic Package — for clients who want to build fast with essential guidance)</p>
         </div>
@@ -316,11 +314,9 @@
             <div class="cp-img-grid-2">
                 <div class="cp-img-card">
                     <img src="assets/construction/existing-plan.jpg" alt="Existing floor plan">
-                    <div class="caption">EXISTING FLOOR PLAN</div>
                 </div>
                 <div class="cp-img-card">
                     <img src="assets/construction/proposed-plan.jpg" alt="Proposed floor plan">
-                    <div class="caption">PROPOSED FLOOR PLAN</div>
                 </div>
             </div>
         </div>
@@ -334,18 +330,15 @@
             <div class="cp-img-grid-3">
                 <div class="cp-img-card">
                     <img src="assets/construction/demolishing-plan.jpg" alt="Demolishing Plan">
-                    <div class="caption">DEMOLISHING PLAN</div>
                 </div>
                 <div class="cp-img-card">
                     <img src="assets/construction/new-wall-layout.jpg" alt="New Wall Layout">
-                    <div class="caption">NEW WALL LAYOUT</div>
                 </div>
             </div>
 
             <div class="cp-drawings-bottom">
                 <div class="cp-img-card">
                     <img src="assets/construction/furniture-plan.jpg" alt="Furniture Plan">
-                    <div class="caption">FURNITURE PLAN</div>
                 </div>
                 <div class="cp-drawings-bottom-text">
                     <p>The composition of the documentation includes a basic set of drawings, it will be enough to control the process of some work at a construction site.</p>
@@ -364,7 +357,9 @@
         <!-- Who This is For -->
         <div class="cp-final-section">
             <h3>Who This is For</h3>
-            <p>Clients who want a quick and cost-effective start. Those who already have a contractor or design direction. Clients located in another zone/area/city.</p>
+            <p>Clients who want a quick and cost-effective start<br>
+            Those who already have a contractor or design direction<br>
+            Clients focused on function over aesthetics</p>
         </div>
 
         <!-- Result -->
@@ -404,12 +399,28 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 ArcDiz LLC, all rights reserved.</p>
+            <p>&copy; 2026 ArcDiz LLC, all rights reserved.</p>
             <div class="footer-legal">
                 <a href="#">Policies</a>
                 <a href="#">Terms & Conditions</a>
             </div>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fa fa-chevron-up"></i>
+    </button>
+
+    <script>
+        const backToTopBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) backToTopBtn.classList.add('visible');
+            else backToTopBtn.classList.remove('visible');
+        });
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>

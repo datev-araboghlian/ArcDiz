@@ -139,6 +139,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
+    // Honor URL hash to set initial tab (e.g. interior.html#architecture)
+    const hashCategory = window.location.hash.replace('#', '');
+    if (hashCategory) {
+        const targetTab = document.querySelector(`.category-tab[data-category="${hashCategory}"]`);
+        const targetPanel = document.querySelector(`.${hashCategory}-panel`);
+        if (targetTab && targetPanel && !targetTab.classList.contains('active')) {
+            categoryTabs.forEach(t => t.classList.remove('active'));
+            contentPanels.forEach(p => {
+                p.classList.remove('active');
+                p.style.display = 'none';
+            });
+            targetTab.classList.add('active');
+            targetPanel.classList.add('active');
+            targetPanel.style.display = '';
+        }
+    }
+
     // Set initial underline position
     const activeTab = document.querySelector('.category-tab.active');
     if (activeTab) {
