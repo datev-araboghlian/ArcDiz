@@ -275,9 +275,23 @@
         .pricing-content-slider { position: relative; overflow: hidden; }
         .pricing-panel { display: none; }
         .pricing-panel.active { display: block; }
-                
+
+        /* Architecture single-card layout */
+        .cards.cards-single { justify-content: flex-start; }
+        .cards.cards-single .card { flex: 0 0 calc((100% - 30px) / 3); min-height: 560px; display: flex; flex-direction: column; }
+        .cards.cards-single .card-body { display: flex; flex-direction: column; height: 100%; }
+        .cards.cards-single .card-list { flex: 1; }
+        .arch-price-text { font-size: 24px; font-weight: 700; margin: 4px 0 18px; color: #000; }
+        .card-list li.list-spacer { border: none; padding: 10px 0; }
+        .card-list li .check.check-highlight { color: #1f9d3a; }
+        /* CTA positioned under the single architecture card with white text */
+        .cta.cta-arch { width: calc((100% - 30px) / 3); margin-left: 0; text-align: center; }
+        .cta.cta-arch p { color: #fff; }
+
         @media (max-width: 768px) {
             .design-text, .cards, .faq-grid, .foot-grid { flex-direction: column; }
+            .cards.cards-single .card { flex: 1 1 auto; }
+            .cta.cta-arch { width: 100%; }
             .foot-bottom { flex-direction: column; gap: 8px; text-align: center; }
         }
     </style>
@@ -486,91 +500,29 @@
                     </div>
                 </section>
 
-                <div class="cards">
+                <div class="cards cards-single">
                     <div class="card">
                         <div class="card-body">
-                            <div class="card-label">Concept Design</div>
-                            <div class="card-price">5000<span>֏/m²</span></div>
+                            <div class="card-label">Architectural Project</div>
+                            <div class="arch-price-text">Custom Pricing</div>
                             <ul class="card-list">
-                                <li><span class="check">✓</span> Site Analysis</li>
-                                <li><span class="check">✓</span> Initial Consultation</li>
-                                <li><span class="check">✓</span> Concept Sketches</li>
-                                <li class="unavailable"><span class="cross">✗</span> 3D Visualization</li>
-                                <li class="unavailable"><span class="cross">✗</span> Technical Drawings</li>
-                                <li class="unavailable"><span class="cross">✗</span> Construction Documents</li>
-                                <li class="unavailable"><span class="cross">✗</span> Permit Assistance</li>
-                                <li class="unavailable"><span class="cross">✗</span> Site Supervision</li>
+                                <li><span class="check">✓</span> Site &amp; Context Analysis</li>
+                                <li><span class="check">✓</span> Client Consultation</li>
+                                <li><span class="check">✓</span> Concept Development</li>
+                                <li><span class="check">✓</span> Schematic Design</li>
+                                <li><span class="check">✓</span> 3D Architectural Visualization</li>
+                                <li><span class="check">✓</span> Detailed Drawings</li>
+                                <li class="list-spacer"></li>
+                                <li><span class="check">✓</span> Construction Documentation</li>
+                                <li><span class="check">✓</span> Permit Coordination</li>
+                                <li><span class="check check-highlight">✓</span> Construction Supervision</li>
                             </ul>
-                            <div class="calc">
-                                <div class="calc-title">Please indicate the area</div>
-                                <input type="number" class="calc-input" id="area4" value="30" min="30" max="600" onchange="updateCalc(4, 5000)">
-                                <input type="range" class="calc-slider" id="slider4" min="30" max="600" value="30" oninput="syncInput(4, 5000)">
-                                <div class="calc-range"><span>30</span><span>600*</span></div>
-                                <div class="calc-sum">
-                                    <div class="calc-sum-label">Sum</div>
-                                    <div class="calc-sum-value" id="sum4">150,000֏</div>
-                                </div>
-                            </div>
-                            <button class="card-btn" onclick="openModal()">LEARN MORE</button>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="card-label">Full Architecture Package</div>
-                            <div class="card-price">12,000<span>֏/m²</span></div>
-                            <ul class="card-list">
-                                <li><span class="check">✓</span> Site Analysis</li>
-                                <li><span class="check">✓</span> Initial Consultation</li>
-                                <li><span class="check">✓</span> Concept Sketches</li>
-                                <li><span class="check">✓</span> 3D Visualization</li>
-                                <li><span class="check">✓</span> Technical Drawings</li>
-                                <li><span class="check">✓</span> Construction Documents</li>
-                                <li class="unavailable"><span class="cross">✗</span> Permit Assistance</li>
-                                <li class="unavailable"><span class="cross">✗</span> Site Supervision</li>
-                            </ul>
-                            <div class="calc">
-                                <div class="calc-title">Please indicate the area</div>
-                                <input type="number" class="calc-input" id="area5" value="30" min="30" max="600" onchange="updateCalc(5, 12000)">
-                                <input type="range" class="calc-slider" id="slider5" min="30" max="600" value="30" oninput="syncInput(5, 12000)">
-                                <div class="calc-range"><span>30</span><span>600*</span></div>
-                                <div class="calc-sum">
-                                    <div class="calc-sum-label">Sum</div>
-                                    <div class="calc-sum-value" id="sum5">360,000֏</div>
-                                </div>
-                            </div>
-                            <button class="card-btn" onclick="openModal()">LEARN MORE</button>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="card-label">Premium Architecture</div>
-                            <div class="card-price">18,000<span>֏/m²</span></div>
-                            <ul class="card-list">
-                                <li><span class="check">✓</span> Site Analysis</li>
-                                <li><span class="check">✓</span> Initial Consultation</li>
-                                <li><span class="check">✓</span> Concept Sketches</li>
-                                <li><span class="check">✓</span> 3D Visualization</li>
-                                <li><span class="check">✓</span> Technical Drawings</li>
-                                <li><span class="check">✓</span> Construction Documents</li>
-                                <li><span class="check">✓</span> Permit Assistance</li>
-                                <li><span class="check">✓</span> Site Supervision</li>
-                            </ul>
-                            <div class="calc">
-                                <div class="calc-title">Please indicate the area</div>
-                                <input type="number" class="calc-input" id="area6" value="30" min="30" max="600" onchange="updateCalc(6, 18000)">
-                                <input type="range" class="calc-slider" id="slider6" min="30" max="600" value="30" oninput="syncInput(6, 18000)">
-                                <div class="calc-range"><span>30</span><span>600*</span></div>
-                                <div class="calc-sum">
-                                    <div class="calc-sum-label">Sum</div>
-                                    <div class="calc-sum-value" id="sum6">540,000֏</div>
-                                </div>
-                            </div>
-                            <button class="card-btn" onclick="openModal()">LEARN MORE</button>
+                            <button class="card-btn" onclick="window.location.href='coming-soon.html'">LEARN MORE</button>
                         </div>
                     </div>
                 </div>
 
-                <div class="cta">
+                <div class="cta cta-arch">
                     <button class="cta-btn" onclick="openModal()">GET CONSULTATION</button>
                     <p>* A DISCOUNT APPLIES FOR AREAS OF 200 m² AND MORE</p>
                     <p>*PRICES MAY VARY DEPENDING THE SCOPE OF THE PROJECT</p>
@@ -578,77 +530,17 @@
             </div>
         </div>
 
-        <section class="faq">
-            <h2>FAQ</h2>
-            <div class="faq-grid">
-                <div class="faq-col">
-                    <div class="faq-item" onclick="this.classList.toggle('open')">
-                        <div class="faq-q">Why is supervision necessary?</div>
-                        <div class="faq-a">Project implementation control is necessary so that you get the most accurate and successful result. Only architectural supervision will ensure 100% implementation of the project into reality.</div>
-                    </div>
-                    <div class="faq-item" onclick="this.classList.toggle('open')">
-                        <div class="faq-q">Do you take into account the financial capabilities of the customer?</div>
-                        <div class="faq-a">Of course, this is the main condition for successful cooperation. We always ask you to clearly indicate the amount beyond which the customer is not ready to go.</div>
-                    </div>
-                    <div class="faq-item" onclick="this.classList.toggle('open')">
-                        <div class="faq-q">Is it possible to start repairs in parallel with the development of a design project?</div>
-                        <div class="faq-a">Yes, but we recommend completing the design project first to avoid costly changes during construction.</div>
-                    </div>
-                    <div class="faq-item" onclick="this.classList.toggle('open')">
-                        <div class="faq-q">What styles do you work in?</div>
-                        <div class="faq-a">We work in all styles - from classic to modern minimalism. Our team adapts to your preferences and lifestyle.</div>
-                    </div>
-                    <div class="faq-item" onclick="this.classList.toggle('open')">
-                        <div class="faq-q">Can you create a complete project in 1 month?</div>
-                        <div class="faq-a">The timeline depends on the project scope. Small projects can be completed in 3-4 weeks, larger ones require 2-3 months.</div>
-                    </div>
-                    <div class="faq-item" onclick="this.classList.toggle('open')">
-                        <div class="faq-q">Do you provide services remotely? And if so, how is architectural supervision ensured in this case?</div>
-                        <div class="faq-a">Yes, services can be provided remotely. We use video calls, detailed documentation, and trusted local partners for supervision.</div>
-                    </div>
-                </div>
-                <div class="faq-col">
-                    <div class="faq-item" onclick="this.classList.toggle('open')">
-                        <div class="faq-q">Why do you need a set of objects?</div>
-                        <div class="faq-a">A set of objects allows us to create a cohesive design throughout your space, ensuring visual harmony.</div>
-                    </div>
-                    <div class="faq-item" onclick="this.classList.toggle('open')">
-                        <div class="faq-q">Do you have proven construction crews you can trust? And do you work with the customer's team?</div>
-                        <div class="faq-a">Both options are possible. We have our own experienced team, but also work with the customer's team when preferred.</div>
-                    </div>
-                    <div class="faq-item" onclick="this.classList.toggle('open')">
-                        <div class="faq-q">If you have not received the keys to the apartment yet, can you start working on the project?</div>
-                        <div class="faq-a">Yes, we can start with floor plans and preliminary designs while you wait for access to the property.</div>
-                    </div>
-                    <div class="faq-item" onclick="this.classList.toggle('open')">
-                        <div class="faq-q">How many floor plans do you make?</div>
-                        <div class="faq-a">We typically provide 2-3 layout options for you to choose from, which we then refine based on your feedback.</div>
-                    </div>
-                    <div class="faq-item" onclick="this.classList.toggle('open')">
-                        <div class="faq-q">Are engineering projects included in the working documentation?</div>
-                        <div class="faq-a">The documentation does not include specialized engineering projects, but they can be performed by our contractors upon request.</div>
-                    </div>
-                    <div class="faq-item" onclick="this.classList.toggle('open')">
-                        <div class="faq-q">Only one room design is needed, do you provide such a service?</div>
-                        <div class="faq-a">Absolutely! We offer single-room design services with the same attention to detail as full-home projects.</div>
-                    </div>
-                </div>
-            </div>
-        </section>
     </div>
 
     <footer class="expanded-footer">
             <div class="footer-main">
                 <div class="footer-column footer-about-info">
                     <h3>About Us</h3>
-                    <p><i class="fa fa-map-marker"></i> Armenia, Yerevan, 3/1 Pavstos Buzand St.</p>
                     <p><i class="fa fa-envelope"></i> <a href="mailto:info@arcdiz.com">info@arcdiz.com</a></p>
                     <p><i class="fa fa-phone"></i> <a href="tel:+37433600445">(+374) 33 600445</a></p>
                     <div class="footer-social">
-                        <a href="https://facebook.com" target="_blank"><i class="fa fa-facebook"></i></a>
-                        <a href="https://instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
-                        <a href="https://linkedin.com" target="_blank"><i class="fa fa-linkedin"></i></a>
-                        <a href="https://behance.net" target="_blank"><i class="fa fa-behance"></i></a>
+                        <a href="https://www.instagram.com/arcdiz_studio?igsh=Nmp0MnFhM2RhNXBu" target="_blank"><i class="fa fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/sako-mardirossian-4b5b25404?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank"><i class="fa fa-linkedin"></i></a>
                     </div>
                 </div>
                 
