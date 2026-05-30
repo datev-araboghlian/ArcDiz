@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyser Residential Complex - ArcDiz</title>
+    <link rel="icon" type="image/png" href="../assets/ArcDiz_tab_logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .l3-project .project-header { grid-template-columns: 1fr 1.4fr; gap: 60px; max-width: 1180px; margin: 0 auto; }
+        .l3-project .project-featured-image img { max-height: 460px; width: 100%; object-fit: cover; }
+        .l3-project .project-title { font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+        .project-description { margin-top: 10px; }
+        .project-description p { font-size: 0.9rem; line-height: 1.75; color: #444; margin-bottom: 14px; }
+        .project-description p:last-child { margin-bottom: 0; }
+        .arsh-floorplan { margin: 60px 0 30px; text-align: center; }
+        .arsh-floorplan img { max-width: calc(50% - 9px); height: auto; display: inline-block; }
+
+        /* Gallery toggle (3D / Photo) */
+        .gallery-toggle {
+            display: flex;
+            gap: 8px;
+            padding: 18px 0 28px;
+            border-top: 1px solid #e6e6e6;
+            margin: 0 0 22px;
+        }
+        .gallery-toggle button {
+            padding: 10px 28px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #888;
+            border-radius: 4px;
+            transition: background-color 0.2s ease, color 0.2s ease;
+            letter-spacing: 0.3px;
+        }
+        .gallery-toggle button:hover { color: #333; }
+        .gallery-toggle button.active {
+            background: #e8e8e8;
+            color: #222;
+        }
+
+        .arsh-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 60px; }
+        .arsh-grid-item { overflow: hidden; background: #f5f5f5; }
+        .arsh-grid-item img { width: 100%; height: 100%; object-fit: cover; display: block; aspect-ratio: 4 / 3; }
+        /* Center an odd, lone last photo so it doesn't sit on the left */
+        .arsh-grid > .arsh-grid-item:last-child:nth-child(odd) {
+            grid-column: 1 / -1;
+            max-width: calc(50% - 9px);
+            margin: 0 auto;
+        }
+
+        .gallery-panel { display: none; }
+        .gallery-panel.active { display: grid; }
+
+        @media (max-width: 768px) {
+            .arsh-grid { gap: 10px; }
+            .arsh-floorplan img { max-width: 100%; }
+            .gallery-toggle button { padding: 10px 20px; font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper scrollable project-detail-page l3-project">
+        <div class="nav-elements">
+            <a href="../index.html" class="logo-link">
+                <img src="../assets/ArcDiz_logo.png" alt="ArcDiz Logo" class="logo">
+            </a>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </label>
+            <nav class="menu-panel">
+                <label for="menu-toggle" class="menu-close"></label>
+                <ul>
+                    <li><a href="../index.html" class="menu-link">Home</a></li>
+                    <li><a href="../about.html" class="menu-link">About</a></li>
+                    <li><a href="../interior.html" class="menu-link">Portfolio</a></li>
+                    <li><a href="../pricing.html" class="menu-link">Pricing</a></li>
+                    <li><a href="../contact.html" class="menu-link">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <main class="project-main">
+            <div class="project-container">
+                <nav class="breadcrumb">
+                    <a href="../index.html">Home</a>
+                    <span class="breadcrumb-separator">›</span>
+                    <a href="../interior.html">Portfolio</a>
+                    <span class="breadcrumb-separator">›</span>
+                    <span class="breadcrumb-current">Luyser Residential Complex</span>
+                </nav>
+
+                <div class="project-header">
+                    <div class="project-info">
+                        <h1 class="project-title">Luyser Residential Complex</h1>
+                        <div class="project-details">
+                            <div class="detail-row">
+                                <span class="detail-label">2-room apartment</span>
+                                <span class="detail-value">50 m²</span>
+                            </div>
+                        </div>
+                        <span class="detail-location">Yerevan</span>
+                        <div class="project-description">
+                            <p>Minimalism finds its warmest expression in this thoughtfully composed interior, where clean lines and a restrained palette of creamy whites, soft beiges, and natural wood tones create a space that feels both refined and deeply livable. Every element serves a purpose — flat-front cabinetry, flush built-ins, and hidden storage eliminate visual noise while smoked black glass accents add quiet depth and contrast.</p>
+                            <p>Warm LED lighting tucked beneath open shelves casts a gentle glow, softening the precision of the architecture. The fluted round dining table and bouclé-upholstered chairs introduce subtle texture, reminding us that minimalism here is not cold or stark, but intentional and human. This is a space designed to breathe — where less is not a compromise, but a carefully considered luxury.</p>
+                        </div>
+                    </div>
+                    <div class="project-featured-image">
+                        <img src="../assets/projects/luyser-3/1.jpg" alt="Luyser 3 - Featured">
+                    </div>
+                </div>
+
+                <section class="arsh-floorplan">
+                    <img src="../assets/projects/luyser-3/2.jpg" alt="Luyser 3 - Floor Plan">
+                </section>
+
+                <!-- 3D / Photo toggle -->
+                <div class="gallery-toggle" role="tablist">
+                    <button type="button" class="gallery-tab active" data-gallery="renders" role="tab" aria-selected="true">3D</button>
+                    <button type="button" class="gallery-tab" data-gallery="real" role="tab" aria-selected="false">Photo</button>
+                </div>
+
+                <!-- Renders gallery -->
+                <section class="gallery-panel active arsh-grid" id="gallery-renders" role="tabpanel">
+                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-3/3.jpg" alt="Luyser 3 - Render 3"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-3/4.jpg" alt="Luyser 3 - Render 4"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-3/5.jpg" alt="Luyser 3 - Render 5"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-3/6.jpg" alt="Luyser 3 - Render 6"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-3/7.jpg" alt="Luyser 3 - Render 7"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-3/8.jpg" alt="Luyser 3 - Render 8"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-3/9.jpg" alt="Luyser 3 - Render 9"></div>
+                </section>
+
+                <!-- Real photos gallery -->
+                <section class="gallery-panel arsh-grid" id="gallery-real" role="tabpanel">
+                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-3/real-1.jpg" alt="Luyser 3 - Real Photo 1"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-3/real-2.jpg" alt="Luyser 3 - Real Photo 2"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-3/real-3.jpg" alt="Luyser 3 - Real Photo 3"></div>
+                </section>
+            </div>
+        </main>
+
+        <footer class="expanded-footer">
+            <div class="footer-main">
+                <div class="footer-column footer-about-info">
+                    <h3>About Us</h3>
+                    <p><i class="fa fa-envelope"></i> <a href="mailto:info@arcdiz.com">info@arcdiz.com</a></p>
+                    <p><i class="fa fa-phone"></i> <a href="tel:+37433600445">(+374) 33 600445</a></p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/arcdiz_studio?igsh=Nmp0MnFhM2RhNXBu" target="_blank"><i class="fa fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/sako-mardirossian-4b5b25404?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column footer-links">
+                    <h3>Our pages</h3>
+                    <ul>
+                        <li><a href="../interior.html">Portfolio</a></li>
+                        <li><a href="../about.html">About Us</a></li>
+                        <li><a href="../pricing.html">Pricing</a></li>
+                        <li><a href="../contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column footer-cta">
+                    <h3>Get in Touch</h3>
+                    <p class="footer-cta-text">Ready to bring your design vision to life? Contact ArcDiz today to schedule a consultation. Let us help you create a space that reflects your unique style and personality.</p>
+                    <a href="../contact.html" class="footer-cta-btn">SEND REQUEST</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ArcDiz LLC, all rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Policies</a>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fa fa-chevron-up"></i>
+    </button>
+
+    <script src="../menu.js"></script>
+    <script>
+        const backToTopBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) backToTopBtn.classList.add('visible');
+            else backToTopBtn.classList.remove('visible');
+        });
+        backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // Gallery toggle (3D / Photo)
+        const galleryTabs = document.querySelectorAll('.gallery-tab');
+        const galleryPanels = document.querySelectorAll('.gallery-panel');
+        galleryTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const target = tab.dataset.gallery;
+                galleryTabs.forEach(t => {
+                    const isActive = t === tab;
+                    t.classList.toggle('active', isActive);
+                    t.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                });
+                galleryPanels.forEach(p => {
+                    p.classList.toggle('active', p.id === 'gallery-' + target);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

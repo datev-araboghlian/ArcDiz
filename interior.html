@@ -13,6 +13,47 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* Architecture Coming Soon */
+        .coming-soon-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 90px 20px 110px;
+            min-height: 420px;
+        }
+        .coming-soon-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 28px;
+            letter-spacing: 6px;
+            color: #1a1a1a;
+            margin: 0 0 36px;
+            text-transform: uppercase;
+        }
+        .coming-soon-progress {
+            display: flex;
+            gap: 6px;
+            padding: 6px 8px;
+            border: 1px solid #1a1a1a;
+            background: #fff;
+            border-radius: 6px;
+        }
+        .coming-soon-progress .cs-bar {
+            display: block;
+            width: 9px;
+            height: 34px;
+            background: #F2F2F2;
+        }
+        .coming-soon-progress .cs-bar.filled {
+            background: #231F20;
+        }
+        @media (max-width: 600px) {
+            .coming-soon-text { font-size: 22px; letter-spacing: 4px; }
+            .coming-soon-progress .cs-bar { width: 7px; height: 28px; }
+        }
+    </style>
 </head>
 <body>
     <div class="page-wrapper scrollable design-page">
@@ -100,193 +141,137 @@
                 
                 <!-- Projects Grid -->
                 <div class="portfolio-grid" id="portfolioGrid">
-                    <!-- Project 1: Artisan -->
-                    <a href="projects/artisan.html" class="portfolio-item" 
-                       data-type="residential" 
-                       data-style="modern" 
-                       data-rooms="2" 
+                    <!-- Project: Arshakunyats 192 -->
+                    <a href="projects/arshakunyats-192.html" class="portfolio-item"
+                       data-type="residential"
+                       data-style="modern"
+                       data-rooms="4+"
                        data-property="apartment"
-                       data-real-photos="true">
+                       data-real-photos="false">
                         <div class="portfolio-image">
-                            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&h=400&fit=crop" alt="Artisan Project">
-                            <span class="real-photos-badge"><i class="fa fa-camera"></i> with real photos</span>
+                            <img src="assets/projects/arshakunyats-192/1.jpg" alt="Arshakunyats 192">
                         </div>
                         <div class="portfolio-overlay">
-                            <h3 class="project-name">Artisan</h3>
+                            <h3 class="project-name">Arshakunyats 192</h3>
                             <div class="project-meta">
-                                <span class="project-type">2-room apartment</span>
-                                <span class="project-size">86 m²</span>
-                            </div>
-                            <span class="project-location">Moscow</span>
-                        </div>
-                    </a>
-                    
-                    <!-- Project 2 -->
-                    <a href="projects/modern-loft.html" class="portfolio-item" 
-                       data-type="residential" 
-                       data-style="modern" 
-                       data-rooms="3" 
-                       data-property="apartment"
-                       data-real-photos="true">
-                        <div class="portfolio-image">
-                            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=400&fit=crop" alt="Modern Loft">
-                            <span class="real-photos-badge"><i class="fa fa-camera"></i> with real photos</span>
-                        </div>
-                        <div class="portfolio-overlay">
-                            <h3 class="project-name">Modern Loft</h3>
-                            <div class="project-meta">
-                                <span class="project-type">3-room apartment</span>
+                                <span class="project-type">4-room apartment</span>
                                 <span class="project-size">120 m²</span>
                             </div>
                             <span class="project-location">Yerevan</span>
                         </div>
                     </a>
-                    
-                    <!-- Project 3 -->
-                    <a href="projects/minimalist-studio.html" class="portfolio-item" 
-                       data-type="residential" 
-                       data-style="minimalist" 
-                       data-rooms="2" 
+
+                    <!-- Project: Greybadov Residential Complex -->
+                    <a href="projects/greybadov.html" class="portfolio-item"
+                       data-type="residential"
+                       data-style="modern"
+                       data-rooms="2"
                        data-property="apartment"
                        data-real-photos="false">
                         <div class="portfolio-image">
-                            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&h=400&fit=crop" alt="Minimalist Studio">
+                            <img src="assets/projects/greybadov/1.jpg" alt="Greybadov Residential Complex">
                         </div>
                         <div class="portfolio-overlay">
-                            <h3 class="project-name">Minimalist Studio</h3>
+                            <h3 class="project-name">Greybadov Residential Complex</h3>
                             <div class="project-meta">
                                 <span class="project-type">2-room apartment</span>
-                                <span class="project-size">65 m²</span>
+                                <span class="project-size">79 m²</span>
                             </div>
                             <span class="project-location">Yerevan</span>
                         </div>
                     </a>
-                    
-                    <!-- Project 4 -->
-                    <a href="projects/classic-penthouse.html" class="portfolio-item" 
-                       data-type="residential" 
-                       data-style="modern-classics" 
-                       data-rooms="4+" 
-                       data-property="penthouse"
+
+                    <!-- Project: Luyser Residential Complex 1 -->
+                    <a href="projects/luyser-1.html" class="portfolio-item"
+                       data-type="residential"
+                       data-style="modern"
+                       data-rooms="3"
+                       data-property="apartment"
                        data-real-photos="false">
                         <div class="portfolio-image">
-                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop" alt="Classic Penthouse">
+                            <img src="assets/projects/luyser-1/living-room-4.jpg" alt="Luyser Residential Complex 1">
                         </div>
                         <div class="portfolio-overlay">
-                            <h3 class="project-name">Classic Penthouse</h3>
+                            <h3 class="project-name">Luyser Residential Complex</h3>
                             <div class="project-meta">
-                                <span class="project-type">Penthouse</span>
-                                <span class="project-size">210 m²</span>
+                                <span class="project-type">3-room apartment</span>
+                                <span class="project-size">— m²</span>
                             </div>
-                            <span class="project-location">Dubai</span>
+                            <span class="project-location">Yerevan</span>
                         </div>
                     </a>
-                    
-                    <!-- Project 5 -->
-                    <a href="projects/urban-office.html" class="portfolio-item" 
-                       data-type="commercial" 
-                       data-style="modern" 
-                       data-rooms="any" 
-                       data-property="office"
+
+                    <!-- Project: Luyser Residential Complex 2 (3D + Real photos toggle) -->
+                    <a href="projects/luyser-2.html" class="portfolio-item"
+                       data-type="residential"
+                       data-style="modern"
+                       data-rooms="4+"
+                       data-property="apartment"
                        data-real-photos="true">
                         <div class="portfolio-image">
-                            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop" alt="Urban Office">
+                            <img src="assets/projects/luyser-2/1.jpg" alt="Luyser Residential Complex 2">
                             <span class="real-photos-badge"><i class="fa fa-camera"></i> with real photos</span>
                         </div>
                         <div class="portfolio-overlay">
-                            <h3 class="project-name">Urban Office</h3>
+                            <h3 class="project-name">Luyser Residential Complex</h3>
                             <div class="project-meta">
-                                <span class="project-type">Office space</span>
-                                <span class="project-size">350 m²</span>
+                                <span class="project-type">4-room apartment</span>
+                                <span class="project-size">112 m²</span>
                             </div>
                             <span class="project-location">Yerevan</span>
                         </div>
                     </a>
-                    
-                    <!-- Project 6 -->
-                    <a href="projects/luxury-villa.html" class="portfolio-item" 
-                       data-type="residential" 
-                       data-style="modern-classics" 
-                       data-rooms="4+" 
-                       data-property="house"
-                       data-real-photos="false">
+
+                    <!-- Project: Luyser Residential Complex 3 (3D + Real photos toggle) -->
+                    <a href="projects/luyser-3.html" class="portfolio-item"
+                       data-type="residential"
+                       data-style="modern"
+                       data-rooms="2"
+                       data-property="apartment"
+                       data-real-photos="true">
                         <div class="portfolio-image">
-                            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&h=400&fit=crop" alt="Luxury Villa">
+                            <img src="assets/projects/luyser-3/1.jpg" alt="Luyser Residential Complex 3">
+                            <span class="real-photos-badge"><i class="fa fa-camera"></i> with real photos</span>
                         </div>
                         <div class="portfolio-overlay">
-                            <h3 class="project-name">Luxury Villa</h3>
+                            <h3 class="project-name">Luyser Residential Complex</h3>
                             <div class="project-meta">
-                                <span class="project-type">Private house</span>
-                                <span class="project-size">450 m²</span>
+                                <span class="project-type">2-room apartment</span>
+                                <span class="project-size">50 m²</span>
                             </div>
-                            <span class="project-location">Armenia</span>
+                            <span class="project-location">Yerevan</span>
                         </div>
                     </a>
+
                 </div>
                     </div>
                     
                     <!-- Architecture Content -->
                     <div class="content-panel architecture-panel">
-                        <div class="portfolio-grid">
-                            <!-- Architecture Project 1 -->
-                            <a href="#" class="portfolio-item">
-                                <div class="portfolio-image">
-                                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&h=400&fit=crop" alt="Modern Villa Blueprint">
-                                </div>
-                                <div class="portfolio-overlay">
-                                    <h3 class="project-name">Modern Villa</h3>
-                                    <div class="project-meta">
-                                        <span class="project-type">Residential</span>
-                                        <span class="project-size">320 m²</span>
-                                    </div>
-                                    <span class="project-location">Yerevan</span>
-                                </div>
-                            </a>
-                            
-                            <!-- Architecture Project 2 -->
-                            <a href="#" class="portfolio-item">
-                                <div class="portfolio-image">
-                                    <img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=600&h=400&fit=crop" alt="Office Complex">
-                                </div>
-                                <div class="portfolio-overlay">
-                                    <h3 class="project-name">Office Complex</h3>
-                                    <div class="project-meta">
-                                        <span class="project-type">Commercial</span>
-                                        <span class="project-size">1200 m²</span>
-                                    </div>
-                                    <span class="project-location">Dubai</span>
-                                </div>
-                            </a>
-                            
-                            <!-- Architecture Project 3 -->
-                            <a href="#" class="portfolio-item">
-                                <div class="portfolio-image">
-                                    <img src="https://images.unsplash.com/photo-1486718448742-163732cd1544?w=600&h=400&fit=crop" alt="Cultural Center">
-                                </div>
-                                <div class="portfolio-overlay">
-                                    <h3 class="project-name">Cultural Center</h3>
-                                    <div class="project-meta">
-                                        <span class="project-type">Public</span>
-                                        <span class="project-size">2500 m²</span>
-                                    </div>
-                                    <span class="project-location">Armenia</span>
-                                </div>
-                            </a>
-                            
-                            <!-- Architecture Project 4 -->
-                            <a href="#" class="portfolio-item">
-                                <div class="portfolio-image">
-                                    <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=600&h=400&fit=crop" alt="Residential Tower">
-                                </div>
-                                <div class="portfolio-overlay">
-                                    <h3 class="project-name">Residential Tower</h3>
-                                    <div class="project-meta">
-                                        <span class="project-type">Multi-family</span>
-                                        <span class="project-size">8500 m²</span>
-                                    </div>
-                                    <span class="project-location">Yerevan</span>
-                                </div>
-                            </a>
+                        <div class="coming-soon-section">
+                            <h2 class="coming-soon-text">COMING SOON...</h2>
+                            <div class="coming-soon-progress" aria-label="Coming soon progress">
+                                <span class="cs-bar filled"></span>
+                                <span class="cs-bar filled"></span>
+                                <span class="cs-bar filled"></span>
+                                <span class="cs-bar filled"></span>
+                                <span class="cs-bar filled"></span>
+                                <span class="cs-bar filled"></span>
+                                <span class="cs-bar filled"></span>
+                                <span class="cs-bar filled"></span>
+                                <span class="cs-bar filled"></span>
+                                <span class="cs-bar filled"></span>
+                                <span class="cs-bar filled"></span>
+                                <span class="cs-bar filled"></span>
+                                <span class="cs-bar"></span>
+                                <span class="cs-bar"></span>
+                                <span class="cs-bar"></span>
+                                <span class="cs-bar"></span>
+                                <span class="cs-bar"></span>
+                                <span class="cs-bar"></span>
+                                <span class="cs-bar"></span>
+                                <span class="cs-bar"></span>
+                            </div>
                         </div>
                     </div>
                 </div>
