@@ -203,6 +203,17 @@
         .cp-img-card.no-border img {
             object-fit: cover;
         }
+        /* Uniform-cell variant: forces a consistent aspect ratio on every cell so
+           mixed-aspect images in the same row align at the bottom. */
+        .cp-img-grid-uniform .cp-img-card {
+            aspect-ratio: 297 / 210;
+            overflow: hidden;
+        }
+        .cp-img-grid-uniform .cp-img-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
         /* Stage 2 row 1: tall photo left + (text + shorter photo) right */
         .cp-stage2-row {
             display: grid;
@@ -396,7 +407,7 @@
                 <p>the atmosphere and character of each space. Our designers then prepare a curated moodboard, combining materials, colors, textures, and references to shape a clear visual identity. Every element is thoughtfully selected to ensure a cohesive design language, balancing functionality, comfort, and aesthetic harmony.</p>
             </div>
 
-            <div class="cp-img-grid-2">
+            <div class="cp-img-grid-2 cp-img-grid-uniform">
                 <div class="cp-img-card">
                     <img src="assets/construction/existing-plan.jpg" alt="Existing floor plan">
                 </div>
@@ -445,7 +456,7 @@
             <!-- 360 Panorama embed (Kuula) -->
             <div class="cp-360-embed">
                 <iframe
-                    src="https://kuula.co/share/collection/7Mspy?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1"
+                    src="https://kuula.co/share/collection/7TLPh?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1"
                     width="100%"
                     height="500"
                     frameborder="0"
@@ -601,6 +612,7 @@
         <i class="fa fa-chevron-up"></i>
     </button>
 
+    <script src="lightbox.js"></script>
     <script>
         const backToTopBtn = document.getElementById('backToTop');
         window.addEventListener('scroll', () => {
