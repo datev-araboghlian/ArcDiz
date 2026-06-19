@@ -11,11 +11,11 @@
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        .l1-project .project-header { grid-template-columns: 1fr 1.4fr; gap: 60px; max-width: 1180px; margin: 0 auto; }
-        .l1-project .project-featured-image img { max-height: 460px; width: 100%; object-fit: cover; }
+        .l1-project .project-header { grid-template-columns: 0.78fr 1.58fr; gap: 44px; margin: 0 0 60px; }
+        .l1-project .project-featured-image img { max-height: 560px; width: 100%; object-fit: cover; }
         .l1-project .project-title { font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
         .project-description { margin-top: 10px; }
-        .project-description p { font-size: 0.9rem; line-height: 1.75; color: #444; margin-bottom: 14px; }
+        .project-description p { font-size: 0.9rem; line-height: 1.62; color: #444; margin-bottom: 12px; }
         .project-description p:last-child { margin-bottom: 0; }
         .arsh-floorplan { margin: 60px 0 50px; text-align: center; }
         .arsh-floorplan img { max-width: calc(50% - 9px); height: auto; display: inline-block; }
@@ -25,6 +25,7 @@
         @media (max-width: 768px) {
             .arsh-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
             .arsh-floorplan img { max-width: 100%; }
+            .l1-project .project-header { grid-template-columns: 1fr; gap: 30px; margin-bottom: 40px; }
         }
     </style>
 </head>
@@ -67,14 +68,15 @@
                         <h1 class="project-title">Luyser Residential Complex</h1>
                         <div class="project-details">
                             <div class="detail-row">
-                                <span class="detail-label">3-room apartment</span>
-                                <span class="detail-value">— m²</span>
+                                <span class="detail-label">2-room apartment</span>
+                                <span class="detail-value">49 m²</span>
                             </div>
                         </div>
                         <span class="detail-location">Yerevan</span>
                         <div class="project-description">
-                            <p>Modern minimalism shapes this interior through clean geometric forms, a restrained material palette, and a careful balance of light and texture. Soft neutral tones, natural wood accents, and integrated lighting establish a calm and contemporary atmosphere throughout the apartment.</p>
-                            <p>The layout emphasizes openness and functionality, combining tailored cabinetry, refined finishes, and subtle architectural details to create a cohesive composition. Every element is selected to support a sense of order and quiet sophistication, while preserving comfort and warmth in the daily living experience.</p>
+                            <p>Scandinavian design defines this interior through clean architectural lines, warm wood finishes, and a soft neutral palette that creates a calm and inviting atmosphere. The design emphasizes simplicity, functionality, and comfort, where every element serves a purpose while maintaining a refined visual balance.</p>
+                            <p>Integrated storage solutions and built-in cabinetry enhance the minimalist character of the space, keeping the interior visually clean and uncluttered. Natural materials, soft textures, and carefully selected decorative elements add warmth and depth without overpowering the overall composition.</p>
+                            <p>Light tones combined with warm wooden finishes create a bright and timeless aesthetic, while the balanced use of textures introduces a cozy and welcoming feeling. The result is a sophisticated Scandinavian interior that feels modern, functional, and effortlessly elegant.</p>
                         </div>
                     </div>
                     <div class="project-featured-image">
@@ -122,6 +124,7 @@
                         <li><a href="../interior.html">Portfolio</a></li>
                         <li><a href="../about.html">About Us</a></li>
                         <li><a href="../pricing.html">Pricing</a></li>
+                        <li><a href="../pricing.html#faq">FAQ</a></li>
                         <li><a href="../contact.html">Contact Us</a></li>
                     </ul>
                 </div>
@@ -146,6 +149,7 @@
     </button>
 
     <script src="../menu.js"></script>
+    <script src="../lightbox.js"></script>
     <script>
         const backToTopBtn = document.getElementById('backToTop');
         window.addEventListener('scroll', () => {

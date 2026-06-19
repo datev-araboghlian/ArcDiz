@@ -2,13 +2,15 @@
 // prev/next navigation, counter, ESC/arrow-key support, and click-outside
 // to close. Auto-initialises on DOM ready by collecting all images that
 // belong to project image containers (cp-img-card, cp-stage2-tall-img,
-// cp-stage2-short-img, arsh-grid-item).
+// cp-stage2-short-img, featured images, floor plans, arsh-grid-item).
 
 (function () {
     'use strict';
 
     document.addEventListener('DOMContentLoaded', function () {
         var selector = [
+            '.project-featured-image img',
+            '.arsh-floorplan img',
             '.cp-img-card img',
             '.cp-stage2-tall-img img',
             '.cp-stage2-short-img img',

@@ -11,14 +11,14 @@
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        .gb-project .project-header { grid-template-columns: 1fr 1.4fr; gap: 60px; max-width: 1180px; margin: 0 auto; }
+        .gb-project .project-header { grid-template-columns: 1fr 1.4fr; gap: 60px; }
         .gb-project .project-featured-image img { max-height: 460px; width: 100%; object-fit: cover; }
         .gb-project .project-title { font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
         .project-description { margin-top: 10px; }
         .project-description p { font-size: 0.9rem; line-height: 1.75; color: #444; margin-bottom: 14px; }
         .project-description p:last-child { margin-bottom: 0; }
         .arsh-floorplan { margin: 60px 0 50px; text-align: center; }
-        .arsh-floorplan img { max-width: calc(50% - 9px); height: auto; display: inline-block; }
+        .arsh-floorplan img { max-width: 90%; height: auto; display: inline-block; }
         .arsh-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 18px; margin-bottom: 60px; }
         .arsh-grid-item { overflow: hidden; background: #f5f5f5; grid-column: span 3; }
         .arsh-grid-item.col-third { grid-column: span 2; }
@@ -124,6 +124,7 @@
                         <li><a href="../interior.html">Portfolio</a></li>
                         <li><a href="../about.html">About Us</a></li>
                         <li><a href="../pricing.html">Pricing</a></li>
+                        <li><a href="../pricing.html#faq">FAQ</a></li>
                         <li><a href="../contact.html">Contact Us</a></li>
                     </ul>
                 </div>
@@ -148,6 +149,7 @@
     </button>
 
     <script src="../menu.js"></script>
+    <script src="../lightbox.js"></script>
     <script>
         const backToTopBtn = document.getElementById('backToTop');
         window.addEventListener('scroll', () => {

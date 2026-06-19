@@ -79,7 +79,7 @@
         .price-btn:hover { background: #666666; }
         
         /* FAQ */
-        .faq { padding: 60px 0; background: #1a1a1a; margin: 0 -60px; padding: 60px 60px; }
+        .faq { background: #1a1a1a; margin: 0; padding: 60px; }
         .faq h2 { font-size: 42px; font-weight: 400; margin-top: 0; margin-bottom: -10px; line-height: 1; color: #fff; }
         .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 60px; }
         .faq-item { padding: 22px 0; border-bottom: 1px solid #fff; cursor: pointer; background: none; }
@@ -216,7 +216,7 @@
         .price-btn:hover { background: #666666; }
         
         /* FAQ */
-        .faq { padding: 60px 0; background: #1a1a1a; margin: 0 -60px; padding: 60px 60px; }
+        .faq { background: #1a1a1a; margin: 0; padding: 60px; }
         .faq h2 { font-size: 42px; font-weight: 400; margin-top: 0; margin-bottom: -10px; line-height: 1; color: #fff; }
         .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 60px; }
         .faq-item { padding: 22px 0; border-bottom: 1px solid #fff; cursor: pointer; background: none; }
@@ -530,6 +530,32 @@
 
     </div>
 
+    <section class="faq" id="faq">
+        <h2>FAQ</h2>
+        <div class="faq-grid">
+            <div>
+                <div class="faq-item">
+                    <div class="faq-q">What is included in the construction project package?</div>
+                    <div class="faq-a">It includes the survey, consultation, proposed layout, and the core documentation needed to begin planning the project.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">Can the final price change after consultation?</div>
+                    <div class="faq-a">Yes. Prices may vary depending on the scope of the project, total area, selected services, and project complexity.</div>
+                </div>
+            </div>
+            <div>
+                <div class="faq-item">
+                    <div class="faq-q">Do you provide author supervision?</div>
+                    <div class="faq-a">Yes. Author supervision can be added monthly for site visits, showroom visits, coordination, and design compliance checks.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">How do I start a project with ArcDiz?</div>
+                    <div class="faq-a">Send a request with your contact details, location, object type, and area. The team will contact you to schedule a consultation.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer class="expanded-footer">
             <div class="footer-main">
                 <div class="footer-column footer-about-info">
@@ -548,6 +574,7 @@
                         <li><a href="interior.html">Portfolio</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="pricing.html#faq">FAQ</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
@@ -676,6 +703,10 @@
             if (activeTab) {
                 updatePricingUnderline(activeTab);
             }
+        });
+
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => item.classList.toggle('open'));
         });
     </script>
 </body>
