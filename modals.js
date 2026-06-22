@@ -20,18 +20,8 @@ function closeConsultationModal() {
     document.body.style.overflow = 'auto';
 }
 
-// Close modal when clicking outside
-window.onclick = function(event) {
-    const contactModal = document.getElementById('contactModal');
-    const consultationModal = document.getElementById('consultationModal');
-    
-    if (event.target === contactModal) {
-        closeContactModal();
-    }
-    if (event.target === consultationModal) {
-        closeConsultationModal();
-    }
-}
+// Modals only close via their X (close) button — clicking the backdrop is intentionally ignored
+// so users don't accidentally lose form input.
 
 // Handle consultation form submission
 document.addEventListener('DOMContentLoaded', function() {

@@ -2582,11 +2582,16 @@ main {
 .filter-bar {
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 12px;
     padding: 20px 0;
     margin-bottom: 40px;
     flex-wrap: wrap;
     min-height: 60px;
+}
+
+/* Keep the photos toggle anchored to the right edge of the bar */
+.filter-photos {
+    margin-left: auto;
 }
 
 .filter-group {
@@ -2602,7 +2607,7 @@ main {
 }
 
 .filter-btn {
-    padding: 8px 18px;
+    padding: 8px 14px;
     border: 1px solid #ddd;
     background: transparent;
     color: #333;
@@ -2630,7 +2635,7 @@ main {
 }
 
 .dropdown-btn {
-    padding: 8px 18px;
+    padding: 8px 14px;
     border: 1px solid #ddd;
     background: transparent;
     color: #333;
@@ -2639,7 +2644,11 @@ main {
     cursor: pointer;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 8px;
+    /* Fixed width so selecting a longer style (e.g. "Contemporary Scandinavian") doesn't reflow the filter bar */
+    min-width: 15rem;
+    white-space: nowrap;
 }
 
 .dropdown-arrow {
@@ -2647,7 +2656,7 @@ main {
     transition: transform 0.2s ease;
 }
 
-.filter-dropdown:hover .dropdown-arrow {
+.filter-dropdown.open .dropdown-arrow {
     transform: rotate(180deg);
 }
 
@@ -2665,7 +2674,7 @@ main {
     transition: all 0.2s ease;
 }
 
-.filter-dropdown:hover .dropdown-content {
+.filter-dropdown.open .dropdown-content {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
@@ -2771,6 +2780,12 @@ main {
     display: block;
     aspect-ratio: 4/3;
     transition: transform 0.5s ease, filter 0.3s ease;
+    /* Promote to its own GPU layer so the browser uses the GPU's high-quality
+       bilinear filter for downscaling. This gives noticeably crisper thumbnails
+       on Windows/Chrome which otherwise uses a faster CPU scaler. */
+    will-change: transform;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 /* Real photos badge */

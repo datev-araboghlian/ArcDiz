@@ -99,7 +99,36 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Handle dropdown style filter
+    // Toggle dropdown open/close on button click (touch-friendly, replaces :hover)
+    const dropdown = dropdownBtn ? dropdownBtn.closest('.filter-dropdown') : null;
+
+    if (dropdownBtn && dropdown) {
+        dropdownBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const willOpen = !dropdown.classList.contains('open');
+            dropdown.classList.toggle('open', willOpen);
+            dropdownBtn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+        });
+
+        // Close on outside click
+        document.addEventListener('click', function(e) {
+            if (!dropdown.contains(e.target)) {
+                dropdown.classList.remove('open');
+                dropdownBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && dropdown.classList.contains('open')) {
+                dropdown.classList.remove('open');
+                dropdownBtn.setAttribute('aria-expanded', 'false');
+                dropdownBtn.focus();
+            }
+        });
+    }
+
+    // Handle dropdown style filter selection
     dropdownLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
@@ -112,6 +141,12 @@ document.addEventListener('DOMContentLoaded', function() {
             // Update dropdown button text
             dropdownBtn.innerHTML = this.textContent + ' <span class="dropdown-arrow">▼</span>';
             
+            // Close dropdown after selection
+            if (dropdown) {
+                dropdown.classList.remove('open');
+                dropdownBtn.setAttribute('aria-expanded', 'false');
+            }
+
             // Update filter
             filters.style = filterValue;
             filterItems();
