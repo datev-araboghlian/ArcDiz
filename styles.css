@@ -2520,7 +2520,11 @@ main {
 /* Content Slider */
 .content-slider {
     position: relative;
-    overflow: hidden;
+    /* Keep horizontal containment for slide-in/out animations, but allow
+       absolutely-positioned children (e.g. the style filter dropdown) to
+       overflow vertically so they don't get clipped when the panel is short. */
+    overflow-x: clip;
+    overflow-y: visible;
 }
 
 .content-panel {
@@ -2667,7 +2671,7 @@ main {
     background: #fff;
     border: 1px solid #ddd;
     min-width: 230px;
-    z-index: 100;
+    z-index: 1000;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
@@ -3212,6 +3216,23 @@ main {
     .project-cta {
         margin: 0 -20px;
         padding: 40px 20px;
+    }
+
+    /* When the project header collapses to a single column, the absolutely-positioned
+       featured image (used on desktop to match the text column's height) has no implicit
+       height to fill. Restore a natural flow with a sensible aspect ratio. */
+    .project-featured-image {
+        position: static !important;
+        height: auto !important;
+        overflow: visible !important;
+        aspect-ratio: 4 / 3;
+    }
+    .project-featured-image img {
+        position: static !important;
+        inset: auto !important;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 }
 

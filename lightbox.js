@@ -47,8 +47,12 @@
 
         function update() {
             var src = images[currentIndex].src;
+            // Project pages display 1800px-wide thumbnails from .../display/ to keep
+            // page weight low; when the lightbox opens we want the full-resolution
+            // original (one level up from the display/ folder) for maximum zoom quality.
+            var fullSrc = src.replace('/display/', '/');
             var alt = images[currentIndex].alt || '';
-            imgEl.src = src;
+            imgEl.src = fullSrc;
             imgEl.alt = alt;
             counterEl.textContent = (currentIndex + 1) + ' / ' + images.length;
         }

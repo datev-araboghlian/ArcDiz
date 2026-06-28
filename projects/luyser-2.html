@@ -11,8 +11,11 @@
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        .l2-project .project-header { grid-template-columns: 1fr 1.4fr; gap: 60px; }
-        .l2-project .project-featured-image img { max-height: 460px; width: 100%; object-fit: cover; }
+        .l2-project .project-header { grid-template-columns: 1fr 1.4fr; gap: 60px; align-items: stretch; }
+        /* Let the text column dictate the row height; absolutely position the image inside
+           a stretched container so its intrinsic height doesn't push the row taller. */
+        .l2-project .project-featured-image { position: relative; height: 100%; min-height: 0; overflow: hidden; }
+        .l2-project .project-featured-image img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
         .l2-project .project-title { font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
         .project-description { margin-top: 10px; }
         .project-description p { font-size: 0.9rem; line-height: 1.75; color: #444; margin-bottom: 14px; }
@@ -120,12 +123,12 @@
                         </div>
                     </div>
                     <div class="project-featured-image">
-                        <img src="../assets/projects/luyser-2/1.jpg" alt="Luyser 2 - Featured">
+                        <img src="../assets/projects/luyser-2/display/1.jpg" alt="Luyser 2 - Featured">
                     </div>
                 </div>
 
                 <section class="arsh-floorplan">
-                    <img src="../assets/projects/luyser-2/2.jpg" alt="Luyser 2 - Floor Plan">
+                    <img src="../assets/projects/luyser-2/display/2.jpg" alt="Luyser 2 - Floor Plan">
                 </section>
 
                 <!-- 3D / Photo toggle -->
@@ -136,37 +139,37 @@
 
                 <!-- Renders gallery (photos 3-16, 14 photos in 7 rows of 2) -->
                 <section class="gallery-panel active arsh-grid" id="gallery-renders" role="tabpanel">
-                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/3.jpg" alt="Luyser 2 - Render 3"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/4.jpg" alt="Luyser 2 - Render 4"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/5.jpg" alt="Luyser 2 - Render 5"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/6.jpg" alt="Luyser 2 - Render 6"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/7.jpg" alt="Luyser 2 - Render 7"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/8.jpg" alt="Luyser 2 - Render 8"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/9.jpg" alt="Luyser 2 - Render 9"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/10.jpg" alt="Luyser 2 - Render 10"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/11.jpg" alt="Luyser 2 - Render 11"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/12.jpg" alt="Luyser 2 - Render 12"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/13.jpg" alt="Luyser 2 - Render 13"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/14.jpg" alt="Luyser 2 - Render 14"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/15.jpg" alt="Luyser 2 - Render 15"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/16.jpg" alt="Luyser 2 - Render 16"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/display/3.jpg" alt="Luyser 2 - Render 3"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/display/4.jpg" alt="Luyser 2 - Render 4"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/display/5.jpg" alt="Luyser 2 - Render 5"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/display/6.jpg" alt="Luyser 2 - Render 6"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/display/7.jpg" alt="Luyser 2 - Render 7"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/display/8.jpg" alt="Luyser 2 - Render 8"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/display/9.jpg" alt="Luyser 2 - Render 9"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/display/10.jpg" alt="Luyser 2 - Render 10"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/display/11.jpg" alt="Luyser 2 - Render 11"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/display/12.jpg" alt="Luyser 2 - Render 12"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/display/13.jpg" alt="Luyser 2 - Render 13"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/display/14.jpg" alt="Luyser 2 - Render 14"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/display/15.jpg" alt="Luyser 2 - Render 15"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/display/16.jpg" alt="Luyser 2 - Render 16"></div>
                 </section>
 
                 <!-- Real photos gallery (13 photos: 3-8 and 12-15 in 2-col, 9/10/11 in 3-col mixed widths) -->
                 <section class="gallery-panel arsh-grid" id="gallery-real" role="tabpanel">
-                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/real-3.jpg" alt="Luyser 2 - Real 3"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/real-4.jpg" alt="Luyser 2 - Real 4"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/real-5.jpg" alt="Luyser 2 - Real 5"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/real-6.jpg" alt="Luyser 2 - Real 6"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/real-7.jpg" alt="Luyser 2 - Real 7"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/real-8.jpg" alt="Luyser 2 - Real 8"></div>
-                    <div class="arsh-grid-item col-narrow"><img src="../assets/projects/luyser-2/real-9.jpg" alt="Luyser 2 - Real 9"></div>
-                    <div class="arsh-grid-item col-mid"><img src="../assets/projects/luyser-2/real-10.jpg" alt="Luyser 2 - Real 10"></div>
-                    <div class="arsh-grid-item col-mid"><img src="../assets/projects/luyser-2/real-11.jpg" alt="Luyser 2 - Real 11"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/real-12.jpg" alt="Luyser 2 - Real 12"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/real-13.jpg" alt="Luyser 2 - Real 13"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/real-14.jpg" alt="Luyser 2 - Real 14"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/real-15.jpg" alt="Luyser 2 - Real 15"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/display/real-3.jpg" alt="Luyser 2 - Real 3"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/display/real-4.jpg" alt="Luyser 2 - Real 4"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/display/real-5.jpg" alt="Luyser 2 - Real 5"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/display/real-6.jpg" alt="Luyser 2 - Real 6"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/display/real-7.jpg" alt="Luyser 2 - Real 7"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/display/real-8.jpg" alt="Luyser 2 - Real 8"></div>
+                    <div class="arsh-grid-item col-narrow"><img src="../assets/projects/luyser-2/display/real-9.jpg" alt="Luyser 2 - Real 9"></div>
+                    <div class="arsh-grid-item col-mid"><img src="../assets/projects/luyser-2/display/real-10.jpg" alt="Luyser 2 - Real 10"></div>
+                    <div class="arsh-grid-item col-mid"><img src="../assets/projects/luyser-2/display/real-11.jpg" alt="Luyser 2 - Real 11"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/display/real-12.jpg" alt="Luyser 2 - Real 12"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/display/real-13.jpg" alt="Luyser 2 - Real 13"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/display/real-14.jpg" alt="Luyser 2 - Real 14"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/luyser-2/display/real-15.jpg" alt="Luyser 2 - Real 15"></div>
                 </section>
             </div>
         </main>

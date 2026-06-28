@@ -11,14 +11,24 @@
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        /* Widen text column so the title fits on one line, and constrain image height */
+        /* Widen text column so the title fits on one line; let the text column dictate the
+           row height and absolutely position the image to fill it without pushing it taller. */
         .arsh-project .project-header {
             grid-template-columns: 1fr 1.4fr;
             gap: 60px;
+            align-items: stretch;
+        }
+        .arsh-project .project-featured-image {
+            position: relative;
+            height: 100%;
+            min-height: 0;
+            overflow: hidden;
         }
         .arsh-project .project-featured-image img {
-            max-height: 460px;
+            position: absolute;
+            inset: 0;
             width: 100%;
+            height: 100%;
             object-fit: cover;
         }
 
@@ -130,41 +140,41 @@
                     </div>
 
                     <div class="project-featured-image">
-                        <img src="../assets/projects/arshakunyats-192/1.jpg" alt="Arshakunyats 192 - Featured">
+                        <img src="../assets/projects/arshakunyats-192/display/1.jpg" alt="Arshakunyats 192 - Featured">
                     </div>
                 </div>
 
                 <!-- Floor plan -->
                 <section class="arsh-floorplan">
-                    <img src="../assets/projects/arshakunyats-192/2.jpg" alt="Arshakunyats 192 - Floor Plan">
+                    <img src="../assets/projects/arshakunyats-192/display/2.jpg" alt="Arshakunyats 192 - Floor Plan">
                 </section>
 
                 <!-- Photo grid -->
                 <section class="arsh-grid">
-                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/3.jpg" alt="Arshakunyats 192 - Photo 3"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/4.jpg" alt="Arshakunyats 192 - Photo 4"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/5.jpg" alt="Arshakunyats 192 - Photo 5"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/6.jpg" alt="Arshakunyats 192 - Photo 6"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/7.jpg" alt="Arshakunyats 192 - Photo 7"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/8.jpg" alt="Arshakunyats 192 - Photo 8"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/9.jpg" alt="Arshakunyats 192 - Photo 9"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/10.jpg" alt="Arshakunyats 192 - Photo 10"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/11.jpg" alt="Arshakunyats 192 - Photo 11"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/12.jpg" alt="Arshakunyats 192 - Photo 12"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/13.jpg" alt="Arshakunyats 192 - Photo 13"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/14.jpg" alt="Arshakunyats 192 - Photo 14"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/15.jpg" alt="Arshakunyats 192 - Photo 15"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/16.jpg" alt="Arshakunyats 192 - Photo 16"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/17.jpg" alt="Arshakunyats 192 - Photo 17"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/18.jpg" alt="Arshakunyats 192 - Photo 18"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/19.jpg" alt="Arshakunyats 192 - Photo 19"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/20.jpg" alt="Arshakunyats 192 - Photo 20"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/21.jpg" alt="Arshakunyats 192 - Photo 21"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/22.jpg" alt="Arshakunyats 192 - Photo 22"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/23.jpg" alt="Arshakunyats 192 - Photo 23"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/24.jpg" alt="Arshakunyats 192 - Photo 24"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/25.jpg" alt="Arshakunyats 192 - Photo 25"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/26.jpg" alt="Arshakunyats 192 - Photo 26"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/display/3.jpg" alt="Arshakunyats 192 - Photo 3"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/display/4.jpg" alt="Arshakunyats 192 - Photo 4"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/display/5.jpg" alt="Arshakunyats 192 - Photo 5"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/display/6.jpg" alt="Arshakunyats 192 - Photo 6"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/display/7.jpg" alt="Arshakunyats 192 - Photo 7"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/display/8.jpg" alt="Arshakunyats 192 - Photo 8"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/display/9.jpg" alt="Arshakunyats 192 - Photo 9"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/display/10.jpg" alt="Arshakunyats 192 - Photo 10"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/display/11.jpg" alt="Arshakunyats 192 - Photo 11"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/display/12.jpg" alt="Arshakunyats 192 - Photo 12"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/display/13.jpg" alt="Arshakunyats 192 - Photo 13"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/display/14.jpg" alt="Arshakunyats 192 - Photo 14"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/display/15.jpg" alt="Arshakunyats 192 - Photo 15"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/display/16.jpg" alt="Arshakunyats 192 - Photo 16"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/display/17.jpg" alt="Arshakunyats 192 - Photo 17"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/display/18.jpg" alt="Arshakunyats 192 - Photo 18"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/display/19.jpg" alt="Arshakunyats 192 - Photo 19"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/display/20.jpg" alt="Arshakunyats 192 - Photo 20"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/display/21.jpg" alt="Arshakunyats 192 - Photo 21"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/display/22.jpg" alt="Arshakunyats 192 - Photo 22"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/display/23.jpg" alt="Arshakunyats 192 - Photo 23"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/display/24.jpg" alt="Arshakunyats 192 - Photo 24"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/display/25.jpg" alt="Arshakunyats 192 - Photo 25"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/arshakunyats-192/display/26.jpg" alt="Arshakunyats 192 - Photo 26"></div>
                 </section>
             </div>
         </main>

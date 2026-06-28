@@ -168,11 +168,13 @@
             gap: 20px;
             margin-bottom: 24px;
         }
-        .cp-img-grid-2 .cp-img-card {
-            aspect-ratio: 4 / 3;
+        /* Uniform-cell variant: forces a consistent aspect ratio so mixed-aspect
+           images in the same row align at the bottom. Opt-in via cp-img-grid-uniform. */
+        .cp-img-grid-uniform .cp-img-card {
+            aspect-ratio: 297 / 210;
             overflow: hidden;
         }
-        .cp-img-grid-2 .cp-img-card img {
+        .cp-img-grid-uniform .cp-img-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -374,7 +376,7 @@
                 <p>the atmosphere and character of each space. Our designers then prepare a curated moodboard, combining materials, colors, textures, and references to shape a clear visual identity.<br><br>Every element is thoughtfully selected to ensure a cohesive design language, balancing functionality, comfort, and aesthetic harmony.</p>
             </div>
 
-            <div class="cp-img-grid-2">
+            <div class="cp-img-grid-2 cp-img-grid-uniform">
                 <div class="cp-img-card">
                     <img src="assets/construction/existing-plan.jpg" alt="Existing floor plan">
                 </div>

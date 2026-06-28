@@ -12,8 +12,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         .gb-project .project-header { grid-template-columns: 1fr 1.4fr; gap: 60px; align-items: stretch; }
-        .gb-project .project-featured-image { height: 100%; }
-        .gb-project .project-featured-image img { width: 100%; height: 100%; object-fit: cover; }
+        /* Let the text column dictate the row height; absolutely position the image inside
+           a stretched container so its intrinsic height doesn't push the row taller. */
+        .gb-project .project-featured-image { position: relative; height: 100%; min-height: 0; overflow: hidden; }
+        .gb-project .project-featured-image img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
         .gb-project .project-title { font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
         .project-description { margin-top: 10px; }
         .project-description p { font-size: 0.9rem; line-height: 1.75; color: #444; margin-bottom: 14px; }
@@ -82,28 +84,28 @@
                         </div>
                     </div>
                     <div class="project-featured-image">
-                        <img src="../assets/projects/greybadov/1.jpg" alt="Greybadov - Featured">
+                        <img src="../assets/projects/greybadov/display/1.jpg" alt="Greybadov - Featured">
                     </div>
                 </div>
 
                 <section class="arsh-floorplan">
-                    <img src="../assets/projects/greybadov/2.jpg" alt="Greybadov - Floor Plan">
+                    <img src="../assets/projects/greybadov/display/2.jpg" alt="Greybadov - Floor Plan">
                 </section>
 
                 <section class="arsh-grid">
-                    <div class="arsh-grid-item"><img src="../assets/projects/greybadov/3.jpg" alt="Greybadov - Photo 3"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/greybadov/4.jpg" alt="Greybadov - Photo 4"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/greybadov/5.jpg" alt="Greybadov - Photo 5"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/greybadov/6.jpg" alt="Greybadov - Photo 6"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/greybadov/7.jpg" alt="Greybadov - Photo 7"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/greybadov/8.jpg" alt="Greybadov - Photo 8"></div>
-                    <div class="arsh-grid-item col-third"><img src="../assets/projects/greybadov/9.jpg" alt="Greybadov - Photo 9"></div>
-                    <div class="arsh-grid-item col-third"><img src="../assets/projects/greybadov/10.jpg" alt="Greybadov - Photo 10"></div>
-                    <div class="arsh-grid-item col-third"><img src="../assets/projects/greybadov/11.jpg" alt="Greybadov - Photo 11"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/greybadov/12.jpg" alt="Greybadov - Photo 12"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/greybadov/13.jpg" alt="Greybadov - Photo 13"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/greybadov/14.jpg" alt="Greybadov - Photo 14"></div>
-                    <div class="arsh-grid-item"><img src="../assets/projects/greybadov/15.jpg" alt="Greybadov - Photo 15"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/greybadov/display/3.jpg" alt="Greybadov - Photo 3"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/greybadov/display/4.jpg" alt="Greybadov - Photo 4"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/greybadov/display/5.jpg" alt="Greybadov - Photo 5"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/greybadov/display/6.jpg" alt="Greybadov - Photo 6"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/greybadov/display/7.jpg" alt="Greybadov - Photo 7"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/greybadov/display/8.jpg" alt="Greybadov - Photo 8"></div>
+                    <div class="arsh-grid-item col-third"><img src="../assets/projects/greybadov/display/9.jpg" alt="Greybadov - Photo 9"></div>
+                    <div class="arsh-grid-item col-third"><img src="../assets/projects/greybadov/display/10.jpg" alt="Greybadov - Photo 10"></div>
+                    <div class="arsh-grid-item col-third"><img src="../assets/projects/greybadov/display/11.jpg" alt="Greybadov - Photo 11"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/greybadov/display/12.jpg" alt="Greybadov - Photo 12"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/greybadov/display/13.jpg" alt="Greybadov - Photo 13"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/greybadov/display/14.jpg" alt="Greybadov - Photo 14"></div>
+                    <div class="arsh-grid-item"><img src="../assets/projects/greybadov/display/15.jpg" alt="Greybadov - Photo 15"></div>
                 </section>
             </div>
         </main>
