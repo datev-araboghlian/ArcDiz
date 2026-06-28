@@ -180,11 +180,10 @@ main {
     transform: translateX(0);
 }
 
-/* Menu button */
+/* Menu button: lives inside the fixed .nav-elements flex row so it stays vertically
+   aligned with the logo (no more 'logo-lower-than-hamburger' offset). */
 .menu-button {
-    position: fixed;
-    top: 20px;
-    right: 20px;
+    position: relative;
     z-index: 1001;
     cursor: pointer;
     width: 60px;
@@ -1425,8 +1424,9 @@ main {
 
 /* ABOUT PAGE STYLES */
 .about-main {
-    /* Horizontal padding handled by .about-container, vertical padding fluid */
-    padding: clamp(3.75rem, 10vw, 5rem) 0 2.5rem;
+    /* Horizontal padding handled by .about-container.
+       Top padding is large enough to clear the fixed nav (logo + hamburger ~96px tall on phones). */
+    padding: clamp(6.5rem, 14vw, 8rem) 0 2.5rem;
     background-color: #f5f5f5;
     color: #000;
 }
@@ -1436,8 +1436,10 @@ main {
 .about-container {
     max-width: 100rem;
     margin: 0 auto;
-    /* Single source of horizontal padding, scales fluidly with viewport */
-    padding: 0 clamp(2rem, 6vw, 3.75rem);
+    /* Horizontal padding scales fluidly: roomy side margins on phones (min 1.5rem)
+       and grows up to 3.75rem on desktop. The founder bio gets extra inner padding
+       on mobile (see .founder-text rule below) so the text doesn't feel edge-pinned. */
+    padding: 0 clamp(1.5rem, 6vw, 3.75rem);
 }
 
 .about-header {
@@ -2012,6 +2014,13 @@ main {
     .founder-content.reverse {
         flex-direction: column;
         gap: 24px;
+    }
+
+    /* Extra inner side-padding so the bio text has a clearly visible inset from the screen
+       edges. Combined with the container's clamp padding this lands around 48-56px total
+       from each edge on phones. */
+    .founder-text {
+        padding: 0 1.25rem;
     }
 
     .founder-image {
@@ -2891,23 +2900,49 @@ main {
 
 @media (max-width: 768px) {
     .design-main {
-        padding: 100px 20px 40px;
+        padding: 100px 20px 60px;
     }
-    
+
+    /* Tighten the category-tabs gap so 'Interior Design' / 'Architecture' don't crowd
+       the viewport edges on small phones. */
+    .category-tabs {
+        gap: clamp(20px, 6vw, 40px);
+        margin-bottom: 24px;
+    }
+
+    /* Single column with generous spacing between cards. */
     .portfolio-grid {
         grid-template-columns: 1fr;
+        gap: 28px;
     }
-    
+
     .filter-bar {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
+        align-items: stretch;
+        gap: 14px;
+        min-height: 0;
+        padding: 16px 0 8px;
+        margin-bottom: 28px;
     }
-    
+
     .filter-group {
         flex-wrap: wrap;
     }
-    
+
+    /* Style dropdown spans full-width on phones for an easier tap target. */
+    .filter-dropdown,
+    .dropdown-btn {
+        width: 100%;
+    }
+    .dropdown-content {
+        width: 100%;
+    }
+
+    /* Anchor the real-photos toggle to the start when the bar is stacked. */
+    .filter-photos {
+        margin-left: 0;
+    }
+
     .project-name {
         font-size: 1.2rem;
     }
@@ -2917,10 +2952,11 @@ main {
     .design-title {
         font-size: 0.85rem;
     }
-    
+
+    /* Keep filter buttons large enough to hit comfortably on small phones (~44px target). */
     .filter-btn {
-        padding: 5px 10px;
-        font-size: 0.75rem;
+        padding: 10px 14px;
+        font-size: 0.85rem;
     }
 }
 

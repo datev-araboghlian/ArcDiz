@@ -28,6 +28,7 @@
         .arsh-grid-item img { width: 100%; height: 100%; object-fit: cover; display: block; aspect-ratio: 4 / 3; }
         .arsh-grid-item.col-third img { aspect-ratio: 4 / 5; }
         @media (max-width: 768px) {
+            .gb-project .project-header { grid-template-columns: 1fr; gap: 28px; }
             .arsh-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
             .arsh-grid-item, .arsh-grid-item.col-third { grid-column: span 1; }
             .arsh-floorplan img { max-width: 100%; }

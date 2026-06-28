@@ -287,11 +287,67 @@
         /* CTA positioned under the single architecture card */
         .cta.cta-arch { width: calc((100% - 30px) / 3); margin-left: 0; text-align: center; }
 
+        /* Tablet & smaller: reduce edge padding so content has room to breathe. */
+        @media (max-width: 1024px) {
+            .container { padding: 110px 32px 32px; }
+            .additional-wrap { padding: 40px 32px; margin: 0 -32px; }
+            .faq { padding: 48px 32px; }
+            .faq-grid { gap: 0 32px; }
+            .title h1 { font-size: 56px; }
+            .title small { font-size: 22px; }
+        }
+
+        /* Phones: single-column, generous spacing, smaller headlines, friendlier modal. */
         @media (max-width: 768px) {
-            .design-text, .cards, .faq-grid, .foot-grid { flex-direction: column; }
-            .cards.cards-single .card { flex: 1 1 auto; }
+            .container { padding: 100px 20px 28px; }
+            .design-text, .cards, .foot-grid { flex-direction: column; }
+            .cards { gap: 20px; }
+            .cards.cards-single { justify-content: flex-start; }
+            .cards.cards-single .card { flex: 1 1 auto; min-height: 0; }
             .cta.cta-arch { width: 100%; }
             .foot-bottom { flex-direction: column; gap: 8px; text-align: center; }
+
+            /* Title scales down to fit narrow viewports. */
+            .title small { font-size: 18px; letter-spacing: 1.5px; margin-top: 10px; }
+            .title h1 { font-size: clamp(38px, 11vw, 56px); margin-bottom: 28px; }
+
+            /* Additional services wrapper: smaller side padding + safer negative margin. */
+            .additional-wrap { padding: 36px 20px; margin: 0 -20px; }
+            .additional h2 { font-size: 22px; margin-bottom: 20px; }
+
+            /* Each box: stack content above price/button vertically. */
+            .box { flex-direction: column; align-items: flex-start; gap: 16px; padding: 20px; }
+            .box-left { max-width: 100%; }
+            .box-right { width: 100%; text-align: left; }
+            .price-btn { width: 100%; min-width: 0; }
+
+            /* FAQ: collapse the 2-column grid to a single column and add breathing room. */
+            .faq { padding: 40px 20px; }
+            .faq h2 { font-size: 28px; margin-bottom: 12px; }
+            .faq-grid { grid-template-columns: 1fr; gap: 0; }
+            .faq-item { padding: 18px 0; }
+            .faq-q { font-size: 14px; }
+            .faq-a { font-size: 13px; padding: 12px 0 4px 22px; }
+
+            /* Pricing tabs: keep tappable. */
+            .pricing-tab { font-size: 1rem; padding: 10px 4px; }
+
+            /* Modal: full-width, comfortable padding, stacked form rows. */
+            .modal-box { padding: 32px 22px; width: 95%; max-height: 92vh; }
+            .modal-close { top: 12px; right: 16px; font-size: 26px; }
+            .form-row { flex-direction: column; gap: 16px; }
+            .radio-options { gap: 24px; flex-wrap: wrap; }
+
+            /* Footer (pricing-page custom) */
+            footer { padding: 28px 20px; }
+            .foot-grid { gap: 24px; }
+        }
+
+        /* Very small phones (<=480px): one more pass to keep everything comfortable. */
+        @media (max-width: 480px) {
+            .title h1 { font-size: clamp(32px, 12vw, 44px); }
+            .modal-box { padding: 28px 18px; }
+            .cta-btn { padding: 14px 28px; width: 100%; }
         }
     </style>
 </head>

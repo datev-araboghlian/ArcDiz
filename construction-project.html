@@ -231,13 +231,40 @@
             color: #333;
         }
 
+        @media (max-width: 1024px) {
+            .cp-container { padding: 0 32px 40px; }
+            .cp-title-content { padding: 0 32px; }
+        }
+
         @media (max-width: 768px) {
-            .cp-container { padding: 100px 30px 40px; }
-            .cp-overview { flex-direction: column; gap: 20px; }
+            .cp-container { padding: 0 20px 40px; }
+            .cp-title-area { margin-top: 100px; margin-bottom: 28px; }
+            .cp-title-content { padding: 0 20px; }
+            .cp-title-content h1 { font-size: clamp(32px, 9vw, 44px); margin: 14px 0 6px; letter-spacing: 1px; }
+            .cp-title-content .cp-subtitle { font-size: 13px; line-height: 1.5; }
+
+            .cp-overview { flex-direction: column; gap: 18px; }
             .cp-overview-text { max-width: 100%; }
-            .cp-overview-cost { text-align: left; }
+            .cp-overview-cost { text-align: left; min-width: 0; }
+            .cp-overview-cost .cost-label { font-size: 22px; }
+            .cp-overview-cost .cost-value { font-size: 20px; }
+
+            .cp-section { margin-bottom: 36px; }
+            .cp-section-title { font-size: 18px; }
+            .cp-included-label { font-size: 16px; margin-bottom: 22px; }
+            .cp-stage-title { font-size: 22px; margin-bottom: 14px; }
             .cp-stage-desc { flex-direction: column; gap: 14px; }
-            .cp-img-grid-2, .cp-img-grid-3, .cp-drawings-bottom { grid-template-columns: 1fr; }
+            .cp-stage-desc p, .cp-stage-subnote, .cp-section p, .cp-drawings-bottom-text, .cp-final-section p { font-size: 14px; line-height: 1.7; }
+
+            .cp-img-grid-2, .cp-img-grid-3, .cp-drawings-bottom { grid-template-columns: 1fr; gap: 14px; }
+
+            .cp-cta { text-align: center; }
+            .cp-cta .cp-cta-btn { width: 100%; max-width: 320px; padding: 14px 24px; font-size: 13px; }
+        }
+
+        @media (max-width: 480px) {
+            .cp-container { padding: 0 16px 32px; }
+            .cp-title-content { padding: 0 16px; }
         }
     </style>
 </head>
