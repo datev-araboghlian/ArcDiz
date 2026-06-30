@@ -1559,6 +1559,19 @@ main {
     text-align: left;
 }
 
+/* The architect photo (Varant.jpg) is a wide landscape shot, while the designer
+   photo (Sako.png) is portrait. Crop the architect to the same portrait ratio and
+   size so the two photos visually match. object-position can be tuned to keep the
+   subject framed. */
+.architect-image-wrapper img {
+    width: 350px;
+    max-width: 100%;
+    aspect-ratio: 680 / 960;
+    height: auto;
+    object-fit: cover;
+    object-position: 72% 25%;
+}
+
 .architect-image-wrapper .image-placeholder {
     width: 350px;
     height: 400px;
